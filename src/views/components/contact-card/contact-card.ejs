@@ -1,0 +1,29 @@
+<div class="contact-card">
+  <% if (avatarSrc) { %>
+    <div class="contact-card__avatar z-depth-2" style="background-image:url(<%= avatarSrc %>)"></div>
+  <% } %>
+  <div class="contact-card__contact-name">
+    <%= contactName %>
+  </div>
+  <ul class="contact-card__contact-status">
+    <% metaItems.forEach(item => { %>
+      <li>
+        <%= item.text %>
+      </li>
+    <% }) %>
+  </ul>
+  <% if (social) { %>
+    <ul class="contact-card__social">
+      <% for (var i = 0; i < social.length; i++) { %>
+        <li class="contact-card__social__item" style="background-color:<%= social[i].brandColor %>">
+          <a 
+            href="<%= social[i].isEmail ? `mailto:${social[i].link}` : social[i].link %>" 
+            target="<%= social[i].isEmail ? '_top' : '_blank' %>"
+          >
+            <img src="<%= social[i].iconSrc %>" alt="">
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  <% } %>
+</div>

@@ -1,0 +1,43 @@
+.external-link-list__items
+  margin-top: $vertical-spacing
+
+.external-link-list__items__item
+  position: relative
+  padding-left: ($horizontal-spacing * 2)
+
+  &:before,
+  &:after
+    content: ""
+
+  &:before
+    position: absolute
+    top: 6px
+    left: 0
+
+    display: block
+    width: ($horizontal-spacing * 1.5)
+    height: 10px
+    background: url(/img/icons/chevron-right.svg)
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 4px
+  
+  &:after
+    vertical-align: top
+
+    display: inline-block
+    width: 10px
+    height: 10px
+    background: url(/img/icons/external-link.svg)
+    background-repeat: no-repeat
+    background-position: left
+    background-size: 10px
+  
+  > a
+    color: inherit
+    text-decoration: none
+
+    transition: color .3s ease
+
+    &:hover
+      color: $link-color

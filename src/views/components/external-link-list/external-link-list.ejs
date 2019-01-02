@@ -1,0 +1,14 @@
+<div class="external-link-list">
+  <p class="external-link-list__intro">
+    <%= introText %>
+  </p>
+  <ul class="external-link-list__items">
+    <% for (var i = 0; i < links.length; i++) { %>
+      <li class="external-link-list__items__item">
+        <a href="<%= links[i].link %>" target="_blank">
+          <%= links[i].text %>
+        </a>
+      </li>
+    <% } %>
+  </ul>
+</div>

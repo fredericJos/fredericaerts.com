@@ -1,0 +1,62 @@
+<% var pageHeader = require('@components/page-header/page-header.ejs'); %>
+<% var contactCard = require('@components/contact-card/contact-card.ejs'); %>
+<% var pageFooter = require('@components/page-footer/page-footer.ejs'); %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nazka | Boilerplate</title>
+    <meta name="description" content="">
+
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+  </head>
+  <body>
+    <%= pageHeader() %>
+    <div class="home-page-body">
+      <%= contactCard({
+        avatarSrc: '/img/avatar/frederic-aerts.jpg',
+        contactName: 'Hi, I\'m Frederic',
+        metaItems: [
+          {
+            text: "Master in Biology"
+          },
+          {
+            text: "Freelance Web Developer"
+          },
+          {
+            text: "Open to new challenges"
+          }
+        ],
+        email: 'john@doe.com',
+        social: [
+          {
+            isEmail: true,
+            iconSrc: '/img/icons/envelope-white.svg',
+            brandColor: '#333',
+            link: 'info@fredericaerts.com'
+          },
+          {
+            iconSrc: '/img/social/linkedin-in.svg',
+            brandColor: '#0077b5',
+            link: 'https://www.linkedin.com/in/frédéric-aerts-b68035a'
+          },
+          {
+            iconSrc: '/img/social/twitter.svg',
+            brandColor: '#1da1f2',
+            link: 'https://twitter.com/fredericAerts'
+          },
+        ]
+      }) %>
+    </div>
+    <%= pageFooter() %>
+  </body>
+</html>

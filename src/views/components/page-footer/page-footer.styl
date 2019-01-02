@@ -1,0 +1,23 @@
+.page-footer
+  position: relative
+  justify-content: space-between
+  align-items: center
+
+  display: flex
+  height: $page-footer-height
+  padding: 0 ($horizontal-spacing / 2)
+
+  font-size: 11px
+  line-height: $page-footer-height
+
+  &:before
+    position: absolute
+    top: 0
+    left: ($horizontal-spacing / 2)
+
+    display: block
+    width: "calc(100% - %s)" % $horizontal-spacing
+    height: 1px
+    background: rgba($grey-xlight, .5)
+
+    content: ""
