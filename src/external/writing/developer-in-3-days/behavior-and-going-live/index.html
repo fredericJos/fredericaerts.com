@@ -1,0 +1,250 @@
+<html ng-app="blogApp" class="ng-scope">
+  <head>
+    <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+	<title>Developer in 3 days | Behavior and going live</title>
+</head>
+<body data-status="" ng-controller="mainCtrl as mainCtrl" class="ng-scope" cz-shortcut-listen="true">
+	<div class="page-wrapper bg-contrast">
+
+		<!-- ngView: undefined --><div class="ngView ng-scope" autoscroll="true" ngcloak="" style=""><div class="container container--padded bg-white z-depth-1 row-margin-top row-margin-bottom ng-scope">
+	<div ng-controller="seriesRouteCtrl as seriesRouteCtrl" class="ng-scope">
+
+		<article class="blogpost">
+			<h1 class="ng-binding">Day 3: Behavior and going live</h1>
+			<div class="blogpost__meta blogpost__meta--top">
+				<div class="blogpost__meta__item ng-binding">
+					posted on Jan 24, 2016 by <a href="http://twitter.com/fredericAerts" target="_blank">@fredericAerts</a>
+				</div>
+				<div class="blogpost__meta__item">
+					Part of series: <span class="blogpost__meta__seriesTitle ng-binding">How to become a web developer in 3 days</span> <span ng-show="currentSeries.inProgress" class="ng-hide">(to be continued)</span>
+				</div>
+				<div class="blogpost__navblock blogpost__navblock--top clearfix">
+					<span class="ng-binding">
+						Article 3 of 3
+					</span>
+				</div>
+			</div>
+
+			<!-- ngInclude: currentArticle.includeUrl --><div ng-include="currentArticle.includeUrl" class="animateInclude ng-scope" ng-show="articleLoaded" style=""><blockquote class="blogpost__indented ng-scope">
+    <p>
+        Action may not always bring happiness, but there is no happiness without action.
+    </p>
+    <footer>
+        <cite>-- Benjamin Disraeli</cite>
+    </footer>
+</blockquote>
+<p class="blogpost__intro ng-scope">
+    In the last 2 days you’ve acquired some decent web development skills, and a stunning website to back it up. Today, you’ll learn how to share this website on the World Wide Web. But if you think that sharing a website with a broken tab navigation is kind of embarrassing, then you’d better dig into this JavaScript crash course starting… right now!
+</p>
+<h2 class="ng-scope">JavaScript crash course</h2>
+<p class="ng-scope">
+    Yesterday we created an empty JavaScript file (script.js) in our workspace. We also wired this file into our website by referencing it in the <code>&lt;head&gt;</code> tag of our "index.html" file. This JavaScript file will eventually house the code that brings the tabs on your website to life. But for now, let’s use it as a laboratory for getting familiar with the language. The goal here is to get familiar enough with JavaScript to get them tabs working, no more and no less.
+
+    Let’s start from the beginning. A JavaScript program is just a set of instructions that tell the computer what tasks to perform. Like most programming languages, JavaScript often needs to track values as they change over the course of a program. JavaScript has the ability to do so by storing values in so-called <strong>variables</strong>. Let’s create such a variable and output its value via the <code>window.alert()</code> method.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    In your "script.js" file, add the following JavaScript statements:
+    <!-- js: web developer in 3 days - v1 -->
+    <div id="e1d85da0dc44a63421dc"><iframe width="100%" frameborder="0" id="gist-e1d85da0dc44a63421dc" style="height: 150px;"></iframe></div>
+    When you refresh your web page, a pop-up box is displayed with the contents of the variable named <code>myVariable</code>.
+</p>
+<p class="ng-scope">
+    So in this code snippet, we assigned the value <code>"Hello"</code> to the aptly named variable <code>myVariable</code>. The names of variables are of your choosing. When you express values in a program, you choose different representations for those values based on what you plan to do with them. These different value representations are called <strong>types</strong>. When you need to do math, you want a <code>number</code>. When you need to make a conditional decision in your program, you need a <code>boolean</code> (either <code>true</code> or <code>false</code>). In our example, we stored a sequence of characters in our variable. This type of value is called a <code>string</code>, which by convention gets surrounded by double or single quotes.
+</p>
+<p class="ng-scope">
+    A special type of values are <strong>functions</strong>. A function is a named section of code that can be called to run repeatedly, and thus enables us to break up our code into reusable pieces. Consider for instance the personalization of our greeting message to several persons, like so:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    <!-- js: web developer in 3 days - v2 -->
+    <div id="5fdfea2329c975d4217a"><iframe width="100%" frameborder="0" id="gist-5fdfea2329c975d4217a" style="height: 279px;"></iframe></div>
+    Note the space character before each person’s name, ensuring the concatenated values are displayed in the pop-up as two separate words.
+</p>
+<p class="ng-scope">
+    In order to personalize our greeting message, we have to repeat the same two steps over and over; concatenation of each person’s name to the <code>myVariable</code> variable and passing this concatenated variable to the <code>window.alert()</code> method. And for every new person we want to greet, we’ll have to repeatedly repeat this repetition. These two steps for creating a personalized greeting message are thus a perfect candidate for a reusable function. Here’s how:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    In your "script.js" file, add some greeting functionality, like so:
+    <!-- js: web developer in 3 days - v3 -->
+    <div id="5eeb210f9e9609f2b454"><iframe width="100%" frameborder="0" id="gist-5eeb210f9e9609f2b454" style="height: 279px;"></iframe></div>
+    Note that we can invoke functions by attaching round brackets to them. We can optionally pass in a value or variable (argument) in between these brackets, like we did here with the person’s name. This passed-in argument is then accessible in the function as a so-called parameter, <code>name</code> in our example.
+</p>
+<p class="ng-scope">
+    The benefits are immediately obvious. Every new person we need to greet now requires only one line of code instead of two. We’ve actually abstracted the greeting logic away into a separate function, leaving us with more readable and maintainable code. If the function would have more processing logic (and thus more statements) in it, the benefits would be even more pronounced.
+</p>
+<p class="ng-scope">
+    <strong>Arrays</strong> are another type of built in JavaScript tools. An Array is a JavaScript type that can hold multiple values. Most of the time you’ll use Arrays when you want to group similar values. In our example, we can for instance group the names of all the people we want to greet in an Array, like so: <code>var nameArray = ['Tom', 'Sara', 'Bob']</code>. We can now access the individual values or treat all these values as a whole via properties that are specific to Arrays.  An example of such an Array-specific property would be the <code>length</code> property, which returns us the number of values in the Array, like so: <code>var numberOfPersons = nameArray.length</code>. Let’s rewrite the <code>greetingFunction</code> so that it takes an Array of names as argument, rather than a single name.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    <!-- js: web developer in 3 days - v4 -->
+    <div id="0e938552dc99dd2acff6"><iframe width="100%" frameborder="0" id="gist-0e938552dc99dd2acff6" style="height: 323px;"></iframe></div>
+</p>
+<p class="ng-scope">
+    In the code snippet above, the <code>greetFunction</code> takes the <code>nameArray</code> variable as an argument. This Array is then accessible inside of the <code>greetFunction</code> as the <code>names</code> variable. In the <code>greetFunction</code>, we iterate over all the values of the <code>names</code> Array by use of an Array-specific function named <code>forEach</code>. Functions which are specific to a certain type of variable are called <strong>methods</strong> (another example would be the <code>alert()</code> method, which is a function specific to the <code>window</code> object). In the <code>greetFunction</code>, we thus invoke the <code>forEach</code> method on the <code>names</code> Array. This method iterates over each value of the Array, thereby taking a function as its parameter which will be executed on each iteration. The function that we pass in as an argument to the <code>forEach</code> method will in its own right receive the currently iterated value as its argument, thereby allowing us to manipulate each value of the Array. In our case, we’re concatenating the string <code>'Hello'</code> to each name variable before passing it to the <code>window.alert()</code> method. Thus, we now optimized our code so that we have to invoke the <code>greetingFunction</code> only once to greet all persons. Awesome!
+</p>
+<p class="ng-scope">
+    One last important type of value you need to know about in JavaScript is <strong>object</strong>. The object type is the mother of all types. As a matter of fact, you can think of Arrays (and even functions) as special versions of the object type. The object type refers to a compound value where you can set properties that each hold their own values of any type. Examples of such properties in the Array type would be the <code>forEach</code> function or the <code>length</code> number. You can access these properties either with the dot notation (e.g. <code>names.length</code>) or the bracket notation (e.g. <code>names["length"]</code>). JavaScript provides you with a whole host of built-in objects that you can use in your code to do all sorts of neat stuff like math computations (Math object), date and time manipulations (Date object), etc… It’s easy to create your own custom objects too, but that’s outside the scope of this tutorial. Objects are, however, key to managing complex code, since they allow you to free your mind to think at a higher level. It is therefore essential for you to master object-oriented programming, would you ever want to be taken seriously as a web developer.
+</p>
+<h2 class="ng-scope">Interacting with the DOM</h2>
+<p class="ng-scope">
+    By now, it should be obvious that HTML and JavaScript are two totally different technologies. HTML is made of declarative markup that allows you to describe a set of nested elements that make up your pages. JavaScript on the other hand is meant for describing computations. So how are we ever going to be able to have them communicate with each other? The attentive reader will remember from day 1 that the answer comes in the form of an object, namely the <code>window</code> object that is provided to us by the browser. This <code>window</code> object allows us to manipulate the browser into doing things like, for instance, drawing popup windows via its <code>alert</code> method. The actual wormhole between our HTML and Javascript, however, exists yet again in the form of an object which is present as a property on the <code>window</code> object, namely the <code>window.document</code> object. This object represents the entire page in your browser and contains the complete DOM tree (see day 1), so we can ask it to do things like finding an HTML element (a.k.a. DOM element) for us to manipulate. Before we can interact with the DOM, however, we have to wait for the browser to complete its creation. We thus have to write all our DOM manipulating logic inside the document’s <code>DOMContentLoaded</code> event handler. Say what?!
+</p>
+<p class="ng-scope">
+    Behind the scenes of your browser, a lot is going on: files are being downloaded, users are clicking DOM elements, the mouse location is being tracked, … and the DOM tree is being created. All these happenings are causing events to be triggered by the browser. We can react to all these events using the <code>addEventListener</code> method, which is available on a multitude of browser objects that are able to emit events, including our beloved <code>window.document</code> object. The <code>addEventListener</code> method takes two arguments. The first argument is the name of the event we want to react to. The second argument is the so-called "event handler", a function that contains the code that’s to be executed each time the respective event gets triggered. Let’s illustrate this by triggering a popup window after DOM creation is completed.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    <!-- js: web developer in 3 days - v5 -->
+    <div id="37a9f5f56793e288163f"><iframe width="100%" frameborder="0" id="gist-37a9f5f56793e288163f" style="height: 150px;"></iframe></div>
+</p>
+<p class="ng-scope">
+    Refreshing your browser triggers the event handling code (i.e. the alert method) seemingly instantly. There is, however, a tiny delay compared to the execution of code that would be situated outside of the event handler, a delay that makes all the difference for your DOM manipulating code.  If you don’t believe me then try and add <code>window.alert("The DOM tree is not yet available to your code");</code> outside and after your event handling code, and you’ll see it being executed before instead of after your event handling code.
+</p>
+<p class="ng-scope">
+    So now that we know where to place our DOM manipulating code, we might as well write some. Let’s write some code that changes the title of our website. To accomplish this, the first thing we need to do is fetch the <code>&lt;h1&gt;</code> element from the DOM tree. There are several ways to get access to DOM elements, but we’re going to use the <code>querySelector</code> method, which is available on the <code>window.document</code> object. This method takes a CSS selector (string) as an argument, thereby fetching the first element that matches this selector. The DOM element that is returned from the <code>querySelector</code> method is again an object with its own properties. We’ll use the <code>textContent</code> property to update its text. Here’s our code:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    <!-- js: web developer in 3 days - v6 -->
+    <div id="94e0f6cbefa3d7b8ba8e"><iframe width="100%" frameborder="0" id="gist-94e0f6cbefa3d7b8ba8e" style="height: 150px;"></iframe></div>
+    In this piece of code, we fetch the <code>&lt;h1&gt;</code> element via its class name <code>hero-title</code>, much like we targeted this element in our CSS file, with a dot in front of the class name.
+</p>
+<p class="ng-scope">
+    You now know how to store values in variables, write functions, fetch and manipulate DOM elements and add event listeners. You also know a bit about the value types called Arrays and Objects. In other words, you’ve acquired enough skills to get those tabs to work.
+</p>
+<h2 class="ng-scope">Adding tab functionality</h2>
+<p class="ng-scope">
+    Before we start coding for our tab functionality, it’s a good idea to take a step back and look at the problem we’re facing. Only clearly defined problems can give rise to clearly defined solutions, which in turn can give rise to clean, simple and maintainable code. I know it’s tempting to just dive into coding without proper analysis, especially when dealing with simple problems like say, for instance, a tab navigation component. Most simple coding problems are, however, more intricate than you’d expect. I’ve already thought long and hard about the problems at hand. Have you?
+</p>
+<p class="ng-scope">
+    As a matter of fact, I already had the tab functionality in mind when we implemented its markup and styling yesterday. In our HTML markup, we provided every tab link with a <code>href</code> attribute, specifying the <code>id</code> attribute of the tab pane it is supposed to target (go have a look in your HTML). We also styled it in such a way that, in order for a tab to be selected, we need only to toggle the <code>active</code> class on both the tab link element and its corresponding tab pane element. With this elegant setup, we are now able to breath live into our tabs with a minimal amount of uncomplicated JavaScript logic. Put simply, the only thing that’s required from our JavaScript, is to attach a <code>click</code> event handler to each tab link element. This event handler will need to search for the correct tab pane and toggle the <code>active</code> class in the appropriate places.
+</p>
+<p class="ng-scope">
+    Let’s have a look at the code, shall we? Don’t be intimidated by the parts that are way over your head for now. We’re going to cover this code in detail in a bit.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    Replace the content of your "script.js" file with the code snippet below.
+    <!-- js: web developer in 3 days - v7 -->
+    <div id="66d51b7db8283f82dd75"><iframe width="100%" frameborder="0" id="gist-66d51b7db8283f82dd75" style="height: 499px;"></iframe></div>
+    Save, refresh and boom, your tabs should now be functional.
+</p>
+<p class="ng-scope">
+    Reading through this snippet of code, you undoubtedly recognize some of the JavaScript constructs we talked about before. Despite some lines you may not fully understand, I hope the general idea of what is being accomplished does not elude you. Now, before we dive into the nitty-gritty details, I’d like to give you one more general pro-tip: <strong>when opening brackets of any kind, immediately close them before putting any content between them</strong>. Brackets that are not properly paired will break your code and are horrible to debug! In the code above, the opening brackets on the first line are closed only on the last line. I dare you to remember closing them after you’ve finished writing everything in between. Proper indentation might help keep an overview, but still, adhering to this advice will probably save you lots of dreadful debugging hours over time.
+</p>
+<p class="ng-scope">
+    Now let’s have a closer look at the code we just implemented, with special attention to those parts you might not fully grasp yet. First thing to note, is that we’re gonna have to fetch and manipulate DOM elements, so we’re required to wrap our code in a <code>DOMContentLoaded</code> event handler. We’ve already seen how to do this. It should be clear that all code from line 2 to 19 is contained within this event handler, and will thus only be triggered when the DOM tree has become available to our code.
+</p>
+<p class="ng-scope">
+    In the browser, navigating from one tab to another is accomplished by clicking a tab link. This means that each tab link element has some JavaScript logic attached to it. The first step into adding this logic to the tab links is to fetch the respective elements from the DOM, which is exactly what we’re doing on line 2 of our code. All tab link elements are stored in a variable named <code> tabLinks</code>. We would now like to iterate over these elements, thereby attaching the required logic to each tab link element. The Array-specific <code>forEach</code> method sure would come in handy here, but this requires us to have the tab links stored in an Array. The <code>querySelectorAll</code> method returns a so-called NodeList instead, an Array-like object that doesn’t support the <code>forEach</code> method. Through some JavaScript trickery, we can, however, convert this Array-like object into a proper Array. This is accomplished on line 3, thereby storing an Array of tab link elements in a variable named <code>tabLinksArray</code>. We can now thus iterate the tab link elements by calling the <code>forEach</code> method on the <code>tabLinksArray</code> variable. For those who’d like to understand what exactly is going on in line 3, here it goes: an Array-like object can be converted into a proper Array by use of the <code>slice</code> method. The <code>slice</code> method is, however, an Array-specific method. Thankfully, JavaScript makes it easy for us to invoke a method as if it belongs to a different host object via the <code>call</code> method. When we invoke the <code>slice</code> method on line 3, we thus invoke it on the Array-like object that’s passed in as an argument to the <code>call</code> method, rather than on the empty Array <code>[]</code> we are borrowing it from. The result is the Array-like object being converted into an Array, which gives us access to the extensive list of useful methods the latter has at its disposal. Capiche?
+</p>
+<p class="ng-scope">
+    On line 4, we then iterate over all tab link elements by calling the <code>forEach</code> method on our <code>tabLinksArray</code> variable. We already learned that this method receives a function which will get executed on each iteration. In our case, there are three tab link elements in our <code>tabLinksArray</code>, so the code from line 5 to 18 will get executed three times as well. On each iteration, the currently iterated tab link element is made available to this piece of code in the capacity of the variable named <code>tabLink</code>.
+</p>
+<p class="ng-scope">
+    Our goal now is to attach some logic to each tab link, which is to be executed when the tab link in question is clicked on. In JavaScript lingo, this can be translated to attaching a click event handler to each tab link. In the same manner we added a <code>DOMContentLoaded</code> event handler to our <code>window.document</code> object on line 1, we shall now thus add a <code>click</code> event handler to each tab link element on line 5. The <code>addEventListener</code> method is indeed available on any element in the DOM tree. Note that any event that is triggered by your browser is associated with an event object which holds information about the event. On line 5, we’re actually capturing this event object by passing the event handler an aptly named variable <code>event</code> as its argument. The reason why we need this <code>event</code> object, is that we want to prevent the browser from executing some default behavior associated with a click event on a tab link. The tab link elements are after all <code>&lt;a&gt;</code> elements with <code>href</code> attributes containing <id> selectors (in contrast to <code>class</code> selectors which are preceded by a dot, <code>id</code> selectors are preceded by a hashtag). The default behavior of a browser when clicking such a link element would be to scroll to the DOM element with the respective <code>id</code> attribute. We prevent the browser from doing this by calling the event object’s <code>preventDefault</code> method on line 6.
+</id></p>
+<p class="ng-scope">
+    Ok, so now we arrive at the heart of the matter. Line 6 to 17 will get executed every time a tab link is clicked on. It is here that we house the logic that makes our tab navigation tick. What does it need to do in human speak? First, it has to check whether or not the clicked tab link has the class <code>active</code> attached to it. If it does, than the clicked tab is already selected and we need not do anything. If it doesn’t, we have to add the <code>active</code> class to the clicked tab link and its corresponding tab pane, and remove this class from the tab link and tab pane that were previously selected. And that’s all there is to it! The CSS we implemented on day 2 will take care of the rest. So how do we go about this in JavaScript? Let’s see…
+</p>
+<p class="ng-scope">
+    First we have to check whether or not the currently clicked tab link has the class <code>active</code> assigned to it. We have access to this tab link as a DOM element via the <code>tabLink</code> variable that was passed into our <code>forEach</code> method. Conveniently, any DOM element has a <code>classList</code> object at its disposal (unless you’re using Internet Explorer 9 as a browser — see the "Refactoring to jQuery" section below). This object provides us methods by which to add, remove and toggle classes on a DOM element. It also allows us to check if a class has been assigned to a given DOM element via its <code>contains</code> method. We can thus check for the presence of the <code>active</code> class on the tab link, like so: <code>tabLink.classList.contains('active')</code>. This JavaScript statement resolves to a value of the boolean type. A boolean has only one of two possible values, namely <code>true</code> or <code>false</code>. A boolean preceded by an exclamation mark is negated, meaning <code>true</code> becomes <code>false</code> and vice versa. We need to switch tabs if, and only if, the <code>active</code> class is absent from the clicked tab link. There are quite a few ways we can express a conditional like this in our program logic, of which the <code>if</code> statement is the most common one. This statement requires a boolean between its parentheses, and has its logic executed only if this boolean resolves to <code>true</code>. On line 7, we require the <code>active</code> class to be absent from the clicked tab link for the logic on line 8 to 16 to be executed.
+</p>
+<p class="ng-scope">
+    Before we activate a clicked tab link, we’d better deactivate the previously active tab link. Indeed, only one tab should be active at any given time. Fetching this previously activated tab link can be achieved with the <code>querySelector</code> method. Contrary to the <code>querySelectorAll</code> method, this method returns only one DOM element, and that’s all we need here. On line 9, we are thus able to immediately access this DOM element’s <code>classList</code> property to remove the <code>active</code> class. Note that we’re calling the <code>querySelector</code> method on the tab link element’s <code>parentNode</code> property instead of the <code>window.document</code> object. The reason for this is twofold. First, it’s better for performance reasons. Instead of having to search through the entire DOM tree, we now limited the search area to only those elements that live inside the tab link’s parent element (which in this case is the <code>nav</code> element with class <code>tab-links</code>). Second, it ensures that we contain our JavaScript logic to this tab component only. Imagine having more than one tab component on your website with the same classes on them. By limiting our DOM manipulation to the tab link’s parent element, we made sure that no other tab components are affected. Adding the <code>active</code> class to the clicked tab link on line 10 now has our tab links sorted. The only thing that’s left for us to do, is to activate the appropriate tab pane. We already know that each tab link has the <code>id</code> selector for its target pane specified in its <code>href</code> attribute. On line 13, we’re using the <code>getAttribute</code> method to fetch this value from the <code>href</code> attribute, thereby passing it as an argument to the <code>querySelector</code> method. The result is that we capture the targeted tab pane element in a variable named <code>targetPane</code>. This variable can now be used on line 15 and 16 to toggle the <code>active</code> class on the appropriate tab panes, much like we did on line 9 and 10 for our tab links.
+</p>
+<p class="ng-scope">
+    And with that, we got our tab component functionality covered. Quite challenging for a beginning web developer, I know. Maybe you should consider grabbing a coffee, since we’re about to rewrite it all in jQuery…
+</p>
+<h2 class="ng-scope">Refactoring to jQuery</h2>
+<p class="ng-scope">
+    Just like we imported Bootstrap’s CSS file in our web page to help us out with its styling, we can also import <a href="http://jquery.com/" target="_blank">jQuery</a>’s JavaScript file to help us out with its behavioral aspects. Let's import jQuery functionality by adding the following link tag to the <code>&lt;head&gt;</code> of the "index.html" file: <code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"&gt;&lt;/script&gt;</code>. Be sure to add this line of code before the line that’s importing the "script.js" file! We need to have our jQuery functionality loaded before we can use it in our script file.
+</p>
+<p class="ng-scope">
+    jQuery at its core is a DOM manipulation JavaScript library. It’s currently the most popular JavaScript library. The jQuery JavaScript file is packed with JavaScript functions aimed at simplifying tasks like DOM tree navigation and DOM manipulation. The main usage style of jQuery is via the <code>$</code> function, which is a factory method for the jQuery object. You can use this function to create new DOM elements from scratch or retrieve existing elements from the DOM tree. Say for example that you’d want to retrieve all elements with class <code>tab-links-item</code> from your DOM tree. Using the jQuery factory method, you can do this like so: <code>$(‘.tab-links-item’);</code>. Note that this syntax is a lot simpler than the pure JavaScript equivalent <code>window.document.querySelectorAll(‘.tab-links-item’)</code>. It’s also important to note that the jQuery factory method returns a jQuery object referencing all matching elements in the DOM tree, rather than a NodeList as returned by the <code>querySelectorAll</code> method. This jQuery object has methods attached to it that are aimed towards manipulating the referenced elements, again through simplified syntax. Adding a click handler to all tab links, for instance, can be achieved like so: <code>$('.tab-links-item').click(function() {//click handler logic here});</code>. No more having to convert NodeLists into Arrays, no more <code>forEach</code> loops, no more <code>addEventListener</code> methods. Mind you, all these steps are possibly still executed inside jQuery’s JavaScript file, but that’s none of our concern.
+</p>
+<p class="ng-scope">
+    Next to simplified syntax, another advantage of using the jQuery JavaScript library is browser compatibility. JavaScript is not written in stone. Every now and then, a new JavaScript specification hits the market. Likewise, new browser versions are released once in a while, thereby gradually integrating the newest JavaScript specification. In the end though, the responsibility of actually updating those browsers to their newest version lays in the hands of the end-user. At the time I am writing this for example, a lot of people are still using the outdated Internet Explorer 9 as their default browser. This browser doesn’t support the <code>ClassList</code> property we used in our code above, rendering our tab component useless in the hands of folks that are out of step with browser versioning. When using jQuery, however, you don’t have to worry about this nonsense. All jQuery methods are guaranteed to work in Internet Explorer 9. For adding, removing and checking the existence of classes on DOM elements, jQuery provides us with the <code>addClass</code>, <code>removeClass</code> and <code>hasClass</code> methods, respectively. Behind the scenes, jQuery may or may not use the ClassList property to fulfill these actions, but again, that’s none of our concern.
+</p>
+<p class="ng-scope">
+    If you would argue that using jQuery is just the easy way out, which comes at a performance cost as well, then I would agree. Still, although there’s a tendency in the web development community to move away from jQuery, the majority of websites out there is still supported by it. Any serious web developer will get confronted with jQuery sooner or later, which is why I think it’s a good idea to introduce you to it now. Let’s have a look at the jQuery version of our tab component functionality.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    Replace all content in your "script.js" file with the following:
+    <!-- js: web developer in 3 days - v8 -->
+    <div id="105bbcefb2bb47aad939"><iframe width="100%" frameborder="0" id="gist-105bbcefb2bb47aad939" style="height: 389px;"></iframe></div>
+</p>
+<p class="ng-scope">
+    By refactoring our code to jQuery, we made it more compact, more readable and more widely supported throughout the browser landscape. Let me quickly guide you through it. On line 1, we execute the factory method on the <code>window.document</code> object, thereby converting this object into its jQuery equivalent. This enables us to execute the jQuery <code>ready</code> method on it, which is passed in a function as argument that will get executed whenever the DOM tree is fully loaded. Similarly, we pass in a function as argument to the <code>click</code> method, which gets executed each time a tab link is clicked. Before refactoring our code, this click handler had the currently iterated tab link passed in as its argument. This is no longer the case with jQuery. We accommodate for the absence of this variable by use of the jQuery <code>$(this)</code> object on line 3, 5, 6 and 9. Another thing to note is the first character of the variable name <code>$targetPane</code> on line 9. This dollar sign is simply part of the variable’s name, and has no effect on its capabilities. Adding the dollar sign in front of a variable name is just best practice for reminding us that a jQuery object is contained within, and thus jQuery methods are available on it. Examples of such jQuery methods used in our code are <code>hasClass</code>, <code>removeClass</code>, <code>addClass</code>, <code>siblings</code>, <code>attr</code>, <code>show</code> and <code>hide</code>. If you’d like to have a deeper understanding of jQuery and its methods, I urge you to dig into its <a href="http://api.jquery.com/" target="_blank">documentation</a>.
+</p>
+<h2 class="ng-scope">Adding some magic</h2>
+<p class="ng-scope">
+    You’ve undoubtedly noticed the enticing "Show me some magic" button on your web page. However, when you click this button, it’s not exactly spraying rainbows, is it? Let’s fix that. What we actually want to achieve is that the button triggers a modal popup, and we’ll have Bootstrap help us out. We’ve already let our Bootstrap CSS file take care of the button styling. In its <a href="http://getbootstrap.com/javascript/#modals" target="_blank">documentation</a>, you can also find the required HTML markup for a Bootstrap modal. We can simply copy paste this markup in our HTML file, and then Bootstrap will style it into a beautiful modal for us.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    Add the following code to your "index.html" file. You can place it anywhere in the <code>&lt;body&gt;</code> tag, but I recommend placing it right behind the ‘show-me-some-magic button’ markup.
+    <!-- html: web developer in 3 days - v10 -->
+    <div id="470074ae589de10b2594"><iframe width="100%" frameborder="0" id="gist-470074ae589de10b2594" style="height: 543px;"></iframe></div>
+    Note that we’ve added our own custom content to the modal header and body.
+</p>
+<p class="ng-scope">
+    When you refresh your browser now, there’s no modal in sight. This might seem odd, but actually it’s not. Modals should only be displayed when requested by a user action, in our case a button click. Any other use of modals is just plain irritating. That’s why the Bootstrap CSS file makes sure that our modal is initially hidden by setting its <code>display</code> property value to <code>none;</code>. Then how do we make our modal visible? Yet again, there’s Bootstrap to the rescue. In addition to its CSS file, Bootstrap also provides us with a JavaScript file to bring its components to life. This Bootstrap JavaScript depends on jQuery, so we’ll have to make sure to import it after our jQuery. Add the following line of code to the <code>&lt;head&gt;</code> of your "index.html" file, right after the line that imports jQuery: <code>&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;</code>. Just like its CSS, Bootstrap’s JavaScript will target HTML attributes to get its job done. In order for our button to act as a trigger for our Bootstrap modal, we thus have to attach the appropriate attributes to it. More specifically, we have to attach a <code>data-toggle</code> attribute with value <code>modal</code> and a <code>data-target</code> attribute with value <code>#myModal</code> (i.e. the targeted modal’s <code>id</code> selector) to our button. Its HTML markup should look like this:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    Replace the ‘show-me-some-magic button’ markup in your "index.html" with the following:
+    <!-- html: web developer in 3 days - v11 -->
+    <div id="cf59b9e5d81968c65268"><iframe width="100%" frameborder="0" id="gist-cf59b9e5d81968c65268" style="height: 150px;"></iframe></div>
+    Clicking the button should now trigger the modal.
+</p>
+<p class="ng-scope">
+    And with that, we have yet again illustrated the power of using a framework in our web development process. Although they are maybe the most famous ones at the time of writing, Bootstrap and jQuery are definitely not the only tools that can greatly increase your web development capability and efficiency. Because the web development community is so lively, there’s a framework, library or plugin for almost any existing web development problem. It’s up to you to find the ones that solve your specific problems best. Also keep in mind that learning a framework is not the same as learning a language. Where knowledge of a framework is useful only within that specific framework, knowledge of a language (HTML, CSS, JavaScript) can be ported anywhere. It is thus a good idea to occasionally get your hands dirty, like we did when implementing our tab component functionality.
+</p>
+<h2 class="ng-scope">Going live</h2>
+<p class="ng-scope">
+    Save for our twitter bird, our website is now finished! Since the tweet that will urge people to visit your website will preferably contain a link to this website (which we don’t have yet), we’ll postpone implementing the twitter bird functionality for just a bit. Let’s first push our website to the World Wide Web so that it’s accessible for anyone to visit. How can we do that? Maybe it helps to have a look at a definition for the World Wide Web.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    The World Wide Web is a collection of text documents and other resources on web servers, linked by domain names, usually accessed by web browsers.
+</p>
+<p class="ng-scope">
+    We already have our collection of text documents and other resources that make up our website. What we are still missing is a domain name for our website, and a web server to store our website files on. We can thus identify three steps into pushing your website to the World Wide Web. Step one: purchase a domain name from a domain name registrar. Step two: purchase some server space from a web hosting company, and put your website files on it. Step three: notify your domain name registrar on where to find your website files.
+</p>
+<p class="ng-scope">
+    The files that make up your website are stored locally on your computer, and are also served from this exact location to your browser. When your "index.html" is opened in your browser, you can indeed see the path to this file in your browser’s address bar. Typing this path in another computer’s browser address bar will obviously not return your website. In other words, we need a domain name that will direct the browser to the files that make up your website. A domain name is something that needs to be purchased from a domain name registrar, an organization or commercial entity that manages the reservation of Internet domain names. Some of the most popular ones are <a href="https://www.namecheap.com/" target="_blank">namecheap</a>, <a href="https://godaddy.com/" target="_blank">godaddy</a> and <a href="http://www.1and1.com/" target="_blank">1&amp;1</a>. So if you’d like to share your website with people around the globe, the first step is purchasing a domain name of your choosing from one such domain name registrar. Expect a price of about 10 USD per year.
+</p>
+<p class="ng-scope">
+    The next step is to put your website files on a server. You can think of a server as a computer whose sole purpose is to share data and resources. Servers in general are more powerful and reliable than standard personal computers. Thus, by putting your website files on a server, you’re making sure that your website will be available to anyone, from anywhere, at anytime. Server space can be purchased from a web hosting company. Some of the most popular ones are <a href="https://www.bluehost.com/" target="_blank">bluehost</a>, <a href="https://godaddy.com/" target="_blank">godaddy</a> and <a href="http://www.hostgator.com/" target="_blank">hostgator</a>. For now, I recommend going for the cheapest pricing plan available. Expect a price of about 20 USD per year. Once you’ve purchased your server space, you should get access to a dashboard or control panel from which you can manage it. Now is the time to put your "index.html" file and your images, scripts and styles folders with their respective contents in the so-called document root folder of your server space. The name of this folder and the procedure to store your website files depend on your web hosting company. Most probably you’ll have access to the folder structure of your server space via some sort of file management tool on your dashboard. The name of your document root folder will most likely be "public_html". Most web hosting companies have good customer support, so don’t hesitate to reach out to them for help. In any case, the end result should be the contents of your local "my-first-website" folder being copied to the document root folder of your server space.
+</p>
+<p class="ng-scope">
+    Now that you have purchased a domain name and some server space, all that’s left for us to do is to link them together. When people type in your domain name in their browser, they should be directed to your server space and nowhere else. How can you achieve this? You just have to inform your domain name registrar on where to find your website files. Put simply, your domain name registrar will then communicate this information to a set of selected servers. Subsequently, when browsers are looking for your domain name, they will in turn communicate with a set of selected servers to acquire information on the location of your website files and then fetch them. You can inform your domain name registrar on the location of your website files by means of the name servers provided to you by your web hosting company. Typically, these name servers were communicated to you in the web hosting companies subscription confirmation email and have a form similar to ns.webhostname.com. If you can’t find them in your subscription confirmation email, you should be able to find them via your web hosting company’s customer support. As with your web hosting company, your domain name registrar should have a dashboard of some sort where you can log in to manage your domain names. Here, you can provide the name servers of your web hosting company to link them to the domain name that you purchased. The manner in which to do this is registrar-specific, but should be self-evident. If it isn’t, then contact your domain name registrar’s customer support to help you out. No need to panic if your domain name doesn’t instantly link to your website when you’ve inputted the name servers. It takes some time for the appropriate servers to propagate this information around the world.
+</p>
+<h2 class="ng-scope">Sharing on Twitter</h2>
+<p class="ng-scope">
+    Now that your website has become part of the World Wide Web, we can put that twitter bird to work. In your "index.html" file, the twitter bird is represented by a link element that is styled by Fontawesome. All we need to do to make your twitter bird functional, is to update the value of its <code>href</code> attribute so that it directs to the twitter API (Application Programming interface) with some parameters attached.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+    <!-- html: web developer in 3 days - v12 -->
+    In your "index.html", replace your twitter bird &lt;a&gt; element with the following:
+    <div id="5e8552907f6fc6f28376"><iframe width="100%" frameborder="0" id="gist-5e8552907f6fc6f28376" style="height: 150px;"></iframe></div>
+</p>
+<p class="ng-scope">
+    Clicking the twitter bird in your browser will now present a ready made tweet in a separate browser  tab. The content of this ready made tweet will be determined by the parameters you attach to the web address that is passed into the <code>href</code> attribute. In this case, there are 3 parameters attached, namely <code>text</code>, <code>url</code> and <code>via</code>. You can customize their values to create a tweet of your liking.
+</p>
+<h2 class="ng-scope">Final thoughts</h2>
+<p class="ng-scope">
+    You didn’t really think you were going to become a professional web developer in 3 days, did you? If you did, I apologize for deceiving you. It takes a little more time.
+</p>
+<p class="ng-scope">
+    And yet, in a way it is true that one can learn to build a website in a relatively short timespan. HTML, CSS and JavaScript have learning curves that are quite shallow in the beginning. It does get steeper when it’s time to pass from building crappy looking websites to professionally looking websites. To become a professional web developer, I recommend that you spend some time pulling your hair out while trying to build some crappy stuff, learn from it, and build something a bit better the next time. Do this time and time again, and you will be guaranteed a prosperous and happy future. I think.
+</p>
+</div>
+
+		</article>
+	</div>
+</div>
+</div>
+
+		<!-- placeholder to push down footer until website content is rendered -->
+		<div class="placeholder ng-hide" style="height: 3000px;" ng-hide="footerVisible"></div>
+	</div>
+

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-lg-4" ng-repeat="project in projectsFiltered = (projects | orderBy: orderBy | limitTo: limitTo)">
+    <article class="project-widget">
+      <header class="project-widget__rich-media">
+        <span picture-fill data-alt="{{ project.alt }}">
+          <span pf-src="{{ project.richMedia.src }}"></span>
+          <span pf-src="{{ project.richMedia.srcRetina }}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+        </span>
+      </header>
+      <div class="project-widget__body">
+        <div ng-if="project.client.img" class="project-widget__client-logo">
+          <span picture-fill data-alt="{{ project.client.img.alt }}">
+            <span pf-src="{{ project.client.img.src }}"></span>
+            <span pf-src="{{ project.client.img.srcRetina }}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+          </span>
+        </div>
+        <h2 class="project-widget__title">{{ project.title }}</h2>
+        <span ng-if="!project.client.link" class="project-widget__client">{{ project.client.name }}</span>
+        <a ng-if="project.client.link" ng-href="{{ project.client.link }}" class="project-widget__client" target="_blank">{{ project.client.name }}</a>
+        <div class="project-widget__description" ng-bind-html="project.description"></div>
+        <div class="project-widget__technologies">
+          <span class="project-widget__technologies__label">Technologies:</span>
+          <ul class="project-widget__technologies__badges">
+            <li ng-repeat="technology in project.technologies">
+              {{ technology.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <footer class="project-widget__footer clearfix">
+        <a ng-repeat="action in project.actions" ng-href="{{ action.href }}" target="{{ action.target }}">{{ action.text }}</a>
+      </footer>
+    </article>
+  </div>
+</div>

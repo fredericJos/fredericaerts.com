@@ -1,0 +1,15 @@
+<article class="blogpost-intros" ng-repeat="blogpost in blogPostsFiltered =  (blogPosts | orderBy: orderBy | limitTo: limitTo | filter: searchArticle)">
+	<a class="blogpost-intro block-link clearfix" href="" ng-click="routeToArticle(blogpost)">
+		<div ng-if="blogpost.partOfSeries" class="blogpost-intro__series">
+			Part of series:
+			<span class="blogpost-intro__series__title">{{ blogpost.series.title }}</span>
+			<span ng-show="blogpost.series.inProgress">(to be continued)</span>
+		</div>
+		<div>
+			<h2 class="blogpost-intro__title">{{ blogpost.title }}</h2>
+			<span class="blogpost-intro__date">{{ blogpost.dateFormatted }}</span>
+			<p class="blogpost-intro__intro">{{ blogpost.intro }}</p>
+		</div>
+		<span class="blogpost-intro__cta">Read article &raquo;</span>
+	</a>
+</article>

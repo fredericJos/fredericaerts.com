@@ -1,0 +1,381 @@
+<html ng-app="blogApp" class="ng-scope">
+  <head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+	<title>Developer in 3 days | Structure and styling</title>
+</head>
+<body data-status="" ng-controller="mainCtrl as mainCtrl" class="ng-scope" cz-shortcut-listen="true">
+	<div class="page-wrapper bg-contrast">
+
+		<!-- ngView: undefined --><div class="ngView ng-scope" autoscroll="true" ngcloak="" style=""><div class="container container--padded bg-white z-depth-1 row-margin-top row-margin-bottom ng-scope">
+	<div ng-controller="seriesRouteCtrl as seriesRouteCtrl" class="ng-scope">
+
+		<article class="blogpost">
+			<h1 class="ng-binding">Day 2: Structure and styling</h1>
+			<div class="blogpost__meta blogpost__meta--top">
+				<div class="blogpost__meta__item ng-binding">
+					posted on Sept 1, 2015 by <a href="http://twitter.com/fredericAerts" target="_blank">@fredericAerts</a>
+				</div>
+				<div class="blogpost__meta__item">
+					Part of series: <span class="blogpost__meta__seriesTitle ng-binding">How to become a web developer in 3 days</span> <span ng-show="currentSeries.inProgress" class="ng-hide">(to be continued)</span>
+				</div>
+				<div class="blogpost__navblock blogpost__navblock--top clearfix">
+					<span class="ng-binding">
+						Article 2 of 3
+					</span>
+				</div>
+			</div>
+
+			<!-- ngInclude: currentArticle.includeUrl --><div ng-include="currentArticle.includeUrl" class="animateInclude ng-scope" ng-show="articleLoaded" style=""><blockquote class="blogpost__indented ng-scope">
+	<p>
+		For the things we have to learn before we can do them, we learn by doing them.
+	</p>
+	<footer>
+		<cite>-- Aristotle</cite>
+	</footer>
+</blockquote>
+<p class="blogpost__intro ng-scope">
+	Yesterday we set out to build <a href="https://www.fredericaerts.com/external/developer-in-3-days/" target="_blank">this website</a> in 3 days time. We already learned that websites are in essence made using three languages, namely HTML, CSS and JavaScript. Now that we’ve gotten familiar with the building blocks of a website, the time has come to build one of our own. Today we’ll focus on the HTML and CSS of our website. But before we go ahead and do that, let’s get ourselves organized…
+</p>
+<h2 class="ng-scope">Getting organized</h2>
+<p class="ng-scope">
+	Getting organized is the first and most important part of building websites. Professional web developers do not succumb to the temptation of creating a mess in order to move more quickly. Instead, they start with the end-goal in mind and organize themselves accordingly. The advantages become clear when you start writing CSS for a decently sized website. Given the characteristics of the language, CSS files can get very bloated very fast. In order to keep our CSS code easy to read and maintain, we thus have no choice but to think out an effective organization for it. The approach we’ll use is modular in nature. Much like a chef has his ingredients lined up ready to go, we’ll have our CSS file cut up into multiple files that are readily available to our website. When everything is in its designated place, then we are able to think and work efficiently. Here’s our mise en place:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Create a folder on your computer named "my-first-website". This will be the workspace for your website. In this folder, create your "index.html" file and add the following content:
+	<!-- html: web developer in 3 days - v4 -->
+	<div id="5211413b3624482c89af"><iframe width="100%" frameborder="0" id="gist-5211413b3624482c89af" style="height: 507px;"></iframe></div>
+	Now create your CSS files in accordance with the paths specified in the href attribute of your link tags. This means creating a subfolder named "styles" in your workspace, in which you place eight (empty) CSS files with names matching those in the link tags. Likewise, create an empty JavaScript file named "script.js" in a subfolder named "scripts". Finally, add an empty subfolder named "images" in your workspace. This is where you will house your images later on. Your workspace directory should thus look like this:
+</p>
+<style class="ng-scope">
+	.blogpost__image--workspace img {
+		width: 650px;
+		height: 348px;
+	}
+</style>
+<div class="blogpost__image-wrapper blogpost__image--workspace ng-scope">
+  <img src="web/img/blog-posts/dev-in-3-days/workspace.jpg" alt="Workspace folder structure">
+</div>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Now open your "my-first-website" folder in your code editor (e.g. Sublime Text). From now on, we’ll be working in our code editor.
+</p>
+<p class="ng-scope">
+	Each CSS file in our workspace is aimed at either styling a specific structural module in our website, or grouping CSS rules that contribute to a specific task in the overall styling of our website. Laying the groundwork for the styling of our website is the first task we’ll address, and for that we’ll use our "reset.css" file.
+</p>
+<p class="ng-scope">
+	Maybe you remember from yesterday’s article that browsers have built-in default styling rules to make unstyled websites appear more legible. Header elements for example are styled bolder and bigger than paragraphs by most browsers, and often default top and bottom margins are applied. These default styles can vary from browser to browser. Therefore, if we want our website to look the same in every browser, it’s a good idea to reset the styling of all HTML elements to a consistent baseline before we start adding our own custom styles. Since there are many CSS resets freely available on the internet, it would be a waste of time to write this CSS ourselves. A <a href="http://meyerweb.com/eric/tools/css/reset/" target="_blank">nice CSS reset</a> for zeroing out styles on all elements is the one from Eric Meyer. I’ve tweaked this CSS reset a little bit so that it matches the specific needs of our website. Now let’s use it.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Copy paste Eric Meyer’s CSS reset code it in your "reset.css" file;
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="e57f708b8c8de9e030c2"><iframe width="100%" frameborder="0" id="gist-e57f708b8c8de9e030c2" style="height: 661px;"></iframe></div>
+	You can test your CSS reset by adding a h1 header and a paragraph to your "index.html". Both should have the same styling in your browser. If not, start debugging!
+</p>
+<p class="ng-scope">
+	When you take a closer look at this CSS reset, you’ll notice there are a couple of things we can learn from it. First, there are a lot of HTML tags we haven’t seen before. Take a minute to glance through them. No need to memorize them all! Another thing to note is the use of comma’s in our CSS selectors. The comma in a CSS selector separates multiple selectors that have the same style. In other words, all CSS declarations in between curly braces apply to each of the comma-separated HTML tags in front of them. Finally, note the presence of CSS comments. CSS comments are a handy way of adding helpful notes and hints to your CSS, thereby making sure that people who read your code understand what’s going on.. By using comments to make your stylesheets more readable, your CSS will be easier to maintain in the future. A CSS comment is added by enclosing it between /* and */ characters. Everything in our CSS that’s in between these opening and closing comment characters will be ignored by the browser, and so will the comment characters themselves.
+</p>
+<p class="ng-scope">
+	Now that we have turned off browser default styles, we can start layering our own styles on our HTML elements. Let’s make a rule for ourselves to use our "base.css" file for styling HTML tags only, and our remaining CSS files for targeting classes only. This way we get a logical progression in the styling of our website. First, we reset browser default styling in our "reset.css". Subsequently, we layer on our own default styling for HTML tags in our "base.css", and then finally, we have the opportunity to layer on element-specific styles by targeting element class attributes in the appropriate CSS files. Since the browser processes our CSS files one by one from top to bottom, it should be clear that the order in which we declare the link tags in the head of our "index.html" is of great importance (see CSS specificity on day 1).
+</p>
+<h2 class="ng-scope">The CSS box model</h2>
+<p class="ng-scope">
+	Now before we go ahead and build up our website, there’s just one more concept you need to familiarize yourself with, and that is that <strong>every HTML element is a rectangular box</strong>. We can represent this box like so;
+</p>
+<style class="ng-scope">
+	.blogpost__image--box-model img {
+		width: 600px;
+		height: 338px;
+	}
+</style>
+<div class="blogpost__image-wrapper blogpost__image--box-model ng-scope">
+  <img src="web/img/blog-posts/dev-in-3-days/box-model.jpg" alt="CSS Box Model">
+</div>
+<p class="ng-scope">
+	We’ve already seen that we can manipulate the margins of this box using CSS. Margins don’t affect the size of the box itself, but they affect the distance of the box in respect to the other boxes in our website, and thus they are an important part of the CSS box model. Evidently, we can also use CSS to adjust the padding and border properties of our HTML elements. Where it gets confusing is when we also declare specific height and/or width properties on those elements. If we would for example setup our CSS to give an element a padding of 20px and a width of 100px, then the perceived width of this element in our browser would be 120px. This is totally counter-intuitive since this perceived width does not match the width property in our CSS. There is, however, the CSS property <code>box-sizing</code> which conveniently allows us to change the box model so that an element's specified width and height aren't affected by its padding or borders. It’s common practice to apply this rule to all elements.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Insert this piece of code in your "base.css" file;
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="e2f29461155aca812eb9"><iframe width="100%" frameborder="0" id="gist-e2f29461155aca812eb9" style="height: 150px;"></iframe></div>
+	It could be argued that this piece of code belongs in our "reset.css" rather than our "base.css" file. You say to-may-to, I say to-mah-to. Let’s move on…
+</p>
+<p class="ng-scope">
+	Note that the asterisk is a special CSS selector that simply targets all elements. So from now on, the width and height properties in our CSS include content, padding and border, but not the margin. Neat indeed! But don’t you start thinking that all boxes are created equal now… Because they’re not!
+</p>
+<p class="ng-scope">
+	Based on their default behavior as a box in the browser, we can distinguish 3 types of HTML elements. There are <strong>block elements</strong>, which by default take up the full width of their parent element and enforce line breaks. The h1 header and paragraph elements we used yesterday are examples of block elements. Then there are <strong>inline elements</strong>. Consider you want a word in a paragraph marked up as a link to another website. We don’t want a line break to be enforced on that word right? The link tag is therefore an example of an inline element, which is by default just as wide as its content and doesn’t enforce a line break. Don’t try to set a top margin, bottom margin, height, or width on an inline element, ‘cause it’s not going to work! Finally there are <strong>inline-block elements</strong>, which differ only in respect to inline elements in that their margins are all adjustable, just as their width and height. An example of such an element would be an image.
+</p>
+
+<h2 class="ng-scope">Walking the walk</h2>
+<p class="ng-scope">
+	Alright, we’ve spent approximately one and a half day talking about website development. We’ve learned a lot, and you’re a real trooper for still hanging in there. But although being knowledgeable is mighty fine, it’s of no value until you put this into practice. In other words, it’s high time we get our hands dirty. So hold on to your hats, because we’re going to move fast in building something to be proud of by the end of the day.
+</p>
+<p class="ng-scope">
+	Looking at the beginner page of our website, we can distinguish six sections. Here they are from top to bottom:
+</p>
+<ul class="blogpost__indented ng-scope">
+	<li>
+		<strong>Header</strong><br>
+		contains navigation bar and twitter logo -&gt; styled mainly in "header.css" file
+	</li>
+	<li>
+		<strong>Hero</strong><br>
+		contains page title and web languages logo image -&gt; styled mainly in "hero.css" file
+	</li>
+	<li>
+		<strong>Main content section</strong><br>
+		contains subtitle, some paragraphs and a button -&gt; styled mainly in "base.css" file
+	</li>
+	<li>
+		<strong>Devices image</strong><br>
+		contains image of different devices on which our website will shine -&gt; styled mainly in "helper-classes.css" file
+	</li>
+	<li>
+		<strong>Tab section</strong><br>
+		contains subtitle, paragraph and tabs -&gt; styled mainly in "tabs.css" file
+	</li>
+	<li>
+		<strong>Footer</strong><br>
+		contains website info -&gt; styled mainly in "footer.css" file
+	</li>
+</ul>
+<p class="ng-scope">
+	On a side note, the term "hero" is commonly used for a website’s main banner. It is believed to stem from the marketing industry, where "hero" denotes the main focal point of an advertisement.
+</p>
+<p class="ng-scope">
+	Now let’s build them sections one by one…
+</p>
+<h2 class="ng-scope">Header</h2>
+<p class="ng-scope">
+	First notice that the header bar covers the full width of the page, but the content of the navigation bar is positioned in the middle. Since this same pattern of centered content is returning in other sections of the page, it would be wise to create a wrapper for this content that can be reused in the other sections. For this purpose, we’ll use a block element (any semantically meaningful block element will do) decorated with the class <code>content-wrapper</code>. We’ll then target this <code>content-wrapper</code> class from our CSS to position it in the middle of the page.
+</p>
+<p class="ng-scope">
+	The HTML elements we’ll use to construct our header are <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> and <code>&lt;a&gt;</code>, which respectively define the boundaries of the header, the wrapper for our navigation links and the links themselves (including the twitter icon). We’re going to decorate them all with meaningful classnames too, so that we can target them from our "header.css" Here’s the HTML for our header:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Copy paste this HTML snippet into the body tag of your "index.html" file:
+	<!-- html: web developer in 3 days - v5 -->
+	<div id="46b539514a2232c7e42c"><iframe width="100%" frameborder="0" id="gist-46b539514a2232c7e42c" style="height: 221px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	Now take a long, good look at this HTML snippet. Note that we have used the absolute minimum number of HTML tags necessary to describe the structure and meaning of the header content. If you know that the <code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> tags are block elements, and the <code>&lt;a&gt;</code> tag is an inline element, then try to imagine how their respective boxes will be positioned in the browser. Open your "index.html" in the browser and use its web development tools to inspect these elements! We already know what the <code>content-wrapper</code> class is for. How can we use the other classes to style our HTML elements in accordance with the design we’re after? Don’t worry about the absent twitter bird just yet, we’ll fix that in a minute.
+</p>
+<p class="ng-scope">
+	The first thing we’ll address is the content-wrapper. The content-wrapper is a block element and thus has a default width of 100%. We can easily make a block element smaller by setting a CSS width property for it, and then center it by setting its left and right margins to <code>auto</code>. The content-wrapper class will be used throughout multiple sections of our website, so it makes sense to put this code in the generic CSS file named "grid.css".
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add this CSS code to your "grid.css" file:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="3fb2f809fa6a337e92b0"><iframe width="100%" frameborder="0" id="gist-3fb2f809fa6a337e92b0" style="height: 177px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	When you refresh your browser, you’ll see that the navigation links have moved away from the left side of your browser to a more centered position. When you inspect the <code>&lt;nav&gt;</code> element with your browser’s web development tools, you’ll see that it’s perfectly centered. All content within it will now be positioned in the middle of the page. Easy enough, right? Note that this code is not going to cut it on smaller (mobile) devices, but we’ll fix that later on.
+</p>
+<p class="ng-scope">
+	Next up, the twitter bird! Did you notice the <code>fa</code>, <code>fa-twitter</code> and <code>fa-2x</code> classes on our last link element? These classes will be used by our CSS to style that link element, so that it gets a twitter bird as its content. This will obviously require some advanced CSS trickery way beyond the scope of this series, so we’re going to use an external CSS file to do it for us. To import this CSS file, add the following line of code to the <code>&lt;head&gt;</code> of your "index.html": <code>&lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;</code>. Refresh your browser and the twitter bird is in place. Mind = blown! With special thanks to <a href="https://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a>, the iconic font, and CSS toolkit…
+</p>
+<p class="ng-scope">
+	Still, the color of our twitter bird is off. And what’s that line on the bottom doing there? Well, these are default browser styles applied to link elements, which we’ll have to overwrite. Looking at other links throughout our <a href="https://www.fredericaerts.com/external/developer-in-3-days/" target="_blank">example website</a>, you’ll notice that most of them have a light blue color and none of them are underlined. It thus makes sense to style link elements this way in our "base.css" file:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add this CSS code to your "base.css" file:
+	<!-- css: web developer in 3 days - v2 -->
+	<div id="6c38aba51558522a105f"><iframe width="100%" frameborder="0" id="gist-6c38aba51558522a105f" style="height: 265px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	Note that the color property has a hex code value. On day one of this series, we used the color name <code>red</code> to change the color of highlighted text. Obviously, the list of color names to choose from is limited. A more flexible (and popular) way of specifying colors with CSS is via hex codes, where the first two digits represent the red, the next two the green, and the last two the blue. Mixing these three colors together in different proportions gives us a huge color palette to work with. In the hexadecimal system, numbers (0-9) team up with letters (A-F) to create 16 possibilities per digit: [0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F]. And so, black would be represented by <code>#000000</code>, white by <code>#FFFFFF</code>, red by <code>#FF0000</code>, green by <code>#00FF00</code>, and blue by <code>#0000FF</code>. Looking at the hex code we’re using to color our links, we can see there’s a lot of blue (ED) mixed in, but also a substantial amount of red (64) and green (95). The result is a light blue, much like the twitter brand color.
+</p>
+<p class="ng-scope">
+	Now blow the trumpet and bang the drum, because our header… still looks like crap. So let’s bring out the big guns and fill up that "header.css" file with some header-specific CSS rules. Here’s the code:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Fill up your "header.css" file with the following CSS:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="8795d2e02d09df049818"><iframe width="100%" frameborder="0" id="gist-8795d2e02d09df049818" style="height: 683px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	Now that’s better! Can you figure out the purpose of each CSS rule by yourself? If you have doubts about the effect of a certain CSS property, just delete it and see what happens in the browser. If you have doubts about the syntax of a CSS property, just google it (I had to google the <code>box-shadow</code> syntax myself). Note that we’ve shown here that the default inline, inline-block, or block behavior of an element are interchangeable via the <code>display</code> property. In our case, we’ve changed the inline nav-item link elements into inline-block elements, so as to enable us to specify their height. Note also that it’s good practice to give small clickable elements some padding (rather than margins), thereby increasing their clickable surface. With everything you’ve learned so far, I consider the rest of this CSS code to be self-evident. Let’s move on…
+</p>
+<h2 class="ng-scope">Hero</h2>
+<p class="ng-scope">
+	Since all our hero content is centered horizontally, it’s tempting to think we need a content-wrapper in our hero like we did in our header. However, if you think about it, centering elements in respect to either a content-wrapper or a full-width element has exactly the same effect. We can thus omit the content-wrapper in our hero markup.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add this HTML snippet right after the header closing tag in your "index.html" file:
+	<!-- html: web developer in 3 days - v6 -->
+	<div id="5d3e89c1e792b4fd9efc"><iframe width="100%" frameborder="0" id="gist-5d3e89c1e792b4fd9efc" style="height: 221px;"></iframe></div>
+	Note that the button in our hero is actually linking to another website, which is why an <code>&lt;a&gt;</code> tag is semantically more correct here than the perhaps more obvious <code>&lt;button&gt;</code> tag.
+</p>
+<p class="ng-scope">
+	Looking at the rendered hero markup in your browser, the first thing you’ll notice is the missing image. As specified in the <code>&lt;img&gt;</code>’s src attribute, the browser is desperately looking for an image named "logo.png" in the images folder. You can help out the browser by downloading the image <a href="https://www.fredericaerts.com/external/developer-in-3-days/images/logo.png" target="_blank">here</a>, and then placing this (correctly named) image in the images folder of your workspace. If you’d like to use your own image instead, then that’s just fine by me. Just make sure that it is no bigger than needed, because images take up an awful lot of bandwidth.
+</p>
+<p class="ng-scope">
+	Assuming that the h1 header will have the same font properties on all our webpages, it’s best to define these in our "base.css" file.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add this generic CSS rule to your "base.css" file:
+	<!-- css: web developer in 3 days - v6 -->
+	<div id="3025d277260cde2e1eb3"><iframe width="100%" frameborder="0" id="gist-3025d277260cde2e1eb3" style="height: 177px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	Now let’s focus on horizontally centering all hero content. We have already learned from our content-wrapper that we can center block elements by specifying their width and setting their left and right margins to <code>auto</code>, so our h1 element is covered. Since our image element (inline-block element) is supposed to enforce a line break, we might as well make it a block element too. Here are the hero-specific CSS rules for our h1 header and image element:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add these CSS rules to your "hero.css" file:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="068fdf0ac9db4574fd71"><iframe width="100%" frameborder="0" id="gist-068fdf0ac9db4574fd71" style="height: 441px;"></iframe></div>
+	Note that we’re using a combination of the <code>width</code> and <code>max-width</code> properties to make elements scale nicely on smaller devices, but prevent them from scaling out of proportion on larger devices.
+</p>
+<p class="ng-scope">
+	Although our block elements are now centered nicely, our h1 header border makes it clear that its content is not. Horizontally centering text, inline and inline-block elements requires another, more straightforward approach than block elements, namely setting a <code>text-align</code> property on its parent…
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add this CSS rule to your "hero.css" file:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="668632d9eca3d762b32f"><iframe width="100%" frameborder="0" id="gist-668632d9eca3d762b32f" style="height: 221px;"></iframe></div>
+	Note that the text-align property gets inherited by the h1 element.
+</p>
+<p class="ng-scope">
+	Now that’s looking better! But did you notice that the shadow on the header has disappeared? That’s because our hero is stacked on top of it. And since we’ve now specified a background color for our hero, it’s actually covering it. We can fix this by moving the header element upwards with the <code>z-index</code> property. Note that this property works only on positioned elements. So if you want, you can already bring back the header shadow by styling the header element, like so: <code>position:relative; z-index:999;</code>. Later on, when styling the header to stay fixed to the top of the screen while scrolling, we’re going to update this code again.
+</p>
+<p class="ng-scope">
+	All that’s left for us to do now regarding the hero is to style its button. We could do that ourselves, and it wouldn’t be that difficult either. There is, however, an even easier way called <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>. Much like Font Awesome provided us with CSS to style our twitter bird in the header, Bootstrap can provide us with CSS to style commonly used components throughout the web. All we have to do is import the Bootstrap CSS and decorate our elements with the targeted classes. The classes that Bootstrap targets for styling a success button (<code>btn</code>, <code>btn-success</code>, and <code>btn-lg</code>) are already in place. All that’s left for us to do is import the Bootstrap CSS file by adding the following link tag to the <code>&lt;head&gt;</code> of our "index.html" file: <code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;</code>. Impressive, right? Styling buttons is just a tiny little fraction of what Bootstrap can do for us. It’s actually kind of a waste importing such a huge CSS file, just to use so little of its potential. The purpose of this course is only showing you how Bootstrap works. If you decide to use it in your own projects, then use it enough so that the CSS file import is justified. Also make sure you always import Bootstrap CSS before your own stylesheets, meaning that its link tag in the <code>&lt;head&gt;</code> should precede the others. That way, it’s easier to overwrite any Bootstrap styling we didn’t ask for, like for instance underlining links that are hovered over by the mouse. You can now fix this by adding <code>a:hover { text-decoration: none; }</code> to your "base.css" file.
+</p>
+<h2 class="ng-scope">Main content section</h2>
+<p class="ng-scope">
+	I hope we can agree that the main content section is not a component in itself like the header and hero. The subtitle (<code>&lt;h2&gt;</code>) and paragraphs within are indeed very generic in the sense that they’re not specific to any component. Thus, we can best style them in our "base.css" file. The button styling is already taken care of by Bootstrap. Here’s the required HTML and CSS for our main content section:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add the following HTML snippet to your "index.html" file:
+	<!-- html: web developer in 3 days - v7 -->
+	<div id="5b231f6b426670c19733"><iframe width="100%" frameborder="0" id="gist-5b231f6b426670c19733" style="height: 441px;"></iframe></div>
+	Add the following CSS snippet to your "base.css" file:
+	<!-- css: web developer in 3 days - v4 -->
+	<div id="4b019a436a9e7201779d"><iframe width="100%" frameborder="0" id="gist-4b019a436a9e7201779d" style="height: 573px;"></iframe></div>
+	Note that the CSS selector <code>h2 + p</code> targets any paragraph element that’s directly preceded by a h2 header element, just as the <code>p + button</code> selector targets any button element that is directly preceded by a paragraph.
+</p>
+<p class="ng-scope">
+	Not too shabby. But the font doesn’t look quite right, now does it? When you take a close look at our <a href="https://www.fredericaerts.com/external/developer-in-3-days" target="_blank">example website</a>, you’ll notice that there are two different font families in play. Paragraphs are presented in one font family, and all other text in another. It’s becoming very clear now that the font used throughout our website is not matching those at all. The time has come to specify the appropriate fonts in our CSS. Doing this, we have to take into account that browsers can only actually use fonts that are available to them. It is therefore important that we also specify a fallback font whose presence is safe to assume on any computer. The obvious place to add these font family declarations is our "base.css" file. Add the following CSS declaration to the CSS rule for paragraphs: <code>font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</code>. The browser will now go through the comma-separated font family list from left to right, applying the first font it finds on your computer to all paragraphs in your website. Even when it has to fallback to Arial, it still looks ok! And with that, our paragraphs are covered. We can now easily specify a font for all other text by targeting the body element. All nested elements will inherit this font setting, except for paragraphs that indeed overwrite it with a setting of their own. Let's use "Oswald" as our default font:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Specify a default font for your website by adding the following CSS rule to your "base.css" file:
+	<!-- css: web developer in 3 days - v5 -->
+	<div id="82de834a3c671c0dad22"><iframe width="100%" frameborder="0" id="gist-82de834a3c671c0dad22" style="height: 150px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	There are not a lot of fallback fonts specified here, and there are not a lot of computers that support "Oswald" either! But don’t you worry, cause with the help of <a href="https://www.google.com/fonts" target="_blank">google fonts</a>, we’re going to instruct the browser to download "Oswald" for us. You can do this by adding the following line to the <code>&lt;head&gt;</code> in your "index.html": <code>&lt;link href='http://fonts.googleapis.com/css?family=Oswald:400,700" rel='stylesheet" type=‘text/css’&gt;</code>. Our website requires two font-weight variations (400 which is the default &amp; 700) from "Oswald", and you can derive from this link that the browser is instructed to download both. Moving on…
+</p>
+<h2 class="ng-scope">Devices image</h2>
+<p class="ng-scope">
+	Since we can follow exactly the same protocol here as we did for the hero image, we can be brief about this section. Download the image <a href="https://www.fredericaerts.com/external/developer-in-3-days/images/devices.jpg" target="_blank">here</a>, put it in your images folder under the name "devices.jpg", and add the following line to the <code>&lt;body&gt;</code> of your "index.html" file: <code>&lt;img class="image-wide" src="images/devices.jpg"&gt;</code>. The only question that remains is which CSS file to add the accompanying CSS rules to. Surely, this section is not a component, since it consists of one HTML element only.  Neither is it generic enough to style on tag level in our "base.css". We’ll thus put its styling in "helper-classes.css", a file made especially for targeting specific component-independent classes. Hah! And in my opinion, we should also remove the <code>h2 + p { … }</code> CSS rule from our "base.css" file, and target an <code>intro-text</code> class in the "helper-classes.css" instead. Do you agree? Anyway, here’s the CSS for our "devices image" section:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add the following CSS to your "helper-classes.css" file:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="4e14f5bff511c4b0cc68"><iframe width="100%" frameborder="0" id="gist-4e14f5bff511c4b0cc68" style="height: 199px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	Note that we’re using exactly the same CSS properties we used for styling the hero image. The properties used here differ only in their respective values, bringing about a much wider image on desktop computers.
+</p>
+<h2 class="ng-scope">Tab section</h2>
+<p class="ng-scope">
+	What we have here is a subtitle and intro paragraph whose styling we already covered, and then there’s a tab component whose styling we still need to insert in the "tabs.css" file. The tab component consists of three tab links and their three corresponding tab panes. Let’s have a look at the markup…
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add the tab section HTML to the body tag in your "index.html" file:
+	<!-- html: web developer in 3 days - v8 -->
+	<div id="8fd1544437de9c600648"><iframe width="100%" frameborder="0" id="gist-8fd1544437de9c600648" style="height: 991px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	There are two HTML tags here that we didn’t use before. First, there’s <code>&lt;h3&gt;</code>, which represents a subtitle one level lower than our <code>&lt;h2&gt;</code> subtitles. We’re going to style it in our "base.css" file.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Style the h3 subtitle in your "base.css" like so:
+	<!-- css: web developer in 3 days - v6 -->
+	<div id="45ef0c58658c9ef301d4"><iframe width="100%" frameborder="0" id="gist-45ef0c58658c9ef301d4" style="height: 155px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	The other HTML tag in our tab component we haven’t used before is the very generic <code>&lt;div&gt;</code> tag. It defines a <strong>div</strong>ision block element and is probably the most used HTML tag throughout the web. If I would have written this series a couple of years ago, there would be plenty more <code>&lt;div&gt;</code> tags in our website too. With the inception of HTML5, however, many semantically more appropriate tags like <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, etc… were introduced, enabling us to write clearer and more descriptive code. With these new semantic tags, screen readers can also better examine the HTML document and create an improved experience for users. But don’t you get too hung up on semantics either. There’s nothing wrong with using <code>&lt;div&gt;</code> tags in your HTML. In our case, for us to properly layout the tab component with CSS, it’s absolutely required that we wrap the tab panes and their content in block elements. No meaningful HTML tag exists for this purpose, so the <code>&lt;div&gt;</code> tag is the way to go here.
+</p>
+<p class="ng-scope">
+	Looking at our tab component in the browser, you can see that all three tab panes are displayed. What we want though, is that only one tab pane is visible, namely the one that’s decorated with a class name <code>active</code>. We can then use JavaScript to move this <code>active</code> class from one tab pane to another according to which tab link was clicked. For now, let’s just update our CSS so that only the first (active) pane is displayed. And while we’re at it, let’s add some padding to these tab panes as well…
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add the following CSS to your "tabs.css" file:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="0a063bb0a2747767cb56"><iframe width="100%" frameborder="0" id="gist-0a063bb0a2747767cb56" style="height: 243px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	For styling the tab links, we’ll need to tinker with their border properties. First of, there’s a bottom border on their <code>tab-links</code> wrapper element. Then there’s also a left, top, and right border on the active <code>tab-links-item</code> element, but apparently no bottom border. We thus need to hide the <code>tab-links</code> wrapper border below the active <code>tab-links-item</code> element. There are several ways to do it, but we are going to give the active tab link a white background and then move it down 1 pixel over the <code>tab-links</code> border. We’ll finish up the tab link styling by polishing of those top border corners with the <code>border-radius</code> property.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Style your tab links by adding this CSS to your "tabs.css" file:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="830118ebd23fdbfcc10a"><iframe width="100%" frameborder="0" id="gist-830118ebd23fdbfcc10a" style="height: 683px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	We now have a tab component that’s seemingly forever stuck on the first tab. However, we’ve constructed the tabs in such a way that it requires minimum effort to switch between them. All it takes is to transfer the <code>active</code> class between tab elements. We can already do this manually in our code, but tomorrow we’ll write some JavaScript that will take care of this for us.
+</p>
+<h2 class="ng-scope">Footer</h2>
+<p class="ng-scope">
+	Phew, last component… So what do we have here? We have some centered text like we had in the hero. We also have a footnote on the bottom right of the footer. The footer will thus — contrary to the hero — require a content wrapper to position this footnote against. Here’s the markup:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add the footer HTML to the body tag in your "index.html" file:
+	<!-- html: web developer in 3 days - v9 -->
+	<div id="b6268889cccbcfb3ac2d"><iframe width="100%" frameborder="0" id="gist-b6268889cccbcfb3ac2d" style="height: 199px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	The <code>&lt;span&gt;</code> tag is new to us. You can think of the <code>&lt;span&gt;</code> tag as the inline counterpart of the <code>&lt;div&gt;</code> tag. Its only purpose is to provide a hook to a part of inline content, so that we can for instance target it for styling purposes. The first <code>&lt;span&gt;</code> tag is used here as a hook for Font Awesome to insert a heart icon. The second is used to style (<code>position</code> and <code>font-size</code>) our footnote.
+</p>
+<p class="ng-scope">
+	In order to position the footnote against the content wrapper, we’re going to have to set its <code>position</code> property to <code>absolute</code>. We can then use the <code>left</code>, <code>right</code>, <code>top</code> and <code>bottom</code> properties to position the footnote relative to its first containing element that has its <code>position</code> property set to a non-default value. In our case, it’s the content wrapper, and it will have its <code>position</code> property set to <code>relative</code>. The rest of the footer styling is self-evident for a pro like you, so let’s just insert it into the "footer.css" file.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Add the following CSS to your "footer.css" file:
+	<!-- css: web developer in 3 days - v1 -->
+	<div id="46ffd238ba2e2cdac67c"><iframe width="100%" frameborder="0" id="gist-46ffd238ba2e2cdac67c" style="height: 617px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	With that, all content has been added to our website. And it’s looking great too! But before we call it a day, let’s give our website an ultra professional boost with two little tweaks.
+</p>
+<h2 class="ng-scope">Finishing touches</h2>
+<p class="ng-scope">
+	You’ve probably noticed the sticky header in our <a href="https://www.fredericaerts.com/external/developer-in-3-days/" target="_blank">example website</a>. Sticky headers enable quicker navigation, especially when dealing with long pages. It eliminates the requirement for a user to scroll back up to be navigated elsewhere. To achieve this effect, we’re going to set the <code>position</code> property of the header to <code>fixed</code> and then position it at the top of the page by setting its <code>top</code> property to zero. If you try only this, you’ll see weird stuff happening to the header. First, the header is no longer taking up the full width of the page, and second, the hero has jumped to the top of the page, so that it’s seemingly positioned under the header. Both these phenomena can be explained by the fact that the header has actually been taken out of the flow of the web page by the <code>position: fixed;</code> declaration. Its width is thus no longer determined by its parent element, and the hero is now the first element taking up space in the web page. We can fix these issues by respectively setting the <code>&lt;header&gt;</code>’s width explicitly to 100%, and inserting some padding to the top of the <code>&lt;body&gt;</code> element. Here’s the updated CSS rule for our header:
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Update the header CSS rule in your "header.css" file like so:
+	<!-- css: web developer in 3 days - v2 -->
+	<div id="3491104b0e5d61fc6d9f"><iframe width="100%" frameborder="0" id="gist-3491104b0e5d61fc6d9f" style="height: 309px;"></iframe></div>
+	Note that we’ve also set a white background to the header, so that the underlying elements don’t show through.
+</p>
+<p class="ng-scope">
+	Now all that’s left for us to do is to push down the hero a bit. In your "base.css" file, update the CSS rule that targets the <code>&lt;body&gt;</code> tag with the <code>padding-top: 60px;</code> declaration, and done is done! Until you visit the website from a mobile device…
+</p>
+<p class="ng-scope">
+	Ok, it’s time we had "the talk". Resize your browser window so that it becomes smaller than 750px in width (not coincidentally the width of your content wrapper), and watch part of your website fall off screen. Ugh! This is how your mobile users would experience your website as it is. And since the use of mobile devices has exploded over the last couple of years, we definitely need to take action here! Cue "Responsive Web Design" (RWD). The goal of RWD is to build web pages that detect the visitor’s screen size and change the layout accordingly. In our case, we want to detect if our website is viewed on a screen smaller than 750px, and act upon it by changing the width of the content wrapper to a 100%. Or if we take the opposite approach — the mobile first approach — we want our content wrapper to be full-width, unless the screen size exceeds 749px, in which case we want it centered with a fixed width of 750px. Detecting screen sizes in CSS is made possible by so-called media queries. Let’s use one to fix our issue.
+</p>
+<p class="blogpost__intructions blogpost__indented ng-scope">
+	Replace the content of your "grid.css" file with the following:
+	<!-- css: web developer in 3 days - v2 -->
+	<div id="6127ae3be88e1920eb2e"><iframe width="100%" frameborder="0" id="gist-6127ae3be88e1920eb2e" style="height: 353px;"></iframe></div>
+</p>
+<p class="ng-scope">
+	In this piece of code, everything that’s wrapped within the <code>@media (min-width: 750px) { }</code> curly braces will only be executed in screens that are at least 750px in width. Our first CSS rule thus has effect on smaller devices only, making our content wrapper stretch to full screen width on them. We’ve also applied a 15px left and right padding, so that its content doesn’t touch the borders of the screen. Viewed on a large enough screen, the width property of the content wrapper gets overwritten to 750px, and its left and right margins are set to auto so that it is centered. Note that the padding property does not get overwritten, and thus still stands on larger devices too, which is totally fine.
+</p>
+<p class="ng-scope">
+	And with that, our website has become fully responsive. All that’s left for us to do now is to add some JavaScript action to it, and publish it for the whole world to admire. Let’s do that tomorrow…
+</p>
+</div>
+
+		</article>
+	</div>
+</div>
+</div>
+
+		<!-- placeholder to push down footer until website content is rendered -->
+		<div class="placeholder ng-hide" style="height: 3000px;" ng-hide="footerVisible"></div>
+	</div>
+
