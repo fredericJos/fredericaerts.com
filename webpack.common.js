@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -44,6 +45,13 @@ module.exports = {
       _: 'lodash',
     }),
     new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/views/index.ejs',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'archive/index.html',
+      template: 'src/views/pages/archive.ejs',
+    }),
     new CopyWebpackPlugin([
       {
         from: 'src/meta',
