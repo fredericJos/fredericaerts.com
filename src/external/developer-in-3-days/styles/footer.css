@@ -1,0 +1,25 @@
+.footer {
+	margin-top: 50px;
+
+	text-align: center;
+
+	background: #EEEEEE;
+}
+
+.footer .content-wrapper {
+	position: relative;
+
+	padding: 40px 0;
+}
+
+.footer-heart {
+	color: red;
+}
+
+.footer-footnote {
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+
+	font-size: 10px;
+}

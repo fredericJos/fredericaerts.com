@@ -1,0 +1,37 @@
+<div>
+    <div ng-if="sectionCtrl.header.breadcrumb" class="header-wrapper__breadcrumb">
+      <div class="container container--padded" flex>
+        <span class="header-wrapper__breadcrumb__item" ng-class="{'link' : item.link}" ng-click="item.link ? $state.go(item.link) : null" ng-repeat="item in sectionCtrl.header.breadcrumb">{{item.name}}</span>
+        <div ng-if="sectionCtrl.header.options" class="header-wrapper__breadcrumb__options">
+            <!-- buttons -->
+            <md-button ng-if="!option.icon && !option.isLabel" class="header-wrapper__breadcrumb__options__buttons" ng-click="option.clickHandler()" ng-repeat="option in sectionCtrl.header.options">
+                {{option.label}}
+            </md-button>
+            <!-- label -->
+            <span ng-if="option.isLabel" class="header-wrapper__breadcrumb__options__buttons is-label" ng-repeat="option in sectionCtrl.header.options">
+              {{option.label}}
+            </span>
+            <!-- icon buttons -->
+            <md-menu ng-if="option.icon" md-position-mode="target-right target" class="header-wrapper__breadcrumb__options__sortby-menu md-icon-button" aria-label="More" ng-repeat="option in sectionCtrl.header.options">
+                <md-button aria-label="{{option.label}}" class="md-icon-button" ng-click="option.menu?$mdOpenMenu($event):option.clickHandler()">
+                  <md-icon aria-label="{{option.label}}" class="material-icons">
+                    {{option.icon}}
+                  </md-icon>
+                </md-button>
+                <md-menu-content ng-show="option.menu" width="{{option.menu.width}}" class="">
+                  <md-menu-item ng-repeat="menuOption in option.menu.options" ng-class="{'divider': menuOption.divider}">
+                    <md-button ng-click="menuOption.clickHandler(option)">
+                      <div layout="row">
+                        <md-icon ng-if="menuOption.icon" class="material-icons">{{menuOption.icon}}</md-icon>
+                        <p flex>{{menuOption.name}}</p>
+                        <i ng-if="menuOption.selected" class="material-icons menu-icon--right-aligned">check</i>
+                      </div>
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+      </div>
+    </div>
+</div>
+

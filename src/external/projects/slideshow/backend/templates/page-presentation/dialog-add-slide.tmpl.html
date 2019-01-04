@@ -1,0 +1,49 @@
+<md-dialog aria-label="Add user" class="sherpa-dialog">
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 class="md-title">Add slides</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="close()">
+          <md-icon aria-label="close" class="material-icons">
+            close
+          </md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content class="sherpa-dialog__content">
+      <div class="md-dialog-content">
+        <div class="content-new-session__images__dropzone">
+          <div class="content-new-session__images__dropzone__add-image">
+            <md-icon aria-label="Upload file" class="material-icons">
+              file_upload
+            </md-icon>
+            <h3 class="md-title">Add slides</h3>
+
+            <div class="content-new-session__images__dropzone__add-image__buttons">
+              <md-button class="md-raised md-accent" ng-click="">upload</md-button>
+            </div>
+
+            <span picture-fill data-alt="" class="content-new-session__images__dropzone__add-image__drive-logo">
+              <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/logo/google-drive.png"></span>
+              <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/logo/google-drive.png" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+          </div>
+
+          <span class="content-new-session__images__dropzone__footnote">
+            Drag and drop assets or select an option
+          </span>
+        </div><!-- ./dropzone -->
+        <div class="help-info-block">
+          <md-icon aria-label="help" class="material-icons">
+            help
+          </md-icon>
+          <p>
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. <strong>3000x3000</strong>
+          </p>
+        </div>
+      </div>
+    </md-dialog-content>
+
+</md-dialog>

@@ -1,0 +1,201 @@
+<!-- controller instantiated by app.routes.js -->
+<div flex ng-controller="PresentationSectionCtrl as sectionCtrl">
+
+  <div class="header-wrapper header-wrapper--primary header-wrapper--tabs" ng-include="'https://www.fredericaerts.com/external/projects/slideshow/hub/partials/header/header-wrapper.html'"></div>
+
+  <div ng-class="{'bg-grey-xxxdark':sectionCtrl.selectedTab == 1 || !sectionCtrl.selectedTab}">
+    <div class="container container--padded" flex>
+      <div class="tabs-block tabs-block--lifted" ng-class="{'tabs-block--options': sectionCtrl.header.tabsBlockOptions}" ng-include="'https://www.fredericaerts.com/external/projects/slideshow/hub/partials/header/header-tabs.html'"></div>
+
+      <!-- LIVE -->
+      <div ng-show="sectionCtrl.selectedTab == 1 || !sectionCtrl.selectedTab">
+        <div class="slide-presentation">
+          <div layout="row" layout-align="center start" class="slide-presentation__header">
+            <span class="slide-presentation__header__title">Holding slide</span>
+            <md-switch class="slide-presentation__header__switch" ng-model="sectionCtrl.isLiveDisplay" aria-label="Live Display">
+              LIVE DISPLAY
+            </md-switch>
+          </div>
+          <div class="slide-presentation__slide" layout="row">
+            <div flex="100" flex-gt-xs="70" flex-offset-gt-xs="15" class="slide-presentation__slide__image">
+              <flippy class="fancy" flip="['custom:FLIP_EVENT_IN_MAIN']" flip-back="['click', 'custom:FLIP_BACK_EVENT_IN_MAIN']" duration="800" timing-function="ease-in-out">
+                <flippy-front class="md-whiteframe-z2">
+                  <md-icon ng-if="sectionCtrl.activeSlide.attachments.length" class="slides-deck__slide__attach" ng-click="sectionCtrl.flipSlide('MAIN')">attach_file</md-icon>
+                  <!-- TODO: support retina: ng-picturefill not updating on navigation? -->
+                  <img src="{{sectionCtrl.activeSlide.image}}">
+                </flippy-front>
+
+                <flippy-back>
+                  <div class="slide-presentation__slide__flippy-back">
+                    <img hide-xs hide-sm class="md-whiteframe-z1" src="{{sectionCtrl.activeSlide.image}}">
+                    <div class="slide-presentation__slide__flippy-back__attachment" ng-repeat="attachment in sectionCtrl.activeSlide.attachments">
+                      <span>{{attachment.title}}</span>
+                      <a href="{{attachment.url}}" target="_blank" ng-click="$event.stopPropagation()">{{attachment.url}}</a>
+                    </div>
+                  </div>
+                </flippy-back>
+              </flippy>
+            </div>
+          </div>
+          <div class="slide-presentation__navigation" layout="row" layout-align="space-between center">
+            <md-button ng-disabled="sectionCtrl.activeSlideIndex === 0" class="md-raised md-accent" ng-click="sectionCtrl.navigateToPrevSlide()">previous</md-button>
+            <md-button ng-disabled="sectionCtrl.activeSlideIndex === sectionCtrl.slides.length - 1" class="md-raised md-accent" ng-click="sectionCtrl.navigateToNextSlide()">next</md-button>
+          </div>
+          <span class="slide-presentation__counter">{{sectionCtrl.activeSlideIndex + 1}} of {{sectionCtrl.slides.length}}</span>
+        </div>
+        <!-- <div class="slide-preview" ng-class="{'hidden':sectionCtrl.isSlidesPreviewHidden}">
+          <md-button class="md-fab slide-preview__nav-button slide-preview__nav-button--prev" aria-label="Navigate left" ng-click="sectionCtrl.moveSlidesbarToLeft($event)">
+            <md-icon>arrow_back</md-icon>
+          </md-button>
+          <div class="slide-preview__slides-wrapper" ng-sortable="sectionCtrl.sortableConfigSlidePreviews">
+            <div class="slide-preview__slide-wrapper sortable-ghost__item" ng-repeat="slide in sectionCtrl.slides" ng-click="sectionCtrl.activateSlide($index, false)">
+              <div class="slide-preview__slide md-whiteframe-z1 sortable-handle" ng-class="{'active':slide.isActive}">
+                <md-icon ng-if="slide.attachments.length" class="slide-preview__slide__attach" ng-click="">attach_file</md-icon>
+                <span picture-fill data-alt="Preview slide">
+                  <span pf-src="{{slide.image}}"></span>
+                  <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                </span>
+              </div>
+              <span class="slide-preview__slide-wrapper__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+            </div>
+          </div>
+          <md-button class="md-fab slide-preview__nav-button slide-preview__nav-button--next" aria-label="Navigate left" ng-click="sectionCtrl.moveSlidesbarToRight($event)">
+            <md-icon>arrow_forward</md-icon>
+          </md-button>
+          <md-button class="md-fab slide-preview__open-button" ng-class="{'hidden':!sectionCtrl.isSlidesPreviewHidden}" aria-label="show slide drawer" ng-click="sectionCtrl.isSlidesPreviewHidden = false">
+            <md-icon>arrow_upward</md-icon>
+          </md-button>
+          <div class="slide-preview__close-button">
+            <md-button ng-hide="sectionCtrl.isSlidesPreviewHidden" class="md-icon-button" aria-label="open/close" ng-click="sectionCtrl.isSlidesPreviewHidden = true">
+              <md-icon>close</md-icon>
+            </md-button>
+          </div>
+        </div> -->
+      </div><!-- ./LIVE -->
+      <!-- MATERIAL -->
+      <div ng-show="sectionCtrl.selectedTab == 2">
+        <div ng-if="sectionCtrl.slidesInGrid" class="container" style="opacity: {{sectionCtrl.inListTypeTransition ? '0' : '1'}}">
+          <div class="slides-deck slides-deck row" ng-sortable="sectionCtrl.sortableConfigSlidePreviews">
+            <div class="slides-deck__slide-wrapper col-xs-6 col-sm-4" ng-repeat="slide in sectionCtrl.slides">
+              <div class="slides-deck__slide md-whiteframe-z1 sortable-handle sortable-ghost__item" ng-click="sectionCtrl.showSlideInDialog($event, slide, false)">
+                <md-icon ng-if="slide.attachments.length" class="slides-deck__slide__attach" ng-click="sectionCtrl.showSlideInDialog($event, slide, true)">attach_file</md-icon>
+                <span picture-fill data-alt="Preview slide">
+                  <span pf-src="{{slide.image}}"></span>
+                  <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                </span>
+              </div>
+              <span class="slides-deck__slide-wrapper__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+            </div>
+          </div>
+        </div>
+        <div ng-if="!sectionCtrl.slidesInGrid" class="slides-list" style="opacity: {{sectionCtrl.inListTypeTransition ? '0' : '1'}}">
+          <div layout="row" layout-wrap class="slides-list__slide md-whiteframe-z1" ng-repeat="slide in sectionCtrl.slides">
+            <md-icon ng-if="slide.attachments.length" class="slides-deck__slide__attach">attach_file</md-icon>
+            <div flex-xs="100" flex-sm="100" class="slides-list__slide__image">
+              <span picture-fill data-alt="Preview slide">
+                <span pf-src="{{slide.image}}"></span>
+                <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+              </span>
+            </div>
+            <div flex flex-xs="100" flex-sm="100" class="slides-list__slide__attachments" ng-class="{'has-input': slide.attachments.length < 3}">
+              <div class="slides-list__slide__attachments__attachment" ng-repeat="attachment in slide.attachments">
+                <div layout="row" layout-align="start center" class="clearfix">
+                  <div ng-if="attachment.img" class="slides-list__slide__attachments__attachment__thumb">
+                    <span picture-fill data-alt="Preview content">
+                      <span pf-src="/backend/images/hub/content/articles/thumbs/{{attachment.img}}"></span>
+                      <span pf-src="/backend/images/hub/content/articles/thumbs/{{attachment.imgRetina}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                    </span>
+                  </div>
+                  <span flex>{{attachment.title}}</span>
+                </div>
+                <a ng-if="attachment.url" href="{{attachment.url}}" target="_blank" ng-click="$event.stopPropagation()">{{attachment.url}}</a>
+              </div>
+              <div ng-show="slide.attachments.length < 3" class="slides-list__slide__attachments__input">
+                <md-autocomplete flex required ng-keydown="sectionCtrl.keyDownOnAutocompleteAttachments($event, slide)"
+                  md-input-name="autocompleteAttachments"
+                  md-selected-item="slide.attachmentChoices.selectedArticle"
+                  md-selected-item-change="sectionCtrl.addSelectedAttachment(slide)"
+                  md-search-text="slide.attachmentChoices.searchTextArticleTitle"
+                  md-items="item in slide.attachmentChoices.querySearchArticleTitle(slide.attachmentChoices.searchTextArticleTitle)"
+                  md-item-text="item.title"
+                  placeholder="Add reference">
+                  <md-item-template>
+                    <span md-highlight-text="slide.attachmentChoices.searchTextArticleTitle">{{item.title}}</span>
+                  </md-item-template>
+                </md-autocomplete>
+              </div>
+              <!-- <md-input-container ng-if="slide.attachments.length < 3" class="md-block slides-list__slide__attachments__input">
+                <label>Add reference</label>
+                <md-select ng-model="slide.selectedAttachment">
+                  <md-option ng-repeat="choice in slide.attachmentChoices" value="{{choice}}">
+                    {{choice}}
+                  </md-option>
+                </md-select>
+              </md-input-container> -->
+            </div>
+            <span class="slides-list__slide__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+          </div>
+        </div>
+        <md-fab-speed-dial md-open="false" md-direction="up" class="md-fab md-scale speed-dial-fab">
+          <md-fab-trigger>
+            <md-button aria-label="menu" class="md-fab speed-dial-fab__dial" ng-click="sectionCtrl.openAddSlideDialog($event)">
+              <md-tooltip md-direction="left">add slide</md-tooltip>
+              <md-icon aria-label="menu" class="material-icons">
+                add
+              </md-icon>
+            </md-button>
+          </md-fab-trigger>
+        </md-fab-speed-dial>
+      </div><!-- ./MATERIAL -->
+
+    </div><!-- ./container -->
+  </div><!-- ./container wrapper -->
+
+  <div ng-show="sectionCtrl.selectedTab == 1 || !sectionCtrl.selectedTab" class="bg-grey-xxxdark">
+    <div ng-if="sectionCtrl.slideNavigationInGrid" class="container" style="opacity: {{sectionCtrl.inListTypeTransition ? '0' : '1'}}">
+      <div class="slides-deck slides-deck--with-margin row" ng-sortable="sectionCtrl.sortableConfigSlidePreviews">
+        <div class="slides-deck__slide-wrapper col-xs-6 col-sm-4" ng-class="{'active':slide.isActive}" ng-repeat="slide in sectionCtrl.slides">
+          <div class="slides-deck__slide md-whiteframe-z1 sortable-handle sortable-ghost__item" ng-click="sectionCtrl.activateSlide($index, true)">
+            <md-icon ng-if="slide.attachments.length" class="slides-deck__slide__attach">attach_file</md-icon>
+            <span picture-fill data-alt="Preview slide">
+              <span pf-src="{{slide.image}}"></span>
+              <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+          </div>
+          <span class="slides-deck__slide-wrapper__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-preview" ng-class="{'hidden':sectionCtrl.slideNavigationInGrid}">
+      <md-button class="md-fab slide-preview__nav-button slide-preview__nav-button--prev" aria-label="Navigate left" ng-click="sectionCtrl.moveSlidesbarToLeft($event)">
+        <md-icon>arrow_back</md-icon>
+      </md-button>
+      <div class="slide-preview__slides-wrapper" ng-sortable="sectionCtrl.sortableConfigSlidePreviews">
+        <div class="slide-preview__slide-wrapper sortable-ghost__item" ng-repeat="slide in sectionCtrl.slides" ng-click="sectionCtrl.activateSlide($index, false)">
+          <div class="slide-preview__slide md-whiteframe-z1 sortable-handle" ng-class="{'active':slide.isActive}">
+            <md-icon ng-if="slide.attachments.length" class="slide-preview__slide__attach" ng-click="">attach_file</md-icon>
+            <span picture-fill data-alt="Preview slide">
+              <span pf-src="{{slide.image}}"></span>
+              <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+          </div>
+          <span class="slide-preview__slide-wrapper__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+        </div>
+      </div>
+      <md-button class="md-fab slide-preview__nav-button slide-preview__nav-button--next" aria-label="Navigate left" ng-click="sectionCtrl.moveSlidesbarToRight($event)">
+        <md-icon>arrow_forward</md-icon>
+      </md-button>
+      <!-- <md-button class="md-fab slide-preview__open-button" ng-class="{'hidden':!sectionCtrl.isSlidesPreviewHidden}" aria-label="show slide drawer" ng-click="sectionCtrl.isSlidesPreviewHidden = false">
+        <md-icon>arrow_upward</md-icon>
+      </md-button>
+      <div class="slide-preview__close-button">
+        <md-button ng-hide="sectionCtrl.isSlidesPreviewHidden" class="md-icon-button" aria-label="open/close" ng-click="sectionCtrl.isSlidesPreviewHidden = true">
+          <md-icon>close</md-icon>
+        </md-button>
+      </div> -->
+    </div>
+  </div>
+  <div class="page-footer" ng-controller="FooterCtrl as footer" ng-include="'https://www.fredericaerts.com/external/projects/slideshow/hub/partials/footer/footer.html'">
+  </div>
+</div>

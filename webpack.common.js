@@ -40,11 +40,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['public']),
-    new webpack.ProvidePlugin({
-      _: 'lodash',
-    }),
-    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/views/index.ejs',
     }),
@@ -52,6 +47,11 @@ module.exports = {
       filename: 'archive/index.html',
       template: 'src/views/pages/archive.ejs',
     }),
+    new CleanWebpackPlugin(['public']),
+    new webpack.ProvidePlugin({
+      _: 'lodash',
+    }),
+    new webpack.NamedModulesPlugin(),
     new CopyWebpackPlugin([
       {
         from: 'src/meta',
@@ -60,6 +60,10 @@ module.exports = {
       {
         from: 'src/img',
         to: 'img',
+      },
+      {
+        from: 'src/external',
+        to: 'external',
       },
     ]),
   ],

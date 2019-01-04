@@ -1,0 +1,442 @@
+{
+    "assets": [
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false,
+            "panel": {
+                "active": false,
+                "hasProgressBar": true,
+                "id": "764xya34",
+                "description": "On demand version of Cambridge Associates webinar on 12th Jan, 2016"
+            }
+        },
+        {
+            "img": "PSD.png",
+            "imgRetina": "PSD@2x.png",
+            "isImgIcon": true,
+            "title": "Self_Drive.psd",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Graphic",
+            "checked": false,
+            "panel": {
+                "active": false,
+                "hasProgressBar": true,
+                "id": "764xya34",
+                "description": "On demand version of Cambridge Associates webinar on 12th Jan, 2016"
+            }
+        },
+        {
+            "img": "Doc.png",
+            "imgRetina": "Doc@2x.png",
+            "isImgIcon": true,
+            "title": "World-Data.doc",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Graphic",
+            "checked": false
+        },
+        {
+            "img": "PDF.png",
+            "imgRetina": "PDF@2x.png",
+            "isImgIcon": true,
+            "title": "Fighter-pilot.pdf",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Document",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "XLS.png",
+            "imgRetina": "XLS@2x.png",
+            "isImgIcon": true,
+            "title": "Fighter.xls",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Data",
+            "checked": false
+        },
+        {
+            "img": "Txt.png",
+            "imgRetina": "Txt@2x.png",
+            "isImgIcon": true,
+            "title": "Self-Driving.txt",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Text",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "PSD.png",
+            "imgRetina": "PSD@2x.png",
+            "isImgIcon": true,
+            "title": "Self_Drive.psd",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Graphic",
+            "checked": false,
+            "panel": {
+                "active": false,
+                "hasProgressBar": true,
+                "id": "764xya34",
+                "description": "On demand version of Cambridge Associates webinar on 12th Jan, 2016"
+            }
+        },
+        {
+            "img": "Doc.png",
+            "imgRetina": "Doc@2x.png",
+            "isImgIcon": true,
+            "title": "World-Data.doc",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Graphic",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "isImgIcon": false,
+            "title": "Virtually_Real.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "a moment ago",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "isImgIcon": false,
+            "title": "Robot.png",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "isImgIcon": false,
+            "title": "World-data.jpg",
+            "meta": {
+                "fileSize": "8 MB"
+            },
+            "date": "Nov 20",
+            "contentType": "Image",
+            "checked": false
+        }
+    ]
+}

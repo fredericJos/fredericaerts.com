@@ -1,0 +1,36 @@
+.header {
+	position: fixed;
+	top: 0;
+
+	width: 100%;
+
+	background: #FFFFFF;
+	box-shadow: 0 0 2px 3px #DDDDDD;
+
+	z-index: 999;
+}
+
+.nav-item {
+	display: inline-block;
+	height: 60px;
+	padding: 20px;
+
+	color: #000000;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* align first navigation item to left */
+.nav-item:first-child {
+	padding-left: 0;
+}
+
+.nav-item.active {
+	color: #6495ED;
+}
+
+/* position twitter link vertically centered at right side of header */
+.nav-twitter {
+	padding: 15px 0;
+	float: right; 
+}

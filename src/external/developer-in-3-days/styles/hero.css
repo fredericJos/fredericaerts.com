@@ -1,0 +1,26 @@
+.hero {
+	padding: 60px 0; 
+	
+	background: #EEEEEE;
+
+	text-align: center;
+}
+
+
+.hero-title {
+	width: 95%;
+	max-width: 550px;
+	margin: 0 auto;
+	padding: 15px;
+
+	background: #FFFFFF;
+
+	border: 1px solid black;
+}
+
+.hero-image {
+	display: block;
+	width: 80%;
+	max-width: 400px;
+	margin: 40px auto;
+}

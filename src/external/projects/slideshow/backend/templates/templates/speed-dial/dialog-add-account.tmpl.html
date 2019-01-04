@@ -1,0 +1,41 @@
+<md-dialog aria-label="Add hub" class="sherpa-dialog">
+
+    <div layout="row" layout-align="space-between center" class="sherpa-dialog__header">
+      <h2 class="md-title">Add new account</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon aria-label="close" class="material-icons">
+          close
+        </md-icon>
+      </md-button>
+    </div>
+
+    <md-dialog-content class="sherpa-dialog__content">
+      <form class="sherpa-dialog__form sherpa-dialog__content__padding-wrapper" >
+        <md-input-container class="md-accent md-input-container sherpa-dialog__form__item sherpa-dialog__form__item--floating-label">
+          <label>Company name</label>
+          <input type="text" name="name">
+        </md-input-container>
+        <div layout layout-align="start center" class="sherpa-dialog__form__item sherpa-dialog__form__item--padded-right sherpa-dialog__form__item--floating-label">
+          <md-input-container flex class="md-accent md-input-container">
+            <label>Sub domain</label>
+            <input type="text" name="dubdomain">
+          </md-input-container>
+          <span class="sherpa-dialog__concat">.wavecast.io</span>
+        </div>
+        <div layout layout-align="start center" class="sherpa-dialog__form__item sherpa-dialog__form__item--padded-right sherpa-dialog__form__item--floating-label">
+          <md-input-container flex class="md-accent md-input-container">
+            <label>Custom domain</label>
+            <input type="text" name="customdomain">
+          </md-input-container>
+        </div>
+        <md-checkbox ng-model="partner" class="md-accent" aria-label="Partner">
+          Partner
+        </md-checkbox>
+      </form>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="md-raised md-accent" ng-click="add('account')">Add</md-button>
+    </md-dialog-actions>
+
+</md-dialog>

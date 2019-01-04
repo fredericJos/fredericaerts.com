@@ -1,0 +1,41 @@
+<md-dialog aria-label="Add hub" class="sherpa-dialog">
+
+  <div layout="row" layout-align="space-between center" class="sherpa-dialog__header">
+    <h2 class="md-title">Add new hub</h2>
+    <span flex></span>
+    <md-button class="md-icon-button" ng-click="cancel()">
+      <md-icon aria-label="close" class="material-icons">
+        close
+      </md-icon>
+    </md-button>
+  </div>
+
+  <md-dialog-content class="sherpa-dialog__content">
+    <form class="sherpa-dialog__form sherpa-dialog__content__padding-wrapper">
+      <md-input-container class="md-accent sherpa-dialog__form__item sherpa-dialog__form__item--floating-label">
+        <label>Hub name</label>
+        <input type="text" name="name">
+      </md-input-container>
+      <div layout layout-xs="column" layout-align-gt-xs="start center" class="sherpa-dialog__form__item sherpa-dialog__form__item--floating-label">
+        <span class="sherpa-dialog__concat">http://[account].wavecast.io/</span>
+        <md-input-container flex md-no-float class="md-accent">
+          <input type="text" name="url" placeholder="Url">
+        </md-input-container>
+      </div>
+      <md-input-container md-no-float class="sherpa-dialog__form__item">
+        <md-select ng-model="variable" placeholder="Account" class="md-accent">
+          <md-option class="md-accent" value="admin">Admin</md-option>
+          <md-option class="md-accent" value="guest">Guest</md-option>
+        </md-select>
+      </md-input-container>
+      <md-radio-group ng-model="radioSelected">
+        <md-radio-button value="draft" class="md-accent" aria-label="Draft">Draft</md-radio-button>
+        <md-radio-button value="live" class="md-accent" aria-label="Live">Live</md-radio-button>
+        <md-radio-button value="protected" class="md-accent" aria-label="Protected">Protected</md-radio-button>
+      </md-radio-group>
+    </form>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button class="md-raised md-accent" ng-click="add('hub')">Add</md-button>
+  </md-dialog-actions>
+</md-dialog>

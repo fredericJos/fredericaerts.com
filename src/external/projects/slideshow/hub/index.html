@@ -1,0 +1,213 @@
+<html lang="en" ng-app="app">
+  <head>
+    <link rel="stylesheet" href="https://www.fredericaerts.com/external/projects/slideshow/backend/css/app-hub.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <meta name="viewport" content="initial-scale=1" />
+    <title>Papillon</title>
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.fredericaerts.com/external/projects/slideshow/admin/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.fredericaerts.com/external/projects/slideshow/admin/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.fredericaerts.com/external/projects/slideshow/admin/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.fredericaerts.com/external/projects/slideshow/admin/apple-icon-76x76.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.fredericaerts.com/external/projects/slideshow/admin/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.fredericaerts.com/external/projects/slideshow/admin/favicon-16x16.png">
+
+  </head>
+  <body layout="column" ng-class="{'sidenav-locked':sidenavLocked}" ng-controller="ShellCtrl as shell">
+    <!-- while page is loading first time -->
+    <div ng-if="!appIsActivated" ng-class="{'dissipate':shell.isAppLoaded}" class="page-loader">
+      <img src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/loader.gif">
+    </div><!-- ./while page is loading first time -->
+
+    <md-toolbar layout="row" class="md-whiteframe-z2" ng-class="{'accent': shell.appBar.hubZones.selected}" ng-cloak>
+      <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="start center">
+          <md-button ng-click="shell.toggleSidenavLeft()" class="md-icon-button md-toolbar-tools__sidenav-button" md-no-ink>
+            <md-icon aria-label="Menu" class="material-icons" ng-class="{'active': !shell.sideNavLeft.isOpen}">
+              menu
+            </md-icon>
+            <md-icon aria-label="Close" class="material-icons" ng-class="{'active': shell.sideNavLeft.isOpen}">
+              arrow_back
+            </md-icon>
+          </md-button>
+          <h3>{{pageName}}</h3>
+        </div>
+        <div class="md-toolbar-tools__logo">
+          <span picture-fill data-alt="Profile background">
+            <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/logo/logo-footer@0.5x.png"></span>
+            <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/logo/logo-footer@1.5x.png" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+          </span>
+        </div>
+        <div layout="row" layout-align="start center">
+          <div class="md-toolbar-tools__zone-select">
+            <md-menu md-position-mode="target-right target" class="md-icon-button" aria-label="Select hub zone">
+              <span ng-click="">{{shell.appBar.hubZones.selected ? shell.appBar.hubZones.selected : 'Hub level' }}</span>
+              <md-menu-content width="3">
+                <md-menu-item class="md-menu-item--no-icon" ng-class="{'active': !shell.appBar.hubZones.selected}">
+                  <md-button ng-click="shell.appBar.hubZones.selectZone('')">
+                    <div layout="row">
+                      <p flex>Hub</p>
+                      <i class="material-icons menu-icon--right-aligned">check</i>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item class="md-menu-item--no-icon" ng-class="{'active': shell.appBar.hubZones.selected == zone}" ng-repeat="zoneName in shell.appBar.hubZones.names">
+                  <md-button ng-click="shell.appBar.hubZones.selectZone(zoneName)">
+                      <div layout="row">
+                        <p flex>{{zoneName}}</p>
+                        <i class="material-icons menu-icon--right-aligned">check</i>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <md-icon aria-label="Select hub zone" class="material-icons">
+              arrow_drop_down
+            </md-icon>
+          </div>
+          <ul hide-xs class="md-toolbar-tools__button-list">
+            <li ng-repeat="button in shell.appBar.buttons">
+              <md-button ng-if="!button.menu" aria-label="Notifications" class="md-icon-button" ng-click="button.clickHandler()">
+                <span class="button-badge" ng-show="button.notificationCount">{{button.notificationCount}}</span>
+                <md-icon aria-label="{{button.name}}" class="material-icons">
+                  {{button.icon}}
+                </md-icon>
+              </md-button>
+              <md-menu ng-if="button.menu" md-offset="-40 0" md-position-mode="target-right target" class="menu--augmented md-icon-button" aria-label="More">
+                <md-button aria-label="{{button.name}}" class="md-icon-button" ng-click="">
+                  <span class="button-badge" ng-show="button.notificationCount">{{button.notificationCount}}</span>
+                  <md-icon md-menu-origin aria-label="{{button.name}}" class="material-icons">
+                    {{button.icon}}
+                  </md-icon>
+                </md-button>
+                <md-menu-content width="{{button.menu.width}}">
+                  <md-menu-item ng-if="button.menu.header" layout="row" layout-align="space-between center" class="menu--augmented__item--header menu--augmented__item">
+                    <div>
+                      {{button.menu.header.name}}
+                    </div>
+                    <md-icon flex ng-if="button.menu.header.icon" md-menu-align-target class="material-icons">{{button.menu.header.icon}}</md-icon>
+                  </md-menu-item>
+                  <md-menu-item layout="row" ng-repeat="item in button.menu.items" class="menu--augmented__item divider" ng-click="item.clickHandler()">
+                    <div ng-if="item.image" class="menu--augmented__item__image">
+                      <span picture-fill data-alt="{{item.title}}">
+                        <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/{{item.image}}"></span>
+                        <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/{{item.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                      </span>
+                    </div>
+                    <div flex class="menu--augmented__item__content">
+                      <span class="menu--augmented__item__content__title">{{item.title}}</span>
+                      <span ng-if="item.text" class="menu--augmented__item__content__text">{{item.text}}</span>
+                    </div>
+                  </md-menu-item>
+                  <md-menu-item ng-if="button.menu.footer" class="menu--augmented__item--footer menu--augmented__item divider" ng-click="button.menu.footer.clickHandler()">
+                      <span>{{button.menu.footer.text}}</span>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </md-toolbar>
+
+    <!-- sidenav right -->
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" ng-cloak>
+      <md-content layout-padding>
+        <!-- <md-button ng-click="shell.toggleSidenavRight()" class="md-primary">
+          Close
+        </md-button> -->
+      </md-content>
+    </md-sidenav>
+
+    <div layout="row" flex>
+      <md-sidenav class="sherpa-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md') && shell.sideNavLeft.isOpen" ng-cloak>
+        <section class="sherpa-sidenav__profile">
+          <div class="sherpa-sidenav__profile__bg">
+            <span picture-fill data-alt="Profile background">
+              <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/user-profile-bg.jpg"></span>
+              <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/user-profile-bg.jpg" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+          </div>
+          <div class="sherpa-sidenav__profile__avatar">
+            <span picture-fill data-alt="Simon Alterhavem">
+              <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/profile_picture.jpg"></span>
+              <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/profile_picture.jpg" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+          </div>
+          <div class="sherpa-sidenav__profile__menu-bar" ng-click="shell.toggleSideNavUserMenu()">
+            <span>Simon Alterhavem</span>
+            <md-icon aria-label="Live" class="material-icons" ng-class="{'collapsed': shell.sideNavUserMenuIsCollapsed}">
+              arrow_drop_down
+            </md-icon>
+          </div>
+        </section>
+
+        <ul class="sherpa-sidenav__nav-list md-body-2" ng-class="{'collapsed': shell.sideNavUserMenuIsCollapsed}" style="height:{{shell.sideNavUserMenuHeight}}">
+          <li ng-click="shell.navigateFromSidenav()" class="sherpa-sidenav__nav-list__item" ng-repeat="item in shell.sideNavUserMenuItems">
+            <a ui-sref="{{item.linkState}}">
+              <md-icon aria-label="{{item.name}}" class="material-icons">
+                {{item.icon}}
+              </md-icon>
+              <span>{{item.name}}</span>
+            </a>
+          </li>
+        </ul>
+        <md-divider ng-hide="shell.sideNavUserMenuIsCollapsed"></md-divider>
+
+        <ul class="sherpa-sidenav__nav-list md-body-2">
+          <li ng-click="shell.navigateFromSidenav()" class="sherpa-sidenav__nav-list__item" ng-class="{'collapsible':item.subItems.length}" ng-repeat="item in shell.sideNavLeft.items">
+            <a ui-sref="{{item.state}}" ng-class="{'active': item.activeStates.indexOf($state.current.name) != -1}" ng-click="shell.toggleSubNav(item.name)">
+              <md-icon aria-label="item.name" class="material-icons">
+                {{item.icon}}
+              </md-icon>
+              <span>{{item.name}}</span>
+              <md-icon aria-label="{{item.name}} dropdown" class="material-icons" ng-class="{'collapsed': item.collapsed}" ng-show="item.subItems.length">
+                arrow_drop_down
+              </md-icon>
+            </a>
+            <ul class="sherpa-sidenav__nav-list md-body-2" ng-class="{'collapsed': item.collapsed}" ng-show="item.subItems.length" style="height:{{item.subNavHeight}}">
+              <li ng-click="shell.navigateFromSidenav()" class="sherpa-sidenav__nav-list__item" ng-repeat="subItem in item.subItems">
+                <a sref="#">
+                  <span>{{subItem.name}}</span>
+                  <span class="sherpa-sidenav__nav-list__item__badge" ng-show="subItem.notificationCount">
+                    {{subItem.notificationCount}}
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <md-divider ng-hide="!item.subItems.length || item.collapsed"></md-divider>
+          </li>
+        </ul>
+
+        <md-divider hide-gt-xs></md-divider>
+
+        <ul hide-gt-xs class="sherpa-sidenav__nav-list sherpa-sidenav__nav-list--toolbar md-body-2">
+          <li ng-click="shell.navigateFromSidenav()" class="sherpa-sidenav__nav-list__item" ng-repeat="item in shell.appBar.buttons">
+            <div ng-click="">
+              <md-icon aria-label="item.name" class="material-icons">
+                {{item.icon}}
+              </md-icon>
+              <span>{{item.name}}</span>
+              <span class="sherpa-sidenav__nav-list__item__badge" ng-show="item.notificationCount">
+                {{item.notificationCount}}
+              </span>
+            </div>
+          </li>
+        </ul>
+      </md-sidenav>
+
+      <div layout="column" flex id="content" class="bg-grey-xlight">
+        <md-content ui-view layout="column" flex class="main-content view-animate bg-grey-transparant" ng-cloak>
+        </md-content>
+      </div>
+    </div>
+
+    <script src="https://www.fredericaerts.com/external/projects/slideshow/backend/js/angular.js"></script>
+    <script src="https://www.fredericaerts.com/external/projects/slideshow/backend/js/app-hub.js"></script>
+  </body>
+</html>

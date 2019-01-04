@@ -1,0 +1,52 @@
+<div class="message-window" ng-class="{'minimized': messageWindow.windowMinimized}">
+    <div class="message-window__header">
+        <span class="message-window__header__partner">
+            {{messageWindow.conversation.partner.firstName}}
+            {{messageWindow.conversation.partner.lastName}}
+        </span>
+        <div class="message-window__header__buttons">
+            <md-button aria-label="minimize" ng-click="messageWindow.minimizeWindow()" class="md-icon-button">
+                <md-icon aria-label="minimize" class="material-icons">
+                    {{messageWindow.windowMinimized ? 'expand_less' : 'remove'}}
+                </md-icon>
+            </md-button>
+            <md-button aria-label="close" ng-click="messageWindow.closeWindow()" class="md-icon-button">
+                <md-icon aria-label="close" class="material-icons">
+                    close
+                </md-icon>
+            </md-button>
+        </div>
+    </div>
+    <div class="message-window__message-box">
+        <div class="message-window__message-box__date-stamp">Today</div>
+        <div class="message-window__message-box__message" ng-class="{'from-partner': message.from != 'you'}" ng-repeat="message in messageWindow.conversation.messages">
+            <div class="message-window__message-box__message__avatar">
+                <span picture-fill data-alt="avatar author">
+                    <span pf-src="/backend/images/{{message.from == 'you' ? 'profile_picture.jpg' : messageWindow.conversation.partner.avatar}}"></span>
+                    <span pf-src="/backend/images/{{message.from == 'you' ? 'profile_picture.jpg' : messageWindow.conversation.partner.avatar}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                </span>
+            </div>
+            <div class="message-window__message-box__message__content">
+                {{message.content}}
+                <!-- <div class="message-window__message-box__message__content__time">
+                    {{message.time}}
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="message-window__footer">
+        <span class="message-window__footer__is-typing">{{messageWindow.conversation.partner.firstName}} is typing..</span>
+        <div class="message-window__footer__avatar">
+            <span picture-fill data-alt="avatar author">
+                <span pf-src="/backend/images/profile_picture.jpg"></span>
+                <span pf-src="/backend/images/profile_picture.jpg" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+        </div>
+        <textarea rows="1" ng-model="messageWindow.newMessage" placeholder="Send a message" class="message-window__footer__textarea"></textarea>
+        <md-button aria-label="send message" ng-click="messageWindow.sendNewMessage()" class="md-icon-button message-window__footer__button">
+            <md-icon aria-label="send message" class="material-icons">
+                send
+            </md-icon>
+        </md-button>
+    </div>
+</div>

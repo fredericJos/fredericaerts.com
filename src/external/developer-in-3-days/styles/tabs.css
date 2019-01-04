@@ -1,0 +1,37 @@
+.tab-links {
+	margin-top: 40px;
+
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.tab-links-item {
+	display: inline-block;
+	padding: 10px 20px;
+
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.tab-links-item.active {
+	position: relative;
+	top: 1px;
+
+	color: #FF0000;
+
+	background: #FFFFFF;
+
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+
+.tab-panes-item {
+	display: none;
+	padding: 10px 20px;
+}
+
+.tab-panes-item.active {
+	display: block;
+}

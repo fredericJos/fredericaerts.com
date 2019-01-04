@@ -1,0 +1,276 @@
+<div flex ng-controller="PresentationSectionCtrl as sectionCtrl">
+  <div class="full-screen-window" ng-cloak>
+
+    <md-toolbar class="md-whiteframe-z2">
+      <div class="md-toolbar-tools">
+        <!-- <h2>Add new assets</h2> -->
+        <div flex-xs="85" flex-gt-xs="50" class="dialog-toolbar-tabs">
+          <md-tabs>
+            <md-tab label="{{tab.name}}" md-active="tab.isSelected" ng-disabled="tab.isLabel" ng-click="tab.clickHandler()" ng-repeat="tab in sectionCtrl.header.tabs"></md-tab>
+          </md-tabs>
+        </div>
+        <div class="md-toolbar-tools__logo">
+          <span picture-fill data-alt="Profile background">
+            <span pf-src="/backend/images/logo/logo-footer@0.5x.png"></span>
+            <span pf-src="/backend/images/logo/logo-footer@1.5x.png" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+          </span>
+        </div>
+        <span flex></span>
+        <md-button hide-xs ng-if="!option.icon && (!option.onTab || option.onTab === sectionCtrl.selectedTab)" class="tabs-block__options__buttons" ng-click="option.clickHandler()" ng-repeat="option in sectionCtrl.header.tabsBlockOptions">
+          {{option.label}}
+        </md-button>
+        <md-menu hide-xs ng-if="option.icon && (!option.onTab || option.onTab === sectionCtrl.selectedTab)" md-position-mode="target-right target" class="tabs-block__options__sortby-menu md-icon-button" aria-label="More" ng-repeat="option in sectionCtrl.header.tabsBlockOptions">
+          <md-button aria-label="{{option.label}}" class="md-icon-button" ng-click="option.menu?$mdOpenMenu($event):option.clickHandler()">
+            <md-icon aria-label="{{option.label}}" class="material-icons">
+              {{option.icon}}
+            </md-icon>
+          </md-button>
+          <md-menu-content ng-show="option.menu" width="{{option.menu.width}}" class="">
+            <md-menu-item ng-repeat="menuOption in option.menu.options" ng-class="{'divider': menuOption.divider}">
+              <md-button ng-click="menuOption.clickHandler(option)">
+                <div layout="row">
+                  <md-icon ng-if="menuOption.icon" class="material-icons">{{menuOption.icon}}</md-icon>
+                  <p flex>{{menuOption.name}}</p>
+                  <i ng-if="menuOption.selected" class="material-icons menu-icon--right-aligned">check</i>
+                </div>
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </md-toolbar>
+    <md-dialog-content class="bg-grey-xlight">
+      <div ng-class="{'bg-grey-xxxdark':sectionCtrl.selectedTab == 1 || !sectionCtrl.selectedTab}">
+        <div class="container container--padded" flex>
+
+          <!-- LIVE -->
+          <div ng-show="sectionCtrl.selectedTab == 1 || !sectionCtrl.selectedTab">
+            <div class="slide-presentation">
+              <div layout="row" layout-align="center start" class="slide-presentation__header">
+                <span class="slide-presentation__header__title">Holding slide</span>
+                <md-switch class="slide-presentation__header__switch" ng-model="sectionCtrl.isLiveDisplay" aria-label="Live Display">
+                  LIVE DISPLAY
+                </md-switch>
+              </div>
+              <div class="slide-presentation__slide" layout="row">
+                <div flex="100" flex-gt-xs="70" flex-offset-gt-xs="15" class="slide-presentation__slide__image">
+                  <flippy class="fancy" flip="['custom:FLIP_EVENT_IN_MAIN']" flip-back="['click']" duration="800" timing-function="ease-in-out">
+                    <flippy-front class="md-whiteframe-z2">
+                      <md-icon ng-if="sectionCtrl.activeSlide.attachments.length" class="slides-deck__slide__attach" ng-click="sectionCtrl.flipSlide('MAIN')">attach_file</md-icon>
+                      <!-- TODO: support retina: ng-picturefill not updating on navigation? -->
+                      <img src="{{sectionCtrl.activeSlide.image}}">
+                    </flippy-front>
+
+                    <flippy-back>
+                      <div class="slide-presentation__slide__flippy-back">
+                        <img hide-xs hide-sm class="md-whiteframe-z1" src="{{sectionCtrl.activeSlide.image}}">
+                        <div class="slide-presentation__slide__flippy-back__attachment" ng-repeat="attachment in sectionCtrl.activeSlide.attachments">
+                          <span>{{attachment.title}}</span>
+                          <a href="{{attachment.url}}" target="_blank" ng-click="$event.stopPropagation()">{{attachment.url}}</a>
+                        </div>
+                      </div>
+                    </flippy-back>
+                  </flippy>
+                </div>
+              </div>
+              <div class="slide-presentation__navigation" layout="row" layout-align="space-between center">
+                <md-button ng-disabled="sectionCtrl.activeSlideIndex === 0" class="md-raised md-accent" ng-click="sectionCtrl.navigateToPrevSlide()">previous</md-button>
+                <md-button ng-disabled="sectionCtrl.activeSlideIndex === sectionCtrl.slides.length - 1" class="md-raised md-accent" ng-click="sectionCtrl.navigateToNextSlide()">next</md-button>
+              </div>
+              <span class="slide-presentation__counter">{{sectionCtrl.activeSlideIndex + 1}} of {{sectionCtrl.slides.length}}</span>
+            </div>
+            <div class="slide-preview" ng-class="{'hidden':sectionCtrl.isSlidesPreviewHidden}">
+              <md-button class="md-fab slide-preview__nav-button slide-preview__nav-button--prev" aria-label="Navigate left" ng-click="sectionCtrl.moveSlidesbarToLeft($event)">
+                <md-icon>arrow_back</md-icon>
+              </md-button>
+              <div class="slide-preview__slides-wrapper" ng-sortable="sectionCtrl.sortableConfigSlidePreviews">
+                <div class="slide-preview__slide-wrapper sortable-ghost__item" ng-repeat="slide in sectionCtrl.slides" ng-click="sectionCtrl.activateSlide($index, false)">
+                  <div class="slide-preview__slide md-whiteframe-z1 sortable-handle" ng-class="{'active':slide.isActive}">
+                    <md-icon ng-if="slide.attachments.length" class="slide-preview__slide__attach" ng-click="">attach_file</md-icon>
+                    <span picture-fill data-alt="Preview slide">
+                      <span pf-src="{{slide.image}}"></span>
+                      <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                    </span>
+                  </div>
+                  <span class="slide-preview__slide-wrapper__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+                </div>
+              </div>
+              <md-button class="md-fab slide-preview__nav-button slide-preview__nav-button--next" aria-label="Navigate left" ng-click="sectionCtrl.moveSlidesbarToRight($event)">
+                <md-icon>arrow_forward</md-icon>
+              </md-button>
+              <md-button class="md-fab slide-preview__open-button" ng-class="{'hidden':!sectionCtrl.isSlidesPreviewHidden}" aria-label="show slide drawer" ng-click="sectionCtrl.isSlidesPreviewHidden = false">
+                <md-icon>arrow_upward</md-icon>
+              </md-button>
+              <div class="slide-preview__close-button">
+                <md-button ng-hide="sectionCtrl.isSlidesPreviewHidden" class="md-icon-button" aria-label="open/close" ng-click="sectionCtrl.isSlidesPreviewHidden = true">
+                  <md-icon>close</md-icon>
+                </md-button>
+              </div>
+            </div>
+          </div><!-- ./LIVE -->
+          <!-- FEED -->
+          <div ng-show="sectionCtrl.selectedTab == 2">
+            <!-- incoming sticky footer -->
+            <div ng-class="{'active': sectionCtrl.numberOfIncomingFeedItemsChecked}" class="sticky-footer sticky-footer--in-dialog default-primary-color">
+              <div class="container container--padded" flex layout="row" layout-align="space-between center">
+                <div flex hide-xs>
+                  <span>{{sectionCtrl.numberOfIncomingFeedItemsChecked}} item<span ng-show="sectionCtrl.numberOfIncomingFeedItemsChecked > 1">s</span> <span>selected</span>
+                </div>
+                <div flex>
+                  <md-button class="md-icon-button" ng-click="button.clickHandler()" ng-repeat="button in sectionCtrl.stickyFooterIncoming.buttons">
+                    <md-icon aria-label="{{button.label}}" class="material-icons">
+                      {{button.icon}}
+                    </md-icon>
+                  </md-button>
+                </div>
+                <md-button class="sticky-footer__action md-raised md-accent" ng-disabled="false" ng-click="sectionCtrl.stickyFooterIncoming.action.clickHandler()">{{sectionCtrl.stickyFooterIncoming.action.text}}</md-button>
+              </div>
+            </div><!-- ./incoming sticky footer -->
+            <div class="container container--padded" flex>
+              <div layout="row" layout-align="center center">
+                <div flex="100" flex-gt-sm="75" flex-gt-md="50" class="simple-bar simple-bar--light-primary simple-bar--centered-content" ng-click="sectionCtrl.prependIncomingFeedItems(4)">
+                  <span>4 new items</span>
+                </div>
+              </div>
+              <!-- tweet feed -->
+              <ul class="feed feed--centered">
+                <li ng-if="item.type == 'tweet'" layout="row" layout-padding class="feed__item md-whiteframe-z1" ng-repeat="item in sectionCtrl.incomingFeedItems">
+                  <md-checkbox ng-model="item.checked" ng-click="$event.stopPropagation()" aria-label="Checkbox" class="md-primary">
+                  </md-checkbox>
+                  <div class="feed__item__avatar">
+                    <span picture-fill data-alt="">
+                      <span pf-src="/backend/images/{{item.avatar}}"></span>
+                      <span pf-src="/backend/images/{{item.avatar}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                    </span>
+                  </div>
+                  <div class="feed__item__content">
+                    <div layout="row" layout-align="space-between start" class="feed__item__content__header">
+                      <span>{{item.name}}</span>
+                      <span hide-xs>{{item.profileName}}</span>
+                      <span>{{item.timestamp}}</span>
+                    </div>
+                    <div class="feed__item__content__tweet">
+                      {{item.tweet}} <a href="#" ng-repeat="link in item.tweetLinks">{{link}} </a>
+                    </div>
+                    <div ng-if="item.imagePath" class="feed__item__content__image">
+                      <span picture-fill data-alt="">
+                        <span pf-src="/backend/images/{{item.imagePath}}"></span>
+                        <span pf-src="/backend/images/{{item.imagePath}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                      </span>
+                    </div>
+                    <div class="feed__item__content__actions">
+                      <md-button class="md-icon-button" ng-click="$event.stopPropagation()">
+                        <md-tooltip md-direction="bottom">reply</md-tooltip>
+                        <md-icon aria-label="" class="material-icons">
+                          help
+                        </md-icon>
+                      </md-button>
+                      <md-button class="md-icon-button" ng-click="$event.stopPropagation()">
+                        <md-tooltip md-direction="bottom">retweet</md-tooltip>
+                        <md-icon aria-label="" class="material-icons">
+                          help
+                        </md-icon>
+                      </md-button>
+                      <md-button class="md-icon-button" ng-click="$event.stopPropagation()">
+                        <md-tooltip md-direction="bottom">star</md-tooltip>
+                        <md-icon aria-label="" class="material-icons">
+                          help
+                        </md-icon>
+                      </md-button>
+                    </div>
+                  </div>
+                </li>
+              </ul><!-- ./tweet feed -->
+              <div layout="row" layout-align="center center">
+                <div flex="100" flex-gt-sm="75" flex-gt-md="50" class="simple-bar simple-bar--light-primary simple-bar--centered-content">
+                  <span>Load more</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- ./FEED -->
+          <!-- MATERIAL -->
+          <div ng-show="sectionCtrl.selectedTab == 3">
+            <div ng-if="sectionCtrl.slidesInGrid" class="container" style="opacity: {{sectionCtrl.inListTypeTransition ? '0' : '1'}}">
+              <div class="slides-deck slides-deck row" ng-sortable="sectionCtrl.sortableConfigSlidePreviews">
+                <div class="slides-deck__slide-wrapper col-xs-6 col-sm-4" ng-repeat="slide in sectionCtrl.slides">
+                  <div class="slides-deck__slide md-whiteframe-z1 sortable-handle sortable-ghost__item" ng-click="sectionCtrl.showSlideInDialog($event, slide, false)">
+                    <md-icon ng-if="slide.attachments.length" class="slides-deck__slide__attach" ng-click="sectionCtrl.showSlideInDialog($event, slide, true)">attach_file</md-icon>
+                    <span picture-fill data-alt="Preview slide">
+                      <span pf-src="{{slide.image}}"></span>
+                      <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                    </span>
+                  </div>
+                  <span class="slides-deck__slide-wrapper__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+                </div>
+              </div>
+            </div>
+            <div ng-if="!sectionCtrl.slidesInGrid" class="slides-list" style="opacity: {{sectionCtrl.inListTypeTransition ? '0' : '1'}}">
+              <div layout="row" layout-wrap class="slides-list__slide md-whiteframe-z1" ng-repeat="slide in sectionCtrl.slides">
+                <md-icon ng-if="slide.attachments.length" class="slides-deck__slide__attach">attach_file</md-icon>
+                <div flex-xs="100" flex-sm="100" class="slides-list__slide__image">
+                  <span picture-fill data-alt="Preview slide">
+                    <span pf-src="{{slide.image}}"></span>
+                    <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                  </span>
+                </div>
+                <div flex flex-xs="100" flex-sm="100" class="slides-list__slide__attachments" ng-class="{'has-input': slide.attachments.length < 3}">
+                  <div class="slides-list__slide__attachments__attachment" ng-repeat="attachment in slide.attachments">
+                    <span>{{attachment.title}}</span>
+                    <a href="{{attachment.url}}" target="_blank" ng-click="$event.stopPropagation()">{{attachment.url}}</a>
+                  </div>
+                  <md-input-container ng-if="slide.attachments.length < 3" class="md-block slides-list__slide__attachments__input">
+                    <label>Add reference</label>
+                    <md-select ng-model="slide.selectedAttachment">
+                      <md-option ng-repeat="choice in slide.attachmentChoices" value="{{choice}}">
+                        {{choice}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+                <span class="slides-list__slide__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+              </div>
+            </div>
+            <!-- <div ng-controller="SpeedDialCtrl as speedDial">
+              <md-fab-speed-dial md-open="false" md-direction="up" class="md-fab md-scale speed-dial-fab bottom right">
+                <md-fab-trigger>
+                  <md-button aria-label="menu" class="md-fab speed-dial-fab__dial">
+                    <md-icon aria-label="menu" class="material-icons">
+                      add
+                    </md-icon>
+                  </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                  <md-button aria-label="add slide" class="md-fab md-raised md-mini speed-dial-fab__option" ng-click="$event.stopPropagation()">
+                    <md-tooltip md-direction="left">add slide</md-tooltip>
+                    <md-icon aria-label="add slide" class="material-icons">
+                      add_to_photos
+                    </md-icon>
+                  </md-button>
+                </md-fab-actions>
+              </md-fab-speed-dial>
+            </div> -->
+          </div><!-- ./MATERIAL -->
+
+        </div><!-- ./container -->
+      </div><!-- ./container wrapper -->
+
+      <div ng-show="sectionCtrl.selectedTab == 1 || !sectionCtrl.selectedTab" class="bg-white">
+        <div class="container">
+          <div class="slides-deck slides-deck--with-margin row" ng-sortable="sectionCtrl.sortableConfigSlidePreviews">
+            <div class="slides-deck__slide-wrapper col-xs-6 col-sm-4" ng-class="{'active':slide.isActive}" ng-repeat="slide in sectionCtrl.slides">
+              <div class="slides-deck__slide md-whiteframe-z1 sortable-handle sortable-ghost__item" ng-click="sectionCtrl.activateSlide($index, true)">
+                <md-icon ng-if="slide.attachments.length" class="slides-deck__slide__attach">attach_file</md-icon>
+                <span picture-fill data-alt="Preview slide">
+                  <span pf-src="{{slide.image}}"></span>
+                  <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+                </span>
+              </div>
+              <span class="slides-deck__slide-wrapper__counter">{{$index + 1}}/{{sectionCtrl.slides.length}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+  </div>
+
+</div>

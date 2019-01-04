@@ -1,0 +1,21 @@
+<div class="post-box z-depth-1 hoverable clearfix js-sticky-post-box" ng-class="{'hoverable': !postBox.hasFocus}">
+  <img class="avatar circle small" srcset="//postBox.avatar.src//, //postBox.avatar.srcRetina// 2x" alt="avatar" >
+  <span class="post-box__text" ng-class="{'admin': postBox.isAdmin}">
+    <textarea id="post-box-editor" froala="postBox.froalaOptions" ng-model="postBox.myText"></textarea>
+    <div class="post-box__text__submit js-post-box-submit" ng-click="postBox.preventFroalaBlurCallback = true">
+      <div class="icon-toggle-label" ng-class="{'active': postBox.postAnonymous}" ng-click="postBox.toggleAnonymous($event)">
+        <span class="icon-toggle-label__default">
+          <i class="icon material-icons">
+            visibility
+          </i>
+        </span>
+        <span class="icon-toggle-label__active"><span class="icon-toggle-label__text">Your post will appear anonymously</span>
+          <i class="icon material-icons">
+            visibility_off
+          </i>
+        </span>
+      </div>
+      <button class="btn btn-flat btn--highlight waves-effect" ng-class="{'disabled': !postBox.myText}" ng-click="postBox.submitMessage($event)">post</button>
+    </div>
+  </span><!-- ./post-box__text -->
+</div>

@@ -1,0 +1,14 @@
+<div class="container container--padded" flex>
+  <div layout="row" layout-wrap>
+      <div layout="column" flex="33" flex-gt-xs="25" flex-gt-sm="20" flex-gt-md="10" class="page-footer__column" ng-repeat="column in footer.columns">
+        <a href="#" class="page-footer__link" ng-repeat="item in column">{{item}}</a>
+      </div>
+  </div>
+
+  <div class="page-footer__logo">
+    <span picture-fill data-alt="Profile background">
+      <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/logo/logo-footer.png"></span>
+      <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/logo/logo-footer@2x.png" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<md-dialog aria-label="" class="sherpa-dialog sherpa-dialog--restrained sherpa-dialog--xpadded" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add new content</h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-radio-group class="row page-templates page-templates--no-radio-buttons page-templates--in-dialog" ng-model="selectedTemplateId">
+          <md-radio-button class="md-align-top-left" value="{{template.id}}" ng-repeat="template in pageTemplates">
+          {{template.name}}<br>
+          <div class="page-templates__image md-whiteframe-z1">
+              <span picture-fill data-alt="{{template.name}}">
+                  <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/page-templates/{{template.img}}"></span>
+                  <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/page-templates/{{template.imgRetina}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+              </span>
+          </div>
+          </md-radio-button>
+        </md-radio-group>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-disabled="!selectedTemplateId" class="md-raised md-accent" ng-click="navigateTo('liveSession')">
+        add
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

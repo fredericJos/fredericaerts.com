@@ -1,0 +1,6 @@
+.image-wide {
+	display: block;
+	width: 90%;
+	max-width: 1000px;
+	margin: 50px auto;
+}

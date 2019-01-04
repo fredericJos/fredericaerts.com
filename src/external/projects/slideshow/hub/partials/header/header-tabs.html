@@ -1,0 +1,33 @@
+<md-tabs flex="90" flex-sm="80">
+  <md-tab label="{{tab.name}}" md-active="tab.isSelected" ng-disabled="tab.isLabel" ng-click="tab.clickHandler()" ng-repeat="tab in sectionCtrl.header.tabs"></md-tab>
+</md-tabs>
+<span flex></span>
+<div ng-if="sectionCtrl.header.tabsBlockOptions" class="tabs-block__options">
+  <md-button ng-if="!option.icon && !option.avatar && (!option.onTab || option.onTab === sectionCtrl.selectedTab)" class="tabs-block__options__buttons" ng-click="option.clickHandler()" ng-repeat="option in sectionCtrl.header.tabsBlockOptions">
+    {{option.label}}
+  </md-button>
+  <md-menu ng-if="option.icon && (!option.onTab || option.onTab === sectionCtrl.selectedTab)" md-position-mode="target-right target" class="tabs-block__options__sortby-menu md-icon-button" aria-label="More" ng-repeat="option in sectionCtrl.header.tabsBlockOptions">
+    <md-button aria-label="{{option.label}}" class="md-icon-button" ng-click="option.menu?$mdOpenMenu($event):option.clickHandler()">
+      <md-icon aria-label="{{option.label}}" class="material-icons">
+        {{option.icon}}
+      </md-icon>
+    </md-button>
+    <md-menu-content ng-show="option.menu" width="{{option.menu.width}}" class="">
+      <md-menu-item ng-repeat="menuOption in option.menu.options" ng-class="{'divider': menuOption.divider}">
+        <md-button ng-click="menuOption.clickHandler(option)">
+          <div layout="row">
+            <md-icon ng-if="menuOption.icon" class="material-icons">{{menuOption.icon}}</md-icon>
+            <p flex>{{menuOption.name}}</p>
+            <i ng-if="menuOption.selected" class="material-icons menu-icon--right-aligned">check</i>
+          </div>
+        </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+  <div ng-if="option.avatar && (!option.onTab || option.onTab === sectionCtrl.selectedTab)" class="avatar avatar--xsmall" ng-repeat="option in sectionCtrl.header.tabsBlockOptions">
+    <span picture-fill data-alt="Profile background">
+      <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/{{option.avatar}}"></span>
+      <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/{{option.avatar}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+    </span>
+  </div>
+</div>

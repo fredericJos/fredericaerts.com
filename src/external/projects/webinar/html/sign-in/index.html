@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Papillon preview | Sign In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../../images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../images/favicon/apple-icon-76x76.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.min.css?v=1.6" media="all" />
+
+    <script async charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js'></script>
+
+    <script>
+    // Picture element HTML5 shiv required for picturefill.js (if no html5 shiv already included)
+      document.createElement( "picture" );
+    </script>
+
+  </head>
+  <body class="body plain-form">
+
+      <div class="">
+        <div class="sticky-header-wrapper fixed animated">
+          <div class="sticky-header js-sticky-header ">
+              <div class="container">
+                <h1 class="sticky-header__title truncate">Tracking customer sentiment, and acting on it</h1>
+                  <button class="sticky-header__call-to-action-button btn js-sign-up-to-watch  right" onclick="pap.signUpPanelCollapse.open('sign-up-panel-collapse-id')">
+                    sign up to watch
+                  </button>
+              </div>
+          </div>
+        </div>
+        <div class="slide-in-panel js-slide-in-panel from-right">
+          <div class="slide-in-panel__content-wrapper">
+            <div class="slide-in-panel__content">
+              <div class="slide-in-panel__content__header">
+                    <button class="cta-icon-button btn-floating waves-effect" onclick="pap.slideInPanel.close()" >
+                      <i class="material-icons">close</i>
+                    </button>
+              </div>
+                <div class="slide-in-panel__content__body">
+                      <div class="slide-in-panel__content__body__panel js-sign-in-panel active">
+                          <div class="profile-panel">
+                            <div class="profile-panel__avatar">
+                                    <i class="icon   material-icons "
+                                      onclick=>
+                                      person
+                                    </i>
+                            </div>
+                            <h1 class="profile-panel__title">Sign in</h1>
+                              <form class="profile-panel__form" action="">
+                                    <div class="input-field">
+                                      <input id="login-email" type="email" class="validate"  value="">
+                                        <label for="login-email" data-error="Invalid email address">Email Address</label>
+                                    </div>
+                                    <div class="input-field">
+                                      <input id="login-password" type="password" class="validate"  value="">
+                                        <label for="login-password" data-error="">Password</label>
+                                    </div>
+                                  <div class="profile-panel__form__submit clearfix">
+                                    <a href="#!" class="profile-panel__form__submit__forgotten" onclick="pap.signIn.toggleForgottenPassword(event)">Forgotten password?</a>
+                                        <button class="btn js-sign-in-button waves-effect right" onclick="pap.slideInPanel.close()">
+                                          sign in
+                                        </button>
+                                  </div>
+                              </form>
+                                <button class="sidenav-panel__alternate-sign-in-button btn-flat btn--block btn--highlight waves-effect " onclick="">
+                                  USE Linkedin
+                                </button>
+                          </div>
+                      </div>
+                      <div class="slide-in-panel__content__body__panel js-sign-in-panel ">
+                          <div class="profile-panel">
+                            <div class="profile-panel__avatar">
+                                      <img class="avatar circle medium  z-depth-1" srcset="../../images/avatars/avatars-160px/male-160-2.png 1x, ../../images/avatars/avatars-160px/male-160-2.png 2x" alt="avatar"  >
+                            </div>
+                              <h1 class="profile-panel__title">Profile</h1>
+                                <form class="profile-panel__form" action="">
+                                      <div class="input-field">
+                                        <input id="profile-name" type="text" class="validate"  value="Tony Tarquini">
+                                          <label for="profile-name" data-error="Invalid email address">Name</label>
+                                      </div>
+                                      <div class="input-field">
+                                        <input id="login-job-title" type="text" class="validate"  value="European Insurance Director">
+                                          <label for="login-job-title" data-error="">Job Title</label>
+                                      </div>
+                                      <div class="input-field">
+                                        <input id="login-company" type="text" class="validate"  value="PegaSystems">
+                                          <label for="login-company" data-error="">Company</label>
+                                      </div>
+                                      <div class="input-field">
+                                        <select>
+                                            <option value="" disabled>Select a country</option>
+                                            <option value="AF" >Afghanistan</option>
+                                            <option value="AX" >Åland Islands</option>
+                                            <option value="AL" >Albania</option>
+                                            <option value="DZ" >Algeria</option>
+                                            <option value="AS" >American Samoa</option>
+                                            <option value="AD" >AndorrA</option>
+                                            <option value="AO" >Angola</option>
+                                            <option value="AI" >Anguilla</option>
+                                            <option value="AQ" >Antarctica</option>
+                                            <option value="AG" >Antigua and Barbuda</option>
+                                            <option value="AR" >Argentina</option>
+                                            <option value="AM" >Armenia</option>
+                                            <option value="AW" >Aruba</option>
+                                            <option value="AU" >Australia</option>
+                                            <option value="AT" >Austria</option>
+                                            <option value="AZ" >Azerbaijan</option>
+                                            <option value="BS" >Bahamas</option>
+                                            <option value="BH" >Bahrain</option>
+                                            <option value="BD" >Bangladesh</option>
+                                            <option value="BB" >Barbados</option>
+                                            <option value="BY" >Belarus</option>
+                                            <option value="BE" >Belgium</option>
+                                            <option value="BZ" >Belize</option>
+                                            <option value="BJ" >Benin</option>
+                                            <option value="BM" >Bermuda</option>
+                                            <option value="BT" >Bhutan</option>
+                                            <option value="BO" >Bolivia</option>
+                                            <option value="BA" >Bosnia and Herzegovina</option>
+                                            <option value="BW" >Botswana</option>
+                                            <option value="BV" >Bouvet Island</option>
+                                            <option value="BR" >Brazil</option>
+                                            <option value="IO" >British Indian Ocean Territory</option>
+                                            <option value="BN" >Brunei Darussalam</option>
+                                            <option value="BG" >Bulgaria</option>
+                                            <option value="BF" >Burkina Faso</option>
+                                            <option value="BI" >Burundi</option>
+                                            <option value="KH" >Cambodia</option>
+                                            <option value="CM" >Cameroon</option>
+                                            <option value="CA" >Canada</option>
+                                            <option value="CV" >Cape Verde</option>
+                                            <option value="KY" >Cayman Islands</option>
+                                            <option value="CF" >Central African Republic</option>
+                                            <option value="TD" >Chad</option>
+                                            <option value="CL" >Chile</option>
+                                            <option value="CN" >China</option>
+                                            <option value="CX" >Christmas Island</option>
+                                            <option value="CC" >Cocos (Keeling) Islands</option>
+                                            <option value="CO" >Colombia</option>
+                                            <option value="KM" >Comoros</option>
+                                            <option value="CG" >Congo</option>
+                                            <option value="CD" >Congo, The Democratic Republic of the</option>
+                                            <option value="CK" >Cook Islands</option>
+                                            <option value="CR" >Costa Rica</option>
+                                            <option value="CI" >Cote D&quot;Ivoire</option>
+                                            <option value="HR" >Croatia</option>
+                                            <option value="CU" >Cuba</option>
+                                            <option value="CY" >Cyprus</option>
+                                            <option value="CZ" >Czech Republic</option>
+                                            <option value="DK" >Denmark</option>
+                                            <option value="DJ" >Djibouti</option>
+                                            <option value="DM" >Dominica</option>
+                                            <option value="DO" >Dominican Republic</option>
+                                            <option value="EC" >Ecuador</option>
+                                            <option value="EG" >Egypt</option>
+                                            <option value="SV" >El Salvador</option>
+                                            <option value="GQ" >Equatorial Guinea</option>
+                                            <option value="ER" >Eritrea</option>
+                                            <option value="EE" >Estonia</option>
+                                            <option value="ET" >Ethiopia</option>
+                                            <option value="FK" >Falkland Islands (Malvinas)</option>
+                                            <option value="FO" >Faroe Islands</option>
+                                            <option value="FJ" >Fiji</option>
+                                            <option value="FI" >Finland</option>
+                                            <option value="FR" >France</option>
+                                            <option value="GF" >French Guiana</option>
+                                            <option value="PF" >French Polynesia</option>
+                                            <option value="TF" >French Southern Territories</option>
+                                            <option value="GA" >Gabon</option>
+                                            <option value="GM" >Gambia</option>
+                                            <option value="GE" >Georgia</option>
+                                            <option value="DE" >Germany</option>
+                                            <option value="GH" >Ghana</option>
+                                            <option value="GI" >Gibraltar</option>
+                                            <option value="GR" >Greece</option>
+                                            <option value="GL" >Greenland</option>
+                                            <option value="GD" >Grenada</option>
+                                            <option value="GP" >Guadeloupe</option>
+                                            <option value="GU" >Guam</option>
+                                            <option value="GT" >Guatemala</option>
+                                            <option value="GG" >Guernsey</option>
+                                            <option value="GN" >Guinea</option>
+                                            <option value="GW" >Guinea-Bissau</option>
+                                            <option value="GY" >Guyana</option>
+                                            <option value="HT" >Haiti</option>
+                                            <option value="HM" >Heard Island and Mcdonald Islands</option>
+                                            <option value="VA" >Holy See (Vatican City State)</option>
+                                            <option value="HN" >Honduras</option>
+                                            <option value="HK" >Hong Kong</option>
+                                            <option value="HU" >Hungary</option>
+                                            <option value="IS" >Iceland</option>
+                                            <option value="IN" >India</option>
+                                            <option value="ID" >Indonesia</option>
+                                            <option value="IR" >Iran, Islamic Republic Of</option>
+                                            <option value="IQ" >Iraq</option>
+                                            <option value="IE" >Ireland</option>
+                                            <option value="IM" >Isle of Man</option>
+                                            <option value="IL" >Israel</option>
+                                            <option value="IT" >Italy</option>
+                                            <option value="JM" >Jamaica</option>
+                                            <option value="JP" >Japan</option>
+                                            <option value="JE" >Jersey</option>
+                                            <option value="JO" >Jordan</option>
+                                            <option value="KZ" >Kazakhstan</option>
+                                            <option value="KE" >Kenya</option>
+                                            <option value="KI" >Kiribati</option>
+                                            <option value="KP" >Korea, Democratic People&quot;S Republic of</option>
+                                            <option value="KR" >Korea, Republic of</option>
+                                            <option value="KW" >Kuwait</option>
+                                            <option value="KG" >Kyrgyzstan</option>
+                                            <option value="LA" >Lao People&quot;S Democratic Republic</option>
+                                            <option value="LV" >Latvia</option>
+                                            <option value="LB" >Lebanon</option>
+                                            <option value="LS" >Lesotho</option>
+                                            <option value="LR" >Liberia</option>
+                                            <option value="LY" >Libyan Arab Jamahiriya</option>
+                                            <option value="LI" >Liechtenstein</option>
+                                            <option value="LT" >Lithuania</option>
+                                            <option value="LU" >Luxembourg</option>
+                                            <option value="MO" >Macao</option>
+                                            <option value="MK" >Macedonia, The Former Yugoslav Republic of</option>
+                                            <option value="MG" >Madagascar</option>
+                                            <option value="MW" >Malawi</option>
+                                            <option value="MY" >Malaysia</option>
+                                            <option value="MV" >Maldives</option>
+                                            <option value="ML" >Mali</option>
+                                            <option value="MT" >Malta</option>
+                                            <option value="MH" >Marshall Islands</option>
+                                            <option value="MQ" >Martinique</option>
+                                            <option value="MR" >Mauritania</option>
+                                            <option value="MU" >Mauritius</option>
+                                            <option value="YT" >Mayotte</option>
+                                            <option value="MX" >Mexico</option>
+                                            <option value="FM" >Micronesia, Federated States of</option>
+                                            <option value="MD" >Moldova, Republic of</option>
+                                            <option value="MC" >Monaco</option>
+                                            <option value="MN" >Mongolia</option>
+                                            <option value="MS" >Montserrat</option>
+                                            <option value="MA" >Morocco</option>
+                                            <option value="MZ" >Mozambique</option>
+                                            <option value="MM" >Myanmar</option>
+                                            <option value="NA" >Namibia</option>
+                                            <option value="NR" >Nauru</option>
+                                            <option value="NP" >Nepal</option>
+                                            <option value="NL" >Netherlands</option>
+                                            <option value="AN" >Netherlands Antilles</option>
+                                            <option value="NC" >New Caledonia</option>
+                                            <option value="NZ" >New Zealand</option>
+                                            <option value="NI" >Nicaragua</option>
+                                            <option value="NE" >Niger</option>
+                                            <option value="NG" >Nigeria</option>
+                                            <option value="NU" >Niue</option>
+                                            <option value="NF" >Norfolk Island</option>
+                                            <option value="MP" >Northern Mariana Islands</option>
+                                            <option value="NO" >Norway</option>
+                                            <option value="OM" >Oman</option>
+                                            <option value="PK" >Pakistan</option>
+                                            <option value="PW" >Palau</option>
+                                            <option value="PS" >Palestinian Territory, Occupied</option>
+                                            <option value="PA" >Panama</option>
+                                            <option value="PG" >Papua New Guinea</option>
+                                            <option value="PY" >Paraguay</option>
+                                            <option value="PE" >Peru</option>
+                                            <option value="PH" >Philippines</option>
+                                            <option value="PN" >Pitcairn</option>
+                                            <option value="PL" >Poland</option>
+                                            <option value="PT" >Portugal</option>
+                                            <option value="PR" >Puerto Rico</option>
+                                            <option value="QA" >Qatar</option>
+                                            <option value="RE" >Reunion</option>
+                                            <option value="RO" >Romania</option>
+                                            <option value="RU" >Russian Federation</option>
+                                            <option value="RW" >RWANDA</option>
+                                            <option value="SH" >Saint Helena</option>
+                                            <option value="KN" >Saint Kitts and Nevis</option>
+                                            <option value="LC" >Saint Lucia</option>
+                                            <option value="PM" >Saint Pierre and Miquelon</option>
+                                            <option value="VC" >Saint Vincent and the Grenadines</option>
+                                            <option value="WS" >Samoa</option>
+                                            <option value="SM" >San Marino</option>
+                                            <option value="ST" >Sao Tome and Principe</option>
+                                            <option value="SA" >Saudi Arabia</option>
+                                            <option value="SN" >Senegal</option>
+                                            <option value="CS" >Serbia and Montenegro</option>
+                                            <option value="SC" >Seychelles</option>
+                                            <option value="SL" >Sierra Leone</option>
+                                            <option value="SG" >Singapore</option>
+                                            <option value="SK" >Slovakia</option>
+                                            <option value="SI" >Slovenia</option>
+                                            <option value="SB" >Solomon Islands</option>
+                                            <option value="SO" >Somalia</option>
+                                            <option value="ZA" >South Africa</option>
+                                            <option value="GS" >South Georgia and the South Sandwich Islands</option>
+                                            <option value="ES" >Spain</option>
+                                            <option value="LK" >Sri Lanka</option>
+                                            <option value="SD" >Sudan</option>
+                                            <option value="SR" >Suriname</option>
+                                            <option value="SJ" >Svalbard and Jan Mayen</option>
+                                            <option value="SZ" >Swaziland</option>
+                                            <option value="SE" >Sweden</option>
+                                            <option value="CH" >Switzerland</option>
+                                            <option value="SY" >Syrian Arab Republic</option>
+                                            <option value="TW" >Taiwan, Province of China</option>
+                                            <option value="TJ" >Tajikistan</option>
+                                            <option value="TZ" >Tanzania, United Republic of</option>
+                                            <option value="TH" >Thailand</option>
+                                            <option value="TL" >Timor-Leste</option>
+                                            <option value="TG" >Togo</option>
+                                            <option value="TK" >Tokelau</option>
+                                            <option value="TO" >Tonga</option>
+                                            <option value="TT" >Trinidad and Tobago</option>
+                                            <option value="TN" >Tunisia</option>
+                                            <option value="TR" >Turkey</option>
+                                            <option value="TM" >Turkmenistan</option>
+                                            <option value="TC" >Turks and Caicos Islands</option>
+                                            <option value="TV" >Tuvalu</option>
+                                            <option value="UG" >Uganda</option>
+                                            <option value="UA" >Ukraine</option>
+                                            <option value="AE" >United Arab Emirates</option>
+                                            <option value="" selected>United Kingdom</option>
+                                            <option value="US" >United States</option>
+                                            <option value="UM" >United States Minor Outlying Islands</option>
+                                            <option value="UY" >Uruguay</option>
+                                            <option value="UZ" >Uzbekistan</option>
+                                            <option value="VU" >Vanuatu</option>
+                                            <option value="VE" >Venezuela</option>
+                                            <option value="VN" >Viet Nam</option>
+                                            <option value="VG" >Virgin Islands, British</option>
+                                            <option value="VI" >Virgin Islands, U.S.</option>
+                                            <option value="WF" >Wallis and Futuna</option>
+                                            <option value="EH" >Western Sahara</option>
+                                            <option value="YE" >Yemen</option>
+                                            <option value="ZM" >Zambia</option>
+                                            <option value="ZW" >Zimbabwe</option>
+                                        </select>
+                                          <label>Country</label>
+                                      </div>
+                                </form>
+                              <h1 class="profile-panel__title">Account</h1>
+                                <form class="profile-panel__form" action="">
+                                      <div class="input-field">
+                                        <input id="account-email" type="email" class="validate"  value="audience@papillon.io">
+                                          <label for="account-email" data-error="Invalid email address">Email Address</label>
+                                      </div>
+                                      <div class="input-field">
+                                        <input id="account-password" type="password" class="validate"  value="bumbabeloo">
+                                          <label for="account-password" data-error="">Password</label>
+                                      </div>
+                                      <div class="input-field">
+                                        <input id="account-timezone" type="text" class="validate"  value="GMT">
+                                          <label for="account-timezone" data-error="">Timezone</label>
+                                      </div>
+                                </form>
+                              <div class="profile-panel__form__submit">
+                                    <button class="btn waves-effect right" onclick="pap.slideInPanel.close('Your details have been updated')">
+                                      save
+                                    </button>
+                              </div>
+                          </div>
+                      </div>
+                </div>
+                <div class="slide-in-panel__content__footer center-align">
+                      <button class="btn-flat waves-effect " onclick="">
+                        sign out
+                      </button>
+                </div>
+            </div>
+          </div>
+        </div>
+    <div class="page">
+          <div class="pap-webinar-header-wrapper  ">
+            <header class="pap-webinar-header container">
+              <div class="pap-webinar-header__top-bar">
+                    <img class="pap-webinar-header__top-bar__logo" srcset="../../images/logo-placeholder-70px.png 1x, ../../images/logo-placeholder-70px@2x.png 2x" alt="logo">
+                      <button class="sign-in-button sign-in-button--avatar-right btn-flat"
+                        onclick=""
+                        data-activates="js-slide-in-panel"
+                        data-activates-mobile="url:sign-in-mobile.html">
+                        Sign in
+                          <i class="material-icons right">person</i>
+                      </button>
+              </div>
+              <div class="pap-webinar-header__content">
+                  <div class="pap-webinar-header__content__time-block">
+                      <span class="pap-webinar-header__content__time-block__label">Live broadcast</span>
+                        <!-- Dropdown Trigger -->
+                          <button class="dropdown-button btn-flat btn-flat--simple  "
+                            data-activates="add-to-calender"
+                              data-induration="300"
+                              data-outduration="225"
+                              data-constrainwidth="false"
+                              data-hover="false"
+                              data-gutter="0"
+                              data-beloworigin="false"
+                              data-alignment="right"
+                            >
+                              <i class="material-icons right">today</i>
+                            14 Dec 2.00 PM GMT
+                          </button>
+
+                        <!-- Dropdown Structure -->
+                          <ul id="add-to-calender" class="dropdown-content">
+                              <li>
+                                <span>
+                                  Apple iCal
+                                </span>
+                              </li>
+                              <li>
+                                <span>
+                                  Google
+                                </span>
+                              </li>
+                              <li>
+                                <span>
+                                  Outlook
+                                </span>
+                              </li>
+                              <li>
+                                <span>
+                                  Outlook.com
+                                </span>
+                              </li>
+                          </ul>
+                  </div>
+                  <h1 class="pap-webinar-header__title">Tracking customer sentiment, and acting on it</h1>
+                  <h2 class="pap-webinar-header__subtitle">From feedback to insight: understanding emotions to build better relationships</h2>
+                  <span class="pap-webinar-header__credit">Sponsored by &quot;Rant &amp; Rave&quot;</span>
+                  <div class="pap-webinar-header__read-more">
+                      <button class="btn-flat btn-flat--simple  " onclick="pap.modals.open('#modal-summary', 'tab-webinar')">
+                        Read more
+                      </button>
+                  </div>
+                    <button class="pap-header__call-to-action-button btn js-sign-up-to-watch  " onclick="pap.signUpPanelCollapse.open('sign-up-panel-collapse-id')">
+                      sign up to watch
+                    </button>
+              </div>
+            </header>
+          </div>
+          <div id="sign-up-panel-collapse-id" class="sign-up-panel-collapse-container js-sign-up-panel-collapse ">
+            <div class="sign-up-panel-collapse container">
+              <div class="row">
+                <div class="col s12 m10 offset-m1 l8 offset-l2">
+                    <form class="sign-up-panel-collapse__form" action="">
+                          <button class="cta-icon-button btn-floating sign-up-panel-collapse__form__close-btn waves-effect" onclick="pap.signUpPanelCollapse.close('sign-up-panel-collapse-id')" >
+                            <i class="material-icons">close</i>
+                          </button>
+                      <div class="row">
+                          <div class="js-sign-up-panel-collapse-sign-up clearfix">
+                              <div class="col s12">
+                                  <h2 class="sign-up-panel-collapse__form__title">Sign up to watch</h2>
+                                  <div class="sign-up-panel-collapse__form__intro">Please complete the following form:</div>
+                              </div>
+                              <div class="col s12 m6">
+                                    <div class="input-field">
+                                      <input id="signup-first-name" type="text" class="validate"  value="">
+                                        <label for="signup-first-name" data-error="">First name</label>
+                                    </div>
+                                    <div class="input-field">
+                                      <input id="signup-last-name" type="text" class="validate"  value="">
+                                        <label for="signup-last-name" data-error="">Last name</label>
+                                    </div>
+                                    <div class="input-field">
+                                      <input id="signup-job-title" type="text" class="validate"  value="">
+                                        <label for="signup-job-title" data-error="">Job title</label>
+                                    </div>
+                              </div>
+                              <div class="col s12 m6">
+                                    <div class="input-field">
+                                      <input id="signup-company" type="text" class="validate"  value="">
+                                        <label for="signup-company" data-error="">Company</label>
+                                    </div>
+                                    <div class="input-field">
+                                      <input id="signup-email" type="email" class="validate"  value="">
+                                        <label for="signup-email" data-error="Invalid email address">Email address</label>
+                                    </div>
+                                    <div class="input-field">
+                                      <input id="signup-password" type="password" class="validate"  value="">
+                                        <label for="signup-password" data-error="">Password</label>
+                                    </div>
+                              </div>
+                              <div class="col s12">
+                                <div class="sign-up-panel-collapse__form__terms-text">
+                                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.:<br><br>- Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui.<br><br>- Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Maecenas faucibus mollis interdum.
+                                </div>
+                              </div>
+                              <div class="col s12">
+                                <div class="sign-up-panel-collapse__form__submit clearfix">
+                                    <div class="sign-up-panel-collapse__form__submit__terms">
+                                            <input type="checkbox" class="filled-in" id="checkbox-id" />
+                                            <label for="checkbox-id">I agree to the terms & conditions cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum.</label>
+                                    </div>
+                                      <button class="btn waves-effect " onclick="pap.signUpPanelCollapse.submitSignup(event)">
+                                        sign up to watch
+                                      </button>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="sign-up-panel-collapse__form__additional-info js-sign-up-panel-collapse-additional-info clearfix">
+                              <div class="col s12">
+                                  <h2 class="sign-up-panel-collapse__form__title">Sign up to watch</h2>
+                              </div>
+                              <div class="col s12">
+                                  <div class="sign-up-panel-collapse__form__intro">Please provide the following additional information:</div>
+                              </div>
+                                <div class="col s12 m6">
+                                      <div class="input-field">
+                                        <input id="signup-phone" type="tel" class="validate"  value="">
+                                          <label for="signup-phone" data-error="">Phone</label>
+                                      </div>
+                                </div>
+                                <div class="col s12 m6">
+                                      <div class="input-field">
+                                        <input id="signup-state" type="text" class="validate"  value="">
+                                          <label for="signup-state" data-error="">State</label>
+                                      </div>
+                                </div>
+                              <div class="col s12">
+                                <div class="sign-up-panel-collapse__form__additional-info__reminders">
+                                    <p>
+                                      Please confirm you would like to sign up to watch this live broadcast and the following reminder emails:
+                                    </p>
+                                        <input type="checkbox" class="filled-in" id="checkbox-reminder-24hr" checked="checked"/>
+                                        <label for="checkbox-reminder-24hr">24hr reminder</label>
+                                        <input type="checkbox" class="filled-in" id="checkbox-reminder-1hr" checked="checked"/>
+                                        <label for="checkbox-reminder-1hr">1hr reminder</label>
+                                        <input type="checkbox" class="filled-in" id="checkbox-reminder-now" checked="checked"/>
+                                        <label for="checkbox-reminder-now">Starting Now</label>
+                                        <input type="checkbox" class="filled-in" id="checkbox-reminder-available" checked="checked"/>
+                                        <label for="checkbox-reminder-available">Recording available</label>
+                                </div>
+                              </div>
+                              <div class="col s12">
+                                  <button class="btn waves-effect right" onclick="pap.signUpPanelCollapse.confirmAdditionalInfo(event)">
+                                    confirm
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="sign-up-panel-collapse__form__thank-you js-sign-up-panel-collapse-thank-you clearfix">
+                              <div class="col s12">
+                                  <h2 class="sign-up-panel-collapse__form__title">Thank you</h2>
+                                  <div class="sign-up-panel-collapse__form__intro">You have successfully signed up to watch this webinar.</div>
+                                  <div class="sign-up-panel-collapse__form__intro">A confirmation email has been sent to <strong>audience@papillon.io</strong></div>
+                                  <div class="sign-up-panel-collapse__form__intro">
+                                    We look forward to your participation on:
+                                      <time class="sign-up-panel-collapse__form__thank-you__timestamp" datetime="2016-11-22 12:00">Nov 22 12.00 PM</time>
+                                  </div>
+                              </div>
+                                <div class="col s12 l4">
+                                      <!-- Dropdown Trigger -->
+                                        <button class="dropdown-button btn-flat btn--block btn--highlight waves-effect "
+                                          data-activates="01"
+                                            data-induration="300"
+                                            data-outduration="225"
+                                            data-constrainwidth="false"
+                                            data-hover="false"
+                                            data-gutter="0"
+                                            data-beloworigin="false"
+                                            data-alignment="right"
+                                          >
+                                          Add to calendar
+                                        </button>
+
+                                      <!-- Dropdown Structure -->
+                                        <ul id="01" class="dropdown-content">
+                                            <li>
+                                              <span>
+                                                Apple iCal
+                                              </span>
+                                            </li>
+                                            <li>
+                                              <span>
+                                                Google
+                                              </span>
+                                            </li>
+                                            <li>
+                                              <span>
+                                                Outlook
+                                              </span>
+                                            </li>
+                                            <li>
+                                              <span>
+                                                Outlook.com
+                                              </span>
+                                            </li>
+                                        </ul>
+                                </div>
+                                <div class="col s12 l4">
+                                    <button class="btn-flat btn--block btn--highlight waves-effect " onclick="">
+                                      share on Linkedin
+                                    </button>
+                                </div>
+                                <div class="col s12 l4">
+                                    <button class="btn-flat btn--block btn--highlight waves-effect " onclick="">
+                                      Tweet
+                                    </button>
+                                </div>
+                          </div>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="theatre-video-backdrop ">
+            <div class="container">
+              <div class="row">
+                <div class="col s12">
+                  <div class="theatre-video-wrapper js-theatre-video">
+                        <div class="video-placeholder">
+                          <div class="aspect-ratio--16-9 js-aspect-ratio--16-9">
+                            <div class="video-placeholder__content-wrapper js-sticky-video ">
+                                <div class="video-placeholder__background-media">
+                                    <!-- <div id="jw-player">Loading the player...</div> -->
+                                    <video src="../../video/intro-video.mp4" autoplay loop muted style="max-width: 100%;">
+                                      Sorry, your browser doesn't support embedded videos,
+                                      but don't worry, you can <a href="../../video/intro-video.mp4">download it</a>
+                                      and watch it with your favorite video player!
+                                      </video>
+                                </div>
+                              <div>
+                                  <div class="video-placeholder__teaser">
+                                        <img class="video-placeholder__teaser__logo" srcset="../../images/logo-placeholder-70px.png 1x, ../../images/logo-placeholder-70px@2x.png 2x" alt="logo">
+                                    <span class="video-placeholder__teaser__intro">Live video broadcast starts</span>
+                                      <time class="video-placeholder__teaser__time" datetime="2016-12-14 14:00">14 Dec 2.00 PM GMT</time>
+                                  </div>
+                                    <button class="video-placeholder__call-to-action-button btn-flat js-sign-up-to-watch  " onclick="pap.signUpPanelCollapse.open('sign-up-panel-collapse-id')">
+                                      sign up to watch
+                                    </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    <div class="theatre-video-controls hide-on-med-and-down">
+                          <i class="icon   material-icons "
+                            onclick=pap.theatreVideo.toggleTheatreView(event)>
+                            fullscreen
+                          </i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m12 l4 push-l8">
+              <div class="js-sidebar has-video">
+                  <div class="row">
+                    <div class="col s12">
+                        <article class="sponsor-card hoverable" onclick="pap.modals.open('#modal-summary', 'tab-sponsor')">
+                          <span class="sponsor-card__title">Sponsored by:</span>
+                              <img srcset="../../images/pages/marketforce/sponsor-logo.jpg 1x, ../../images/pages/marketforce/sponsor-logo.jpg 2x" alt="rant &amp; rave">
+                        </article>
+                    </div>
+                  </div>
+                <div class="speaker-card-group">
+                    <div class="row">
+                      <div class="col s12">
+                          <article class="speaker-card speaker-card--compact-on-mobile hoverable" onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(0))">
+                            <div class="clearfix">
+                                    <img class="avatar circle large medium-on-mobile  z-depth-1" srcset="../../images/avatars/avatars-160px/lindley-160.jpg 1x, ../../images/avatars/avatars-160px/lindley-160.jpg 2x" alt="avatar"  onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(0))">
+                              <div class="speaker-card__profile">
+                                  <h1 class="speaker-card__profile__name">Lindley Gooden</h1>
+                                  <span class="speaker-card__profile__role">Journalist &amp; Filmmaker</span>
+                                    <span class="taxonomy-badge taxonomy-badge-- taxonomy-badge--bordered black-text">
+                                      Moderator
+                                    </span>
+                              </div>
+                            </div>
+                          </article>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                          <article class="speaker-card speaker-card--compact-on-mobile hoverable" onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(1))">
+                            <div class="clearfix">
+                                    <img class="avatar circle large medium-on-mobile  z-depth-1" srcset="../../images/avatars/avatars-160px/female-160.png 1x, ../../images/avatars/avatars-160px/female-160.png 2x" alt="avatar"  onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(1))">
+                              <div class="speaker-card__profile">
+                                  <h1 class="speaker-card__profile__name">Carolina Vicente</h1>
+                                  <span class="speaker-card__profile__role">Director of Digital Marketing</span>
+                                  <span class="speaker-card__profile__company">Google</span>
+                              </div>
+                            </div>
+                          </article>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                          <article class="speaker-card speaker-card--compact-on-mobile hoverable" onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(2))">
+                            <div class="clearfix">
+                                    <img class="avatar circle large medium-on-mobile  z-depth-1" srcset="../../images/avatars/avatars-160px/male-160-3.png 1x, ../../images/avatars/avatars-160px/male-160-3.png 2x" alt="avatar"  onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(2))">
+                              <div class="speaker-card__profile">
+                                  <h1 class="speaker-card__profile__name">Peter Randall</h1>
+                                  <span class="speaker-card__profile__role">Chief Executive Officer</span>
+                                  <span class="speaker-card__profile__company">SETL</span>
+                              </div>
+                            </div>
+                          </article>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                          <article class="speaker-card speaker-card--compact-on-mobile hoverable" onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(3))">
+                            <div class="clearfix">
+                                    <img class="avatar circle large medium-on-mobile  z-depth-1" srcset="../../images/avatars/avatars-160px/male-160-4.png 1x, ../../images/avatars/avatars-160px/male-160-4.png 2x" alt="avatar"  onclick="pap.modals.open('#modal-summary', 'tab-speakers', pap.speakerCarousel.activateSpeakerCallback(3))">
+                              <div class="speaker-card__profile">
+                                  <h1 class="speaker-card__profile__name">Gareth McChesney</h1>
+                                  <span class="speaker-card__profile__role">Director, Personal Lines Pricing &amp; Underwriting</span>
+                                  <span class="speaker-card__profile__company">Zurich Insurance Group</span>
+                              </div>
+                            </div>
+                          </article>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m12 l8 pull-l4">
+              <div class="js-main has-post-box">
+                <div class="row">
+                  <div class="col s12">
+                        <div class="post-box-backdrop js-post-box-wrapper">
+                          <div class="post-box z-depth-1 hoverable clearfix js-sticky-post-box" onclick="Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);">
+                                <i class="icon circle primary-light material-icons "
+                                  onclick=Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);>
+                                  person
+                                </i>
+                            <span class="post-box__text truncate">
+                              Sign in to post comments and questions
+                            </span>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col s12">
+                        <ul class="pap-feed js-feed">
+                              <li class="pap-feed__item  pap-feed__item--pinned clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+
+
+
+                                    </div>
+                                      <p>
+                                        Do you think the global market volatility is having a major effect on private equity deals across Asia?
+                                      </p>
+                                      <div class="pap-feed__item__poll js-poll">
+                                        <div class="row">
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Yes
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Some sectors
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Undecided
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  No
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Marginal
+                                                </button>
+                                            </div>
+                                          <div class="col s12 pap-feed__item__poll__result js-poll-result">
+                                                <div class="poll-result">
+                                                    <div class="poll-result__item clearfix">
+                                                      <span class="poll-result__item__label js-poll-result-label">YES 55%</span>
+                                                      <div class="poll-result__item__bar">
+                                                        <div class="poll-result__item__bar__percentage" style="width:55%"></div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="poll-result__item clearfix">
+                                                      <span class="poll-result__item__label js-poll-result-label">Some sectors 41%</span>
+                                                      <div class="poll-result__item__bar">
+                                                        <div class="poll-result__item__bar__percentage" style="width:41%"></div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="poll-result__item clearfix">
+                                                      <span class="poll-result__item__label js-poll-result-label">Undecided 25%</span>
+                                                      <div class="poll-result__item__bar">
+                                                        <div class="poll-result__item__bar__percentage" style="width:25%"></div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="poll-result__item clearfix">
+                                                      <span class="poll-result__item__label js-poll-result-label">No 20%</span>
+                                                      <div class="poll-result__item__bar">
+                                                        <div class="poll-result__item__bar__percentage" style="width:20%"></div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="poll-result__item clearfix">
+                                                      <span class="poll-result__item__label js-poll-result-label">Marginal 7%</span>
+                                                      <div class="poll-result__item__bar">
+                                                        <div class="poll-result__item__bar__percentage" style="width:7%"></div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="poll-result__selection js-poll-selection">
+                                                      <span>You selected: Yes</span>
+                                                          <button class="btn-flat waves-effect " onclick="">
+                                                            Reset
+                                                          </button>
+                                                    </div>
+                                                </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item pap-feed__item--cta-icons  clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+                                      <a href="https://twitter.com/" target="_blank" class="hide-on-small-only">@marketforcecx</a>
+                                      <span>12 days ago</span>
+
+                                    </div>
+                                      <p>
+                                        Aenean eu leo <a href='#!'>#quam</a>. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed <a href='#!'>https://consectetur</a>.
+                                      </p>
+
+                                    <div class="pap-feed-item__cta-icons">
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="" data-position="top" data-delay="50" data-tooltip="Reply">
+                                          <i class="material-icons">reply</i>
+                                        </button>
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);" data-position="top" data-delay="50" data-tooltip="Add to Favourites">
+                                          <i class="material-icons">star_border</i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item   clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="circle z-depth-2" srcset="../../images/avatars/avatars-160px/lindley-160.jpg 1x, ../../images/avatars/avatars-160px/lindley-160.jpg 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Lindley Gooden</span>
+
+                                          <span class="taxonomy-badge taxonomy-badge--accent taxonomy-badge--bordered ">
+                                            Online Moderator
+                                          </span>
+                                      <span>12 days ago</span>
+
+                                        <div class="pap-feed__item__header__profile">
+                                          <span>Journalist &amp; Filmmaker</span>
+                                        </div>
+                                    </div>
+                                      <p>
+                                        Please let us know your comments and questions on this dynamic and polarised debate and I will pass them on to the panellists . If you'd like to direct your questions  to a specific panellist then please use the @ facility.
+                                      </p>
+
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item pap-feed__item--cta-icons  clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+                                      <a href="https://twitter.com/" target="_blank" class="hide-on-small-only">@marketforcecx</a>
+                                      <span>12 days ago</span>
+                                      <span class="hide-on-small-only">via Twitter</span>
+                                    </div>
+                                      <p>
+                                        Aenean eu leo <a href='#!'>#quam</a>. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed <a href='#!'>https://consectetur</a>.
+                                      </p>
+
+                                    <div class="pap-feed-item__cta-icons">
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="" data-position="top" data-delay="50" data-tooltip="Reply">
+                                          <i class="material-icons">reply</i>
+                                        </button>
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);" data-position="top" data-delay="50" data-tooltip="Add to Favourites">
+                                          <i class="material-icons">star_border</i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item pap-feed__item--cta-icons  clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+                                      <a href="https://twitter.com/" target="_blank" class="hide-on-small-only">@marketforcecx</a>
+                                      <span>12 days ago</span>
+                                      <span class="hide-on-small-only">via Twitter</span>
+                                    </div>
+                                      <p>
+                                        Aenean eu leo <a href='#!'>#quam</a>. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed <a href='#!'>https://consectetur</a>.
+                                      </p>
+                                      <img class="pap-feed__item__content-image materialboxed" srcset="../../images/pages/marketforce/twitter-image.jpg 1x, ../../images/pages/marketforce/twitter-image.jpg 2x" alt="Tweet image">
+
+                                    <div class="pap-feed-item__cta-icons">
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="" data-position="top" data-delay="50" data-tooltip="Reply">
+                                          <i class="material-icons">reply</i>
+                                        </button>
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);" data-position="top" data-delay="50" data-tooltip="Add to Favourites">
+                                          <i class="material-icons">star_border</i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item pap-feed__item--cta-icons  clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+                                      <a href="https://twitter.com/" target="_blank" class="hide-on-small-only">@marketforcecx</a>
+                                      <span>12 days ago</span>
+
+                                    </div>
+                                      <p>
+                                        Aenean eu leo <a href='#!'>#quam</a>. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed <a href='#!'>https://consectetur</a>.
+                                      </p>
+
+                                    <div class="pap-feed-item__cta-icons">
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="" data-position="top" data-delay="50" data-tooltip="Reply">
+                                          <i class="material-icons">reply</i>
+                                        </button>
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);" data-position="top" data-delay="50" data-tooltip="Add to Favourites">
+                                          <i class="material-icons">star_border</i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item pap-feed__item--cta-icons  clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+                                      <a href="https://twitter.com/" target="_blank" class="hide-on-small-only">@marketforcecx</a>
+                                      <span>12 days ago</span>
+                                      <span class="hide-on-small-only">via Twitter</span>
+                                    </div>
+                                      <p>
+                                        Aenean eu leo <a href='#!'>#quam</a>. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed <a href='#!'>https://consectetur</a>.
+                                      </p>
+
+                                    <div class="pap-feed-item__cta-icons">
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="" data-position="top" data-delay="50" data-tooltip="Reply">
+                                          <i class="material-icons">reply</i>
+                                        </button>
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);" data-position="top" data-delay="50" data-tooltip="Add to Favourites">
+                                          <i class="material-icons">star_border</i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item pap-feed__item--cta-icons  clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+                                      <a href="https://twitter.com/" target="_blank" class="hide-on-small-only">@marketforcecx</a>
+                                      <span>12 days ago</span>
+                                      <span class="hide-on-small-only">via Twitter</span>
+                                    </div>
+                                      <p>
+                                        Aenean eu leo <a href='#!'>#quam</a>. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed <a href='#!'>https://consectetur</a>.
+                                      </p>
+                                      <img class="pap-feed__item__content-image materialboxed" srcset="../../images/pages/marketforce/twitter-image.jpg 1x, ../../images/pages/marketforce/twitter-image.jpg 2x" alt="Tweet image">
+
+                                    <div class="pap-feed-item__cta-icons">
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="" data-position="top" data-delay="50" data-tooltip="Reply">
+                                          <i class="material-icons">reply</i>
+                                        </button>
+                                        <button class="cta-icon-button btn-floating tooltipped waves-effect" onclick="Materialize.toast($(&quot;&lt;span&gt;Please &lt;a href='#!' onclick='pap.sideNav.open(event)'&gt;sign in&lt;/a&gt; to participate&lt;/span&gt;&quot;), 5000);" data-position="top" data-delay="50" data-tooltip="Add to Favourites">
+                                          <i class="material-icons">star_border</i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                              </li>
+                              <li class="pap-feed__item   clearfix">
+                                <span class="pap-feed__item__pin tooltipped" data-position="top" data-delay="50" data-tooltip="Please respond to unpin"">
+                                  Pinned item
+                                  <i class="icon fa fa-thumb-tack"></i>
+                                </span>
+                                <div class="pap-feed__item__thumb-wrapper">
+                                  <img class="" srcset="../../images/twitter-avatar-papillon.png 1x, ../../images/twitter-avatar-papillon.png 2x" alt="Twitter avatar">
+                                </div>
+                                <div class="pap-feed__item__content">
+                                    <div class="pap-feed__item__header">
+                                      <span>Marketforce CX</span>
+
+
+
+                                    </div>
+                                      <p>
+                                        Do you think the global market volatility is having a major effect on private equity deals across Asia?
+                                      </p>
+                                      <div class="pap-feed__item__poll js-poll">
+                                        <div class="row">
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Yes
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Some sectors
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Undecided
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  No
+                                                </button>
+                                            </div>
+                                            <div class="col s12 m6 l4">
+                                                <button class="btn js-poll-button waves-effect waves-light " onclick="">
+                                                  Marginal
+                                                </button>
+                                            </div>
+                                          <div class="col s12 pap-feed__item__poll__result js-poll-result">
+  <div class="poll-result">
+      <p class="poll-result__feedback">Thank you for your response</p>
+      <div class="poll-result__selection js-poll-selection">
+        <span>You selected: Yes</span>
+            <button class="btn-flat waves-effect " onclick="">
+              Reset
+            </button>
+      </div>
+  </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+                                </div>
+                              </li>
+                        </ul>
+                          <div class="pap-feed-load-more center-align">
+                              <button class="btn-flat waves-effect " onclick="pap.feed.loadItems()">
+                                load more
+                              </button>
+                          </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+        <footer class="pap-footer page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                  <h5 class="pap-footer__content-title">About Marketforce Webinars</h5>
+                  <p class='pap-footer__content-text'>Marketforce’s webinars are industry-leading, frequently attracting top speakers and offering you insight on the most pertinent topics and pressing issues. Streamed live to an audience of 300+ carefully selected senior executives, each webinar is filmed live in a studio with panoramic views overlooking Tower Bridge.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                  <h5 class="pap-footer__links-title">Links</h5>
+                  <ul>
+                      <li>
+                        <a class="pap-footer__links-link" href="#!">Privacy Policy</a>
+                      </li>
+                      <li>
+                        <a class="pap-footer__links-link" href="#!">Technical Support</a>
+                      </li>
+                      <li>
+                        <a class="pap-footer__links-link" href="#!">Contact Us</a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+            <div class="footer-copyright js-footer-copyright">
+              <div class="container">
+              © 2016 Copyright Papillon
+                  <a class="pap-footer__copyright-link right" href="#!">Terms &amp; Conditions</a>
+              </div>
+            </div>
+        </footer>
+  </div>
+      <div class="fixed-action-btn fixed-action-btn--images js-fixed-action-btn">
+        <button class="btn-floating btn-large " onmouseover="pap.signIn.closeSignInComponent()">
+          <i class="material-icons mdi-navigation-menu">&#xE80D;</i>
+        </button>
+        <ul>
+            <li>
+              <a href="#!" class="btn-floating bg-color-facebook">
+                <span class="sprite facebook"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="btn-floating bg-color-google">
+                <span class="sprite google"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="btn-floating bg-color-linkedin">
+                <span class="sprite linkedin"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="btn-floating bg-color-twitter">
+                <span class="sprite twitter"></span>
+              </a>
+            </li>
+        </ul>
+      </div>
+      <div id="modal-summary" class="modal modal  modal--with-tabs">
+        <button class="modal__close cta-icon-button btn-floating waves-effect" onclick="pap.modals.close('#modal-summary')">
+          <i class="material-icons">close</i>
+        </button>
+          <div class="modal-content">
+              <ul class="tabs tabs-fixed-width">
+                  <li class="tab">
+                    <a class="active" href="#tab-webinar">About</a>
+                  </li>
+                  <li class="tab">
+                    <a class="" href="#tab-sponsor">Sponsor</a>
+                  </li>
+                  <li class="tab">
+                    <a class="" href="#tab-speakers">Speakers</a>
+                  </li>
+              </ul>
+                  <div class="modal-tab-pane " id="tab-webinar">
+                      <h1 class="modal-content__title">Tracking customer sentiment, and acting on it</h1>
+                      <h2 class="modal-content__subtitle">From feedback to insight: understanding emotions to build better relationships</h2>
+                      <span class="modal-content__credit">Sponsored by &quot;The Sponsor&quot;</span>
+                        <p>
+                          Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </p>
+                        <p>
+                          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur.
+                        </p>
+                        <p>
+                          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.
+                        </p>
+                  </div>
+                  <div class="modal-tab-pane " id="tab-sponsor">
+                      <h1 class="modal-content__title">Rant&amp;Rave</h1>
+                      <h2 class="modal-content__subtitle">Sub-title appears here locked up with the title and breaks at 6C of the total width to two lines of text on large screens</h2>
+                        <p>
+                          Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </p>
+                      <div class="modal-content__sponsor-info">
+                          <div class="modal-content__sponsor-info__image">
+                                <img srcset="../../images/pages/marketforce/sponsor-logo.jpg 1x, ../../images/pages/marketforce/sponsor-logo.jpg 2x" alt="sponsor">
+                          </div>
+                          <div class="modal-content__sponsor-info__more">
+                              <span>For more information:</span>
+                              <a href="http://www.rantandrave.com/thoughtleader" target="_blank">http://www.rantandrave.com/thoughtleader</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-tab-pane has-pseudo-footer" id="tab-speakers">
+                          <div class="speaker-carousel__cards-wrapper">
+                            <div class="preloader-wrapper small active">
+                              <div class="spinner-layer">
+                                <div class="circle-clipper left">
+                                  <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                  <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                  <div class="circle"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="speaker-carousel__cards js-carousel-cards">
+                                <div class="active">
+                                      <article class="speaker-card speaker-card--flat hoverable" >
+                                        <div class="clearfix">
+                                                <img class="avatar circle large  z-depth-1" srcset="../../images/avatars/avatars-160px/lindley-160.jpg 1x, ../../images/avatars/avatars-160px/lindley-160.jpg 2x" alt="avatar"  >
+                                          <div class="speaker-card__profile">
+                                              <h1 class="speaker-card__profile__name">LINDLEY GOODEN</h1>
+                                              <span class="speaker-card__profile__role">Journalist &amp; Filmmaker</span>
+                                                <span class="taxonomy-badge taxonomy-badge-- taxonomy-badge--bordered black-text">
+                                                  Moderator
+                                                </span>
+                                          </div>
+                                        </div>
+                                          <div class="speaker-card__bio">
+                                              <p>Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.</p>
+                                              <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus <a href='#!'>mollis interdum</a>.</p>
+                                          </div>
+                                      </article>
+                                </div>
+                                <div class="">
+                                      <article class="speaker-card speaker-card--flat hoverable" >
+                                        <div class="clearfix">
+                                                <img class="avatar circle large  z-depth-1" srcset="../../images/avatars/avatars-160px/female-160.png 1x, ../../images/avatars/avatars-160px/female-160.png 2x" alt="avatar"  >
+                                          <div class="speaker-card__profile">
+                                              <h1 class="speaker-card__profile__name">CAROLINA VICENTE</h1>
+                                              <span class="speaker-card__profile__role">Director of Digital Marketing</span>
+                                              <span class="speaker-card__profile__company">Google</span>
+                                          </div>
+                                        </div>
+                                          <div class="speaker-card__bio">
+                                              <p>Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.</p>
+                                              <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus <a href='#!'>mollis interdum</a>.</p>
+                                          </div>
+                                      </article>
+                                </div>
+                                <div class="">
+                                      <article class="speaker-card speaker-card--flat hoverable" >
+                                        <div class="clearfix">
+                                                <img class="avatar circle large  z-depth-1" srcset="../../images/avatars/avatars-160px/male-160-3.png 1x, ../../images/avatars/avatars-160px/male-160-3.png 2x" alt="avatar"  >
+                                          <div class="speaker-card__profile">
+                                              <h1 class="speaker-card__profile__name">PETER RANDALL</h1>
+                                              <span class="speaker-card__profile__role">Chief Executive Officer</span>
+                                              <span class="speaker-card__profile__company">SETL</span>
+                                          </div>
+                                        </div>
+                                          <div class="speaker-card__bio">
+                                              <p>Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.</p>
+                                              <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus <a href='#!'>mollis interdum</a>.</p>
+                                          </div>
+                                      </article>
+                                </div>
+                                <div class="">
+                                      <article class="speaker-card speaker-card--flat hoverable" >
+                                        <div class="clearfix">
+                                                <img class="avatar circle large  z-depth-1" srcset="../../images/avatars/avatars-160px/male-160-4.png 1x, ../../images/avatars/avatars-160px/male-160-4.png 2x" alt="avatar"  >
+                                          <div class="speaker-card__profile">
+                                              <h1 class="speaker-card__profile__name">GARETH MCCHESNEY</h1>
+                                              <span class="speaker-card__profile__role">Director, Personal Lines Pricing &amp; Underwriting</span>
+                                              <span class="speaker-card__profile__company">Zurich Insurance Group</span>
+                                                <span class="taxonomy-badge taxonomy-badge-- taxonomy-badge--bordered black-text">
+                                                  Moderator
+                                                </span>
+                                          </div>
+                                        </div>
+                                          <div class="speaker-card__bio">
+                                              <p>Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.</p>
+                                              <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus <a href='#!'>mollis interdum</a>.</p>
+                                          </div>
+                                      </article>
+                                </div>
+                            </div>
+                          </div>
+                      <div class="modal-content__pseudo-footer center-align">
+                              <div class="speaker-carousel__avatars">
+                                <button class="cta-icon-button btn-floating waves-effect js-navigation-btn prev">
+                                  <i class="material-icons">navigate_before</i>
+                                </button>
+                                <ul class="speaker-carousel__avatars__list js-carousel-avatars">
+                                    <li class="active">
+                                            <img class="avatar circle xsmall  " srcset="../../images/avatars/avatars-160px/lindley-160.jpg 1x, ../../images/avatars/avatars-160px/lindley-160.jpg 2x" alt="avatar"  >
+                                    </li>
+                                    <li class="">
+                                            <img class="avatar circle xsmall  " srcset="../../images/avatars/avatars-160px/female-160.png 1x, ../../images/avatars/avatars-160px/female-160.png 2x" alt="avatar"  >
+                                    </li>
+                                    <li class="">
+                                            <img class="avatar circle xsmall  " srcset="../../images/avatars/avatars-160px/male-160-3.png 1x, ../../images/avatars/avatars-160px/male-160-3.png 2x" alt="avatar"  >
+                                    </li>
+                                    <li class="">
+                                            <img class="avatar circle xsmall  " srcset="../../images/avatars/avatars-160px/male-160-4.png 1x, ../../images/avatars/avatars-160px/male-160-4.png 2x" alt="avatar"  >
+                                    </li>
+                                </ul>
+                                <button class="cta-icon-button btn-floating waves-effect js-navigation-btn next">
+                                  <i class="material-icons">navigate_next</i>
+                                </button>
+                              </div>
+                      </div>
+                  </div>
+          </div>
+      </div>
+
+        <!-- jwPlayer -->
+    <script type="text/javascript" src="https://content.jwplatform.com/libraries/2saTgRKn.js"></script>
+
+    <script src="../../js/script.min.js?v=1.6"></script>
+
+  </body>
+</html>

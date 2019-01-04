@@ -1,0 +1,43 @@
+<md-dialog aria-label="Add user" class="sherpa-dialog sherpa-dialog--big">
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 class="md-title">{{imageName}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="close()">
+          <md-icon aria-label="close" class="material-icons">
+            close
+          </md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content class="sherpa-dialog__content">
+      <flippy class="fancy" flip="['click', 'custom:FLIP_EVENT_IN_DIALOG']" flip-back="['click']" duration="800" timing-function="ease-in-out">
+        <flippy-front>
+          <div class="slide-presentation__slide__flippy-front">
+            <md-icon ng-if="slide.attachments.length" class="slides-deck__slide__attach">attach_file</md-icon>
+            <!-- TODO: support retina: ng-picturefill not updating on navigation? -->
+            <span picture-fill data-alt="Pre broadcast">
+              <span pf-src="{{slide.image}}"></span>
+              <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+          </div>
+        </flippy-front>
+
+        <flippy-back>
+          <div class="slide-presentation__slide__flippy-back">
+            <span hide-xs picture-fill data-alt="Pre broadcast">
+              <span pf-src="{{slide.image}}"></span>
+              <span pf-src="{{slide.image}}" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+            </span>
+            <div class="slide-presentation__slide__flippy-back__attachment" ng-repeat="attachment in slide.attachments">
+              <span>{{attachment.title}}</span>
+              <a href="{{attachment.url}}" target="_blank" ng-click="$event.stopPropagation()">{{attachment.url}}</a>
+            </div>
+          </div>
+        </flippy-back>
+      </flippy>
+    </md-dialog-content>
+
+</md-dialog>

@@ -1,0 +1,51 @@
+<md-dialog aria-label="Add user" class="sherpa-dialog">
+
+    <div layout="row" layout-align="space-between center" class="sherpa-dialog__header">
+      <h2 class="md-title">Add new user</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon aria-label="close" class="material-icons">
+          close
+        </md-icon>
+      </md-button>
+    </div>
+
+    <md-dialog-content class="sherpa-dialog__content">
+      <form class="sherpa-dialog__form sherpa-dialog__content__padding-wrapper">
+        <div class="sherpa-dialog__form__item sherpa-dialog__form__item--split-2 sherpa-dialog__form__item--floating-label">
+          <md-input-container class="md-accent">
+            <label>First name</label>
+            <input type="text" name="fname">
+          </md-input-container>
+          <md-input-container class="md-accent">
+            <label>Last name</label>
+            <input type="text" name="lname">
+          </md-input-container>
+        </div>
+        <md-input-container class="md-accent sherpa-dialog__form__item sherpa-dialog__form__item--floating-label">
+          <label>Email address</label>
+          <input type="email" name="email">
+        </md-input-container>
+        <md-input-container class="md-accent sherpa-dialog__form__item sherpa-dialog__form__item--floating-label">
+          <label>Password</label>
+          <input type="password" name="password">
+        </md-input-container>
+        <md-input-container class="sherpa-dialog__form__item">
+          <md-select class="md-accent" ng-model="variable" placeholder="Account">
+            <md-option class="md-accent" value="admin">Admin</md-option>
+            <md-option class="md-accent" value="guest">Guest</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="sherpa-dialog__form__item">
+          <md-select class="md-accent" ng-model="variable2" placeholder="Role">
+            <md-option class="md-accent" value="admin">Admin</md-option>
+            <md-option class="md-accent" value="guest">Guest</md-option>
+          </md-select>
+        </md-input-container>
+      </form>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="md-raised md-accent" ng-click="add('user')">Add</md-button>
+    </md-dialog-actions>
+
+</md-dialog>

@@ -1,0 +1,145 @@
+{
+    "articles": [
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "title": "Pega Webinar",
+            "meta": {
+                "icon": "people",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "At the forefront of the next wave of change is virtual reality (VR)"
+            },
+            "date": "2:00 PM",
+            "contentType": "Session",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "Slides.001.jpeg",
+            "imgRetina": "Slides.001.jpeg",
+            "title": "The Art of Storytelling, inspiring world travellers",
+            "meta": {
+                "icon": "people",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius."
+            },
+            "date": "Nov 20",
+            "contentType": "Presentation",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false,
+            "linkState": "presentation"
+        },
+        {
+            "img": "article-list-airplane.png",
+            "imgRetina": "article-list-airplane.png",
+            "title": "For smart customer engagement, think like a fighter pilot",
+            "meta": {
+                "icon": "",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "title": "Do you know where your data is?",
+            "meta": {
+                "icon": "people",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula."
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "article-list-car.jpg",
+            "imgRetina": "article-list-car.jpg",
+            "title": "Why self-driving cars don't need to be KITT",
+            "meta": {
+                "icon": "",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius."
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "article-list-VR.jpg",
+            "imgRetina": "article-list-VR.jpg",
+            "title": "Virtually real, actually here?",
+            "meta": {
+                "icon": "",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "At the forefront of the next wave of change is virtual reality (VR)"
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "article-list-robot.jpg",
+            "imgRetina": "article-list-robot.jpg",
+            "title": "You're plastic pal who's fun to be with?",
+            "meta": {
+                "icon": "",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius."
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "article-list-airplane.png",
+            "imgRetina": "article-list-airplane.png",
+            "title": "For smart customer engagement, think like a fighter pilot",
+            "meta": {
+                "icon": "",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius."
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "article-list-planet.png",
+            "imgRetina": "article-list-planet.png",
+            "title": "Do you know where your data is?",
+            "meta": {
+                "icon": "",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius."
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        },
+        {
+            "img": "article-list-car.jpg",
+            "imgRetina": "article-list-car.jpg",
+            "title": "Why self-driving cars don't need to be KITT",
+            "meta": {
+                "icon": "",
+                "text": "Modified 28 Dec 2015",
+                "textGrid": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius."
+            },
+            "date": "Nov 20",
+            "contentType": "Article",
+            "publisher": "The Economist Intelligence Unit",
+            "checked": false
+        }
+    ]
+}

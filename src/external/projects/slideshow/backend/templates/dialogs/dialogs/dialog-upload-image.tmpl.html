@@ -1,0 +1,50 @@
+<md-dialog aria-label="Add asset" class="sherpa-dialog sherpa-dialog--size-to-content">
+
+  <div layout="row" layout-align="space-between center" class="sherpa-dialog__header">
+    <md-icon aria-label="Upload file" class="material-icons">
+      file_upload
+    </md-icon>
+    <h2 class="md-title">Upload image</h2>
+    </md-button>
+  </div>
+
+  <md-dialog-content class="sherpa-dialog__content">
+    <div class="browse-files-block sherpa-dialog__content__padding-wrapper">
+      <md-button class="md-raised md-primary">Browse</md-button>
+      <span picture-fill data-alt="Profile background" class="browse-files-block__logo">
+        <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/logo/google-drive.png"></span>
+        <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/logo/google-drive.png" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+      </span>
+    </div><!-- ./browse-files-block -->
+
+    <md-tabs md-dynamic-height class="sherpa-dialog__tabs" md-selected="0">
+      <md-tab label="Recent images" ng-click=""></md-tab>
+    </md-tabs>
+
+    <ul class="sherpa-dialog__images-list">
+      <li class="sherpa-dialog__images-list__item" ng-click="activeImageIndex = 0" ng-class="{'active': activeImageIndex == 0}">
+        <span picture-fill data-alt="Virtual real">
+          <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/content/articles/full/VR_Article_Full.jpg"></span>
+          <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/content/articles/full/VR_Article_Full.jpg" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+        </span>
+      </li>
+      <li class="sherpa-dialog__images-list__item" ng-click="activeImageIndex = 1" ng-class="{'active': activeImageIndex == 1}">
+        <span picture-fill data-alt="Wearables">
+          <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/content/articles/full/wearables.jpg"></span>
+          <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/content/articles/full/wearables.jpg" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+        </span>
+      </li>
+      <li class="sherpa-dialog__images-list__item" ng-click="activeImageIndex = 2" ng-class="{'active': activeImageIndex == 2}">
+        <span picture-fill data-alt="Airplane">
+          <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/content/articles/thumbs/article-list-airplane.png"></span>
+          <span pf-src="https://www.fredericaerts.com/external/projects/slideshow/backend/images/hub/content/articles/thumbs/article-list-airplane.png" data-media="only screen and (-webkit-min-device-pixel-ratio: 2),only screen and (min--moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio: 2/1),only screen and (min-device-pixel-ratio: 2),only screen and (min-resolution: 192dpi),only screen and (min-resolution: 2dppx)"></span>
+        </span>
+      </li>
+    </ul><!-- ./sherpa-dialog__images-list -->
+
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button class="md-accent" ng-click="close()">Assign</md-button>
+  </md-dialog-actions>
+
+</md-dialog>
