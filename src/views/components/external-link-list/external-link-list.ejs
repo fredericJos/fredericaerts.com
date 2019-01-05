@@ -5,7 +5,12 @@
   <ul class="external-link-list__items">
     <% for (var i = 0; i < links.length; i++) { %>
       <li class="external-link-list__items__item">
-        <a href="<%= links[i].link %>" target="_blank">
+        <a 
+          href="<%= links[i].link %>"
+          <% if (links[i].newTab) { %>
+            target="_blank"
+          <% } %>
+        >
           <%= links[i].text %>
         </a>
       </li>

@@ -1,9 +1,0 @@
-<article class="series-intros" ng-repeat="series in seriesArrayFiltered = (seriesArray | orderBy: orderBy | limitTo: limitTo | filter: searchSeries)">
-	<a class="series-intro block-link clearfix" href="" ng-click="routeToArticle(series.firstArticle)">
-		<div>
-			<h2 class="series-intro__title">{{ series.title }} <span ng-show="series.inProgress">(to be continued)</span></h2>
-			<p class="series-intro__intro">{{ series.intro }}</p>
-		</div>
-		<span class="series-intro__cta">Start reading &raquo;</span>
-	</a>
-</article>

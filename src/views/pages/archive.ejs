@@ -1,6 +1,4 @@
-<% var pageHeader = require('@components/page-header/page-header.ejs'); %>
-<% var contactCard = require('@components/contact-card/contact-card.ejs'); %>
-<% var pageFooter = require('@components/page-footer/page-footer.ejs'); %>
+<% var externalLinkList = require('@components/external-link-list/external-link-list.ejs'); %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +14,60 @@
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
   </head>
   <body>
-    Archive page
+    <div class="archive-page">
+      <div class="section">
+        <h1>Archive</h1>
+      </div>
+      <div class="section">
+        <h2>Portfolio</h2>
+        <%= externalLinkList({
+          introText: 'Here are some projects I worked on as a freelance web developer.',
+          links: [
+            {
+              text: 'Frontend template for an enterprise grade open publishing and live broadcasting platform.',
+              link: '/external/projects/webinar/html/sign-in/',
+              newTab: false
+            },
+            {
+              text: 'Online home for an organisation that aims to provide a platform for a worldwide community of Mölkky players.',
+              link: 'https://www.molkky.world/',
+              newTab: true
+            },
+            {
+              text: 'Online home for Nazka Mapps',
+              link: 'https://www.nazka.be/en',
+              newTab: true
+            }
+          ]
+        }) %>
+      </div>
+      <div class="section">
+        <h2>Writing</h2>
+        <%= externalLinkList({
+          introText: 'In 2015, I wrote a 3 piece article on building websites for beginners.<br><strong style="display:inline-block; margin-top: 10px;">How to become a web developer in 3 days</strong>',
+          links: [
+            {
+              text: 'Day 1: What websites are made of',
+              link: '/external/writing/developer-in-3-days/what-websites-are-made-of',
+              newTab: false
+            },
+            {
+              text: 'Day 2: Structure and styling',
+              link: '/external/writing/developer-in-3-days/structure-and-styling',
+              newTab: false
+            },
+            {
+              text: 'Day 3: Behavior and going live',
+              link: '/external/writing/developer-in-3-days/behavior-and-going-live',
+              newTab: false
+            }
+          ]
+        }) %>
+      </div>
+    </div>
   </body>
 </html>

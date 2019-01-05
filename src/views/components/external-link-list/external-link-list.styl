@@ -5,10 +5,6 @@
   position: relative
   padding-left: ($horizontal-spacing * 2)
 
-  &:before,
-  &:after
-    content: ""
-
   &:before
     position: absolute
     top: 6px
@@ -21,17 +17,8 @@
     background-repeat: no-repeat
     background-position: center center
     background-size: 4px
-  
-  &:after
-    vertical-align: top
 
-    display: inline-block
-    width: 10px
-    height: 10px
-    background: url(/img/icons/external-link.svg)
-    background-repeat: no-repeat
-    background-position: left
-    background-size: 10px
+    content: ""
   
   > a
     color: inherit
@@ -41,3 +28,16 @@
 
     &:hover
       color: $link-color
+
+    &[target="_blank"]:after
+      vertical-align: top
+
+      display: inline-block
+      width: 10px
+      height: 10px
+      background: url(/img/icons/external-link.svg)
+      background-repeat: no-repeat
+      background-position: left
+      background-size: 10px
+
+      content: ""
