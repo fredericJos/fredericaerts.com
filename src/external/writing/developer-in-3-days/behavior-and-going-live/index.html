@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 
-	<title>Developer in 3 days | Behavior and going live</title>
+    <title>Developer in 3 days | Behavior and going live</title>
+    <link rel="stylesheet" href="web/styles/external-style.css">
 </head>
 <body data-status="" ng-controller="mainCtrl as mainCtrl" class="ng-scope" cz-shortcut-listen="true">
 	<div class="page-wrapper bg-contrast">
@@ -49,7 +50,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
     In your "script.js" file, add the following JavaScript statements:
     <!-- js: web developer in 3 days - v1 -->
-    <div id="e1d85da0dc44a63421dc"><iframe width="100%" frameborder="0" id="gist-e1d85da0dc44a63421dc" style="height: 150px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/e1d85da0dc44a63421dc.js"></script>
     When you refresh your web page, a pop-up box is displayed with the contents of the variable named <code>myVariable</code>.
 </p>
 <p class="ng-scope">
@@ -60,7 +61,7 @@
 </p>
 <p class="blogpost__intructions blogpost__indented ng-scope">
     <!-- js: web developer in 3 days - v2 -->
-    <div id="5fdfea2329c975d4217a"><iframe width="100%" frameborder="0" id="gist-5fdfea2329c975d4217a" style="height: 279px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/5fdfea2329c975d4217a.js"></script>
     Note the space character before each person’s name, ensuring the concatenated values are displayed in the pop-up as two separate words.
 </p>
 <p class="ng-scope">
@@ -69,7 +70,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
     In your "script.js" file, add some greeting functionality, like so:
     <!-- js: web developer in 3 days - v3 -->
-    <div id="5eeb210f9e9609f2b454"><iframe width="100%" frameborder="0" id="gist-5eeb210f9e9609f2b454" style="height: 279px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/5eeb210f9e9609f2b454.js"></script>
     Note that we can invoke functions by attaching round brackets to them. We can optionally pass in a value or variable (argument) in between these brackets, like we did here with the person’s name. This passed-in argument is then accessible in the function as a so-called parameter, <code>name</code> in our example.
 </p>
 <p class="ng-scope">
@@ -80,7 +81,7 @@
 </p>
 <p class="blogpost__intructions blogpost__indented ng-scope">
     <!-- js: web developer in 3 days - v4 -->
-    <div id="0e938552dc99dd2acff6"><iframe width="100%" frameborder="0" id="gist-0e938552dc99dd2acff6" style="height: 323px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/0e938552dc99dd2acff6.js"></script>
 </p>
 <p class="ng-scope">
     In the code snippet above, the <code>greetFunction</code> takes the <code>nameArray</code> variable as an argument. This Array is then accessible inside of the <code>greetFunction</code> as the <code>names</code> variable. In the <code>greetFunction</code>, we iterate over all the values of the <code>names</code> Array by use of an Array-specific function named <code>forEach</code>. Functions which are specific to a certain type of variable are called <strong>methods</strong> (another example would be the <code>alert()</code> method, which is a function specific to the <code>window</code> object). In the <code>greetFunction</code>, we thus invoke the <code>forEach</code> method on the <code>names</code> Array. This method iterates over each value of the Array, thereby taking a function as its parameter which will be executed on each iteration. The function that we pass in as an argument to the <code>forEach</code> method will in its own right receive the currently iterated value as its argument, thereby allowing us to manipulate each value of the Array. In our case, we’re concatenating the string <code>'Hello'</code> to each name variable before passing it to the <code>window.alert()</code> method. Thus, we now optimized our code so that we have to invoke the <code>greetingFunction</code> only once to greet all persons. Awesome!
@@ -97,7 +98,7 @@
 </p>
 <p class="blogpost__intructions blogpost__indented ng-scope">
     <!-- js: web developer in 3 days - v5 -->
-    <div id="37a9f5f56793e288163f"><iframe width="100%" frameborder="0" id="gist-37a9f5f56793e288163f" style="height: 150px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/37a9f5f56793e288163f.js"></script>
 </p>
 <p class="ng-scope">
     Refreshing your browser triggers the event handling code (i.e. the alert method) seemingly instantly. There is, however, a tiny delay compared to the execution of code that would be situated outside of the event handler, a delay that makes all the difference for your DOM manipulating code.  If you don’t believe me then try and add <code>window.alert("The DOM tree is not yet available to your code");</code> outside and after your event handling code, and you’ll see it being executed before instead of after your event handling code.
@@ -107,7 +108,7 @@
 </p>
 <p class="blogpost__intructions blogpost__indented ng-scope">
     <!-- js: web developer in 3 days - v6 -->
-    <div id="94e0f6cbefa3d7b8ba8e"><iframe width="100%" frameborder="0" id="gist-94e0f6cbefa3d7b8ba8e" style="height: 150px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/94e0f6cbefa3d7b8ba8e.js"></script>
     In this piece of code, we fetch the <code>&lt;h1&gt;</code> element via its class name <code>hero-title</code>, much like we targeted this element in our CSS file, with a dot in front of the class name.
 </p>
 <p class="ng-scope">
@@ -126,7 +127,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
     Replace the content of your "script.js" file with the code snippet below.
     <!-- js: web developer in 3 days - v7 -->
-    <div id="66d51b7db8283f82dd75"><iframe width="100%" frameborder="0" id="gist-66d51b7db8283f82dd75" style="height: 499px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/66d51b7db8283f82dd75.js"></script>
     Save, refresh and boom, your tabs should now be functional.
 </p>
 <p class="ng-scope">
@@ -172,7 +173,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
     Replace all content in your "script.js" file with the following:
     <!-- js: web developer in 3 days - v8 -->
-    <div id="105bbcefb2bb47aad939"><iframe width="100%" frameborder="0" id="gist-105bbcefb2bb47aad939" style="height: 389px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/105bbcefb2bb47aad939.js"></script>
 </p>
 <p class="ng-scope">
     By refactoring our code to jQuery, we made it more compact, more readable and more widely supported throughout the browser landscape. Let me quickly guide you through it. On line 1, we execute the factory method on the <code>window.document</code> object, thereby converting this object into its jQuery equivalent. This enables us to execute the jQuery <code>ready</code> method on it, which is passed in a function as argument that will get executed whenever the DOM tree is fully loaded. Similarly, we pass in a function as argument to the <code>click</code> method, which gets executed each time a tab link is clicked. Before refactoring our code, this click handler had the currently iterated tab link passed in as its argument. This is no longer the case with jQuery. We accommodate for the absence of this variable by use of the jQuery <code>$(this)</code> object on line 3, 5, 6 and 9. Another thing to note is the first character of the variable name <code>$targetPane</code> on line 9. This dollar sign is simply part of the variable’s name, and has no effect on its capabilities. Adding the dollar sign in front of a variable name is just best practice for reminding us that a jQuery object is contained within, and thus jQuery methods are available on it. Examples of such jQuery methods used in our code are <code>hasClass</code>, <code>removeClass</code>, <code>addClass</code>, <code>siblings</code>, <code>attr</code>, <code>show</code> and <code>hide</code>. If you’d like to have a deeper understanding of jQuery and its methods, I urge you to dig into its <a href="http://api.jquery.com/" target="_blank">documentation</a>.
@@ -184,7 +185,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
     Add the following code to your "index.html" file. You can place it anywhere in the <code>&lt;body&gt;</code> tag, but I recommend placing it right behind the ‘show-me-some-magic button’ markup.
     <!-- html: web developer in 3 days - v10 -->
-    <div id="470074ae589de10b2594"><iframe width="100%" frameborder="0" id="gist-470074ae589de10b2594" style="height: 543px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/470074ae589de10b2594.js"></script>
     Note that we’ve added our own custom content to the modal header and body.
 </p>
 <p class="ng-scope">
@@ -193,7 +194,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
     Replace the ‘show-me-some-magic button’ markup in your "index.html" with the following:
     <!-- html: web developer in 3 days - v11 -->
-    <div id="cf59b9e5d81968c65268"><iframe width="100%" frameborder="0" id="gist-cf59b9e5d81968c65268" style="height: 150px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/cf59b9e5d81968c65268.js"></script>
     Clicking the button should now trigger the modal.
 </p>
 <p class="ng-scope">
@@ -225,7 +226,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
     <!-- html: web developer in 3 days - v12 -->
     In your "index.html", replace your twitter bird &lt;a&gt; element with the following:
-    <div id="5e8552907f6fc6f28376"><iframe width="100%" frameborder="0" id="gist-5e8552907f6fc6f28376" style="height: 150px;"></iframe></div>
+    <script src="https://gist.github.com/fredericJos/5e8552907f6fc6f28376.js"></script>
 </p>
 <p class="ng-scope">
     Clicking the twitter bird in your browser will now present a ready made tweet in a separate browser  tab. The content of this ready made tweet will be determined by the parameters you attach to the web address that is passed into the <code>href</code> attribute. In this case, there are 3 parameters attached, namely <code>text</code>, <code>url</code> and <code>via</code>. You can customize their values to create a tweet of your liking.

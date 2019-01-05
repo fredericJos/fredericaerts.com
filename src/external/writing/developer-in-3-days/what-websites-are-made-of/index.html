@@ -7,6 +7,7 @@
 	<meta name="description" content="">
 
 	<title>Developer in 3 days | What websites are made of</title>
+	<link rel="stylesheet" href="web/styles/external-style.css">
 </head>
 <body data-status="" ng-controller="mainCtrl as mainCtrl" class="ng-scope" cz-shortcut-listen="true">
 	<div class="page-wrapper bg-contrast">
@@ -39,7 +40,7 @@
 	</footer>
 </blockquote>
 <p class="blogpost__intro ng-scope">
-	I don’t have to tell you that the ability to build websites is an incredibly empowering skill. The idea of building things — especially things of your own design — that could potentially reach millions of people is an exhilarating one. When you get started with building your first website, it’s easy to get overwhelmed by all the information out there. Before you get caught in tutorial paralysis, let us get one thing straight: you don’t have to be a genius to build websites! What you do need, is to be determined. In the end, it’s all just a matter of breaking down problems into smaller problems, and then solving them one by one. So for this series, the problem we’ll solve is: how can we, without any prior knowledge in web development, build <a href="https://www.fredericaerts.com/external/developer-in-3-days/" target="_blank">this website</a> in 3 days time. We'll break this problem down into: getting acquainted with the languages that make up any website (day 1), laying down the structure and style for our website (day 2), and finally, adding interaction behavior and publishing it for the world to admire (day 3). When you’ve finished this series, you’re going to look like you have magical powers compared to everyone else. So let’s get cracking…
+	I don’t have to tell you that the ability to build websites is an incredibly empowering skill. The idea of building things — especially things of your own design — that could potentially reach millions of people is an exhilarating one. When you get started with building your first website, it’s easy to get overwhelmed by all the information out there. Before you get caught in tutorial paralysis, let us get one thing straight: you don’t have to be a genius to build websites! What you do need, is to be determined. In the end, it’s all just a matter of breaking down problems into smaller problems, and then solving them one by one. So for this series, the problem we’ll solve is: how can we, without any prior knowledge in web development, build <a href="https://www.fredericaerts.com/external/developer-in-3-days/" target="_blank">this website</a> in 3 days time. We'll break this problem down into: getting acquainted with the languages that make up any website (day 1), laying down the structure and style for our website (day 2), and finally, adding interaction behavior and publishing it for the world to admire (day 3). When you’ve finished this series, you’re going to look like you have magical powers compared to everyone else. So let’s get started…
 </p>
 <h2 class="ng-scope">Browsers talk HTML</h2>
 <p class="ng-scope">
@@ -65,7 +66,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Replace the content in your current "index.html" file with the following:
 	<!-- html: web developer in 5 days - v1 -->
-	<div id="dc165cb1077a1e2b2310"><iframe width="100%" frameborder="0" id="gist-dc165cb1077a1e2b2310" style="height: 287px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/dc165cb1077a1e2b2310.js"></script>
 </p>
 <p class="ng-scope">
 	Note that we’re nesting HTML tags here, e.g. the <strong>title</strong> tag is nested within the <strong>head</strong> tag. We’re also using line-breaks and indentation to clean up our code, which is a crucial thing to do if you want to avoid spending hours on finding for example a missing closing HTML tag. This formatting of your code will not be reflected in your web page. Line-breaks and indentations can only be enforced by HTML tags and their corresponding CSS rules.
@@ -102,7 +103,7 @@
 </p>
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	<!-- html: web developer in 5 days - v2 -->
-	<div id="efb659e1af6eaf2a0b9f"><iframe width="100%" frameborder="0" id="gist-efb659e1af6eaf2a0b9f" style="height: 155px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/efb659e1af6eaf2a0b9f.js"></script>
 </p><p class="ng-scope">
 	Note that the link tag has no closing tag. It’s what we call a self-enclosing HTML tag. There’s no reason for it to have a closing tag since there’s no content to be contained. Like any HTML tag though (more on this later), the link tag can contain information about itself in its attributes. Our link tag uses the attributes <strong>href</strong> and <strong>rel</strong> to explain to the browser that it should fetch a file named style.css and use it as the stylesheet for our web page. Let’s create that CSS file:
 </p>
@@ -195,7 +196,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Replace the current CSS rules in our CSS file with the following;
 	<!-- css: web developer in 5 days - v1 -->
-	<div id="1361d1670013ac0e6976"><iframe width="100%" frameborder="0" id="gist-1361d1670013ac0e6976" style="height: 727px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/1361d1670013ac0e6976.js"></script>
 </p>
 <p class="ng-scope">
 	Lo and behold, this little piece of self-explanatory CSS code has transformed our website into a true work of art! Don’t worry if you don’t grasp all the details yet, but worth noting is the proper use of indentation and grouping of related CSS properties for better readability. Also note that elements can inherit some CSS properties from their parent elements, illustrated here by the <strong>font-family</strong> and <strong>text-align</strong> properties in our h1 and p elements.
@@ -215,7 +216,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	In your text editor, create a new file, type <code>window.alert(‘Hello, I’m a popup’);</code> and save it as "script.js" in the same directory as your "index.html" file. Be sure to save it in JavaScript format, which means it should have a .js extension instead of the default .txt extension. Now, instruct the browser to fetch this file by adding a script tag in the head of your "index.html" like so:
 	<!-- html: web developer in 5 days - v3 -->
-	<div id="98e0730bbde81f93b9db"><iframe width="100%" frameborder="0" id="gist-98e0730bbde81f93b9db" style="height: 177px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/98e0730bbde81f93b9db.js"></script>
 	Note that although no content is enclosed by the script tag, you should not omit the closing tag here. Let’s just accept this nuance of HTML grammar with the stoicism of a cow standing in the rain.
 	Now refresh your browser. A popup is prompted by the browser on pageload.
 </p>
@@ -240,7 +241,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Copy the following piece of code in our "script.js" file;
 	<!-- js: web developer in 5 days - v1 -->
-	<div id="b1f15a19c258320fe66c"><iframe width="100%" frameborder="0" id="gist-b1f15a19c258320fe66c" style="height: 221px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/b1f15a19c258320fe66c.js"></script>
 </p>
 <p class="ng-scope">
 	Read through this code line by line. Can you figure what will happen to your website when you refresh your browser? In the first three lines of code, we are creating a brand new paragraph element. Since this is not dependent on our DOM tree, we don’t have to wait for the 'DOMContentLoaded' event to execute this code. Once the DOM is loaded, we’re selecting the body element from it, and appending our new paragraph element to it. As a result, you’ll see a new paragraph added to the bottom of your website. This paragraph element was not declared statically in your HTML file, but added dynamically from your JavaScript file. Not impressed? Then imagine what you can achieve by tapping into click events to toggle classes (and thus CSS styling) on HTML elements. Coincidentally, that’s the approach we’ll use to implement tab functionality for the website we’re building in the coming days.

@@ -1,0 +1,33 @@
+.page-wrapper {
+  max-width: 830px;
+  margin: auto;
+
+  font-size: 18px;
+  line-height: 1.8em;
+}
+
+.blogpost__intro {
+  font-weight: 600;
+}
+
+.blogpost__image-wrapper {
+  text-align: center;
+}
+
+code {
+  padding: 0 5px;
+  font-size: 14px;
+  font-family: monospace;
+
+  background: #f5f5f5;
+}
+
+.blogpost p.blogpost__intructions, 
+.blogpost ul, .blogpost__indented {
+  padding-left: 1em;
+  border-left: 10px solid #f5f5f5;
+}
+
+img {
+  max-width: 100%;
+}

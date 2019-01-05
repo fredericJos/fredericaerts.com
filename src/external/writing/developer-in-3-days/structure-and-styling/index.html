@@ -5,6 +5,7 @@
 	<meta name="description" content="">
 
 	<title>Developer in 3 days | Structure and styling</title>
+	<link rel="stylesheet" href="web/styles/external-style.css">
 </head>
 <body data-status="" ng-controller="mainCtrl as mainCtrl" class="ng-scope" cz-shortcut-listen="true">
 	<div class="page-wrapper bg-contrast">
@@ -46,15 +47,9 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Create a folder on your computer named "my-first-website". This will be the workspace for your website. In this folder, create your "index.html" file and add the following content:
 	<!-- html: web developer in 3 days - v4 -->
-	<div id="5211413b3624482c89af"><iframe width="100%" frameborder="0" id="gist-5211413b3624482c89af" style="height: 507px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/5211413b3624482c89af.js"></script>
 	Now create your CSS files in accordance with the paths specified in the href attribute of your link tags. This means creating a subfolder named "styles" in your workspace, in which you place eight (empty) CSS files with names matching those in the link tags. Likewise, create an empty JavaScript file named "script.js" in a subfolder named "scripts". Finally, add an empty subfolder named "images" in your workspace. This is where you will house your images later on. Your workspace directory should thus look like this:
 </p>
-<style class="ng-scope">
-	.blogpost__image--workspace img {
-		width: 650px;
-		height: 348px;
-	}
-</style>
 <div class="blogpost__image-wrapper blogpost__image--workspace ng-scope">
   <img src="web/img/blog-posts/dev-in-3-days/workspace.jpg" alt="Workspace folder structure">
 </div>
@@ -70,7 +65,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Copy paste Eric Meyer’s CSS reset code it in your "reset.css" file;
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="e57f708b8c8de9e030c2"><iframe width="100%" frameborder="0" id="gist-e57f708b8c8de9e030c2" style="height: 661px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/e57f708b8c8de9e030c2.js"></script>
 	You can test your CSS reset by adding a h1 header and a paragraph to your "index.html". Both should have the same styling in your browser. If not, start debugging!
 </p>
 <p class="ng-scope">
@@ -98,7 +93,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Insert this piece of code in your "base.css" file;
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="e2f29461155aca812eb9"><iframe width="100%" frameborder="0" id="gist-e2f29461155aca812eb9" style="height: 150px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/e2f29461155aca812eb9.js"></script>
 	It could be argued that this piece of code belongs in our "reset.css" rather than our "base.css" file. You say to-may-to, I say to-mah-to. Let’s move on…
 </p>
 <p class="ng-scope">
@@ -157,7 +152,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Copy paste this HTML snippet into the body tag of your "index.html" file:
 	<!-- html: web developer in 3 days - v5 -->
-	<div id="46b539514a2232c7e42c"><iframe width="100%" frameborder="0" id="gist-46b539514a2232c7e42c" style="height: 221px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/46b539514a2232c7e42c.js"></script>
 </p>
 <p class="ng-scope">
 	Now take a long, good look at this HTML snippet. Note that we have used the absolute minimum number of HTML tags necessary to describe the structure and meaning of the header content. If you know that the <code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> tags are block elements, and the <code>&lt;a&gt;</code> tag is an inline element, then try to imagine how their respective boxes will be positioned in the browser. Open your "index.html" in the browser and use its web development tools to inspect these elements! We already know what the <code>content-wrapper</code> class is for. How can we use the other classes to style our HTML elements in accordance with the design we’re after? Don’t worry about the absent twitter bird just yet, we’ll fix that in a minute.
@@ -168,7 +163,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add this CSS code to your "grid.css" file:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="3fb2f809fa6a337e92b0"><iframe width="100%" frameborder="0" id="gist-3fb2f809fa6a337e92b0" style="height: 177px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/3fb2f809fa6a337e92b0.js"></script>
 </p>
 <p class="ng-scope">
 	When you refresh your browser, you’ll see that the navigation links have moved away from the left side of your browser to a more centered position. When you inspect the <code>&lt;nav&gt;</code> element with your browser’s web development tools, you’ll see that it’s perfectly centered. All content within it will now be positioned in the middle of the page. Easy enough, right? Note that this code is not going to cut it on smaller (mobile) devices, but we’ll fix that later on.
@@ -182,7 +177,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add this CSS code to your "base.css" file:
 	<!-- css: web developer in 3 days - v2 -->
-	<div id="6c38aba51558522a105f"><iframe width="100%" frameborder="0" id="gist-6c38aba51558522a105f" style="height: 265px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/6c38aba51558522a105f.js"></script>
 </p>
 <p class="ng-scope">
 	Note that the color property has a hex code value. On day one of this series, we used the color name <code>red</code> to change the color of highlighted text. Obviously, the list of color names to choose from is limited. A more flexible (and popular) way of specifying colors with CSS is via hex codes, where the first two digits represent the red, the next two the green, and the last two the blue. Mixing these three colors together in different proportions gives us a huge color palette to work with. In the hexadecimal system, numbers (0-9) team up with letters (A-F) to create 16 possibilities per digit: [0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F]. And so, black would be represented by <code>#000000</code>, white by <code>#FFFFFF</code>, red by <code>#FF0000</code>, green by <code>#00FF00</code>, and blue by <code>#0000FF</code>. Looking at the hex code we’re using to color our links, we can see there’s a lot of blue (ED) mixed in, but also a substantial amount of red (64) and green (95). The result is a light blue, much like the twitter brand color.
@@ -193,7 +188,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Fill up your "header.css" file with the following CSS:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="8795d2e02d09df049818"><iframe width="100%" frameborder="0" id="gist-8795d2e02d09df049818" style="height: 683px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/8795d2e02d09df049818.js"></script>
 </p>
 <p class="ng-scope">
 	Now that’s better! Can you figure out the purpose of each CSS rule by yourself? If you have doubts about the effect of a certain CSS property, just delete it and see what happens in the browser. If you have doubts about the syntax of a CSS property, just google it (I had to google the <code>box-shadow</code> syntax myself). Note that we’ve shown here that the default inline, inline-block, or block behavior of an element are interchangeable via the <code>display</code> property. In our case, we’ve changed the inline nav-item link elements into inline-block elements, so as to enable us to specify their height. Note also that it’s good practice to give small clickable elements some padding (rather than margins), thereby increasing their clickable surface. With everything you’ve learned so far, I consider the rest of this CSS code to be self-evident. Let’s move on…
@@ -205,7 +200,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add this HTML snippet right after the header closing tag in your "index.html" file:
 	<!-- html: web developer in 3 days - v6 -->
-	<div id="5d3e89c1e792b4fd9efc"><iframe width="100%" frameborder="0" id="gist-5d3e89c1e792b4fd9efc" style="height: 221px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/5d3e89c1e792b4fd9efc.js"></script>
 	Note that the button in our hero is actually linking to another website, which is why an <code>&lt;a&gt;</code> tag is semantically more correct here than the perhaps more obvious <code>&lt;button&gt;</code> tag.
 </p>
 <p class="ng-scope">
@@ -217,7 +212,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add this generic CSS rule to your "base.css" file:
 	<!-- css: web developer in 3 days - v6 -->
-	<div id="3025d277260cde2e1eb3"><iframe width="100%" frameborder="0" id="gist-3025d277260cde2e1eb3" style="height: 177px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/3025d277260cde2e1eb3.js"></script>
 </p>
 <p class="ng-scope">
 	Now let’s focus on horizontally centering all hero content. We have already learned from our content-wrapper that we can center block elements by specifying their width and setting their left and right margins to <code>auto</code>, so our h1 element is covered. Since our image element (inline-block element) is supposed to enforce a line break, we might as well make it a block element too. Here are the hero-specific CSS rules for our h1 header and image element:
@@ -225,7 +220,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add these CSS rules to your "hero.css" file:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="068fdf0ac9db4574fd71"><iframe width="100%" frameborder="0" id="gist-068fdf0ac9db4574fd71" style="height: 441px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/068fdf0ac9db4574fd71.js"></script>
 	Note that we’re using a combination of the <code>width</code> and <code>max-width</code> properties to make elements scale nicely on smaller devices, but prevent them from scaling out of proportion on larger devices.
 </p>
 <p class="ng-scope">
@@ -234,7 +229,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add this CSS rule to your "hero.css" file:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="668632d9eca3d762b32f"><iframe width="100%" frameborder="0" id="gist-668632d9eca3d762b32f" style="height: 221px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/668632d9eca3d762b32f.js"></script>
 	Note that the text-align property gets inherited by the h1 element.
 </p>
 <p class="ng-scope">
@@ -250,10 +245,10 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add the following HTML snippet to your "index.html" file:
 	<!-- html: web developer in 3 days - v7 -->
-	<div id="5b231f6b426670c19733"><iframe width="100%" frameborder="0" id="gist-5b231f6b426670c19733" style="height: 441px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/5b231f6b426670c19733.js"></script>
 	Add the following CSS snippet to your "base.css" file:
 	<!-- css: web developer in 3 days - v4 -->
-	<div id="4b019a436a9e7201779d"><iframe width="100%" frameborder="0" id="gist-4b019a436a9e7201779d" style="height: 573px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/4b019a436a9e7201779d.js"></script>
 	Note that the CSS selector <code>h2 + p</code> targets any paragraph element that’s directly preceded by a h2 header element, just as the <code>p + button</code> selector targets any button element that is directly preceded by a paragraph.
 </p>
 <p class="ng-scope">
@@ -262,7 +257,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Specify a default font for your website by adding the following CSS rule to your "base.css" file:
 	<!-- css: web developer in 3 days - v5 -->
-	<div id="82de834a3c671c0dad22"><iframe width="100%" frameborder="0" id="gist-82de834a3c671c0dad22" style="height: 150px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/82de834a3c671c0dad22.js"></script>
 </p>
 <p class="ng-scope">
 	There are not a lot of fallback fonts specified here, and there are not a lot of computers that support "Oswald" either! But don’t you worry, cause with the help of <a href="https://www.google.com/fonts" target="_blank">google fonts</a>, we’re going to instruct the browser to download "Oswald" for us. You can do this by adding the following line to the <code>&lt;head&gt;</code> in your "index.html": <code>&lt;link href='http://fonts.googleapis.com/css?family=Oswald:400,700" rel='stylesheet" type=‘text/css’&gt;</code>. Our website requires two font-weight variations (400 which is the default &amp; 700) from "Oswald", and you can derive from this link that the browser is instructed to download both. Moving on…
@@ -274,7 +269,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add the following CSS to your "helper-classes.css" file:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="4e14f5bff511c4b0cc68"><iframe width="100%" frameborder="0" id="gist-4e14f5bff511c4b0cc68" style="height: 199px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/4e14f5bff511c4b0cc68.js"></script>
 </p>
 <p class="ng-scope">
 	Note that we’re using exactly the same CSS properties we used for styling the hero image. The properties used here differ only in their respective values, bringing about a much wider image on desktop computers.
@@ -286,7 +281,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add the tab section HTML to the body tag in your "index.html" file:
 	<!-- html: web developer in 3 days - v8 -->
-	<div id="8fd1544437de9c600648"><iframe width="100%" frameborder="0" id="gist-8fd1544437de9c600648" style="height: 991px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/8fd1544437de9c600648.js"></script>
 </p>
 <p class="ng-scope">
 	There are two HTML tags here that we didn’t use before. First, there’s <code>&lt;h3&gt;</code>, which represents a subtitle one level lower than our <code>&lt;h2&gt;</code> subtitles. We’re going to style it in our "base.css" file.
@@ -294,7 +289,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Style the h3 subtitle in your "base.css" like so:
 	<!-- css: web developer in 3 days - v6 -->
-	<div id="45ef0c58658c9ef301d4"><iframe width="100%" frameborder="0" id="gist-45ef0c58658c9ef301d4" style="height: 155px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/45ef0c58658c9ef301d4.js"></script>
 </p>
 <p class="ng-scope">
 	The other HTML tag in our tab component we haven’t used before is the very generic <code>&lt;div&gt;</code> tag. It defines a <strong>div</strong>ision block element and is probably the most used HTML tag throughout the web. If I would have written this series a couple of years ago, there would be plenty more <code>&lt;div&gt;</code> tags in our website too. With the inception of HTML5, however, many semantically more appropriate tags like <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, etc… were introduced, enabling us to write clearer and more descriptive code. With these new semantic tags, screen readers can also better examine the HTML document and create an improved experience for users. But don’t you get too hung up on semantics either. There’s nothing wrong with using <code>&lt;div&gt;</code> tags in your HTML. In our case, for us to properly layout the tab component with CSS, it’s absolutely required that we wrap the tab panes and their content in block elements. No meaningful HTML tag exists for this purpose, so the <code>&lt;div&gt;</code> tag is the way to go here.
@@ -305,7 +300,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add the following CSS to your "tabs.css" file:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="0a063bb0a2747767cb56"><iframe width="100%" frameborder="0" id="gist-0a063bb0a2747767cb56" style="height: 243px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/0a063bb0a2747767cb56.js"></script>
 </p>
 <p class="ng-scope">
 	For styling the tab links, we’ll need to tinker with their border properties. First of, there’s a bottom border on their <code>tab-links</code> wrapper element. Then there’s also a left, top, and right border on the active <code>tab-links-item</code> element, but apparently no bottom border. We thus need to hide the <code>tab-links</code> wrapper border below the active <code>tab-links-item</code> element. There are several ways to do it, but we are going to give the active tab link a white background and then move it down 1 pixel over the <code>tab-links</code> border. We’ll finish up the tab link styling by polishing of those top border corners with the <code>border-radius</code> property.
@@ -313,7 +308,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Style your tab links by adding this CSS to your "tabs.css" file:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="830118ebd23fdbfcc10a"><iframe width="100%" frameborder="0" id="gist-830118ebd23fdbfcc10a" style="height: 683px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/830118ebd23fdbfcc10a.js"></script>
 </p>
 <p class="ng-scope">
 	We now have a tab component that’s seemingly forever stuck on the first tab. However, we’ve constructed the tabs in such a way that it requires minimum effort to switch between them. All it takes is to transfer the <code>active</code> class between tab elements. We can already do this manually in our code, but tomorrow we’ll write some JavaScript that will take care of this for us.
@@ -325,7 +320,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add the footer HTML to the body tag in your "index.html" file:
 	<!-- html: web developer in 3 days - v9 -->
-	<div id="b6268889cccbcfb3ac2d"><iframe width="100%" frameborder="0" id="gist-b6268889cccbcfb3ac2d" style="height: 199px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/b6268889cccbcfb3ac2d.js"></script>
 </p>
 <p class="ng-scope">
 	The <code>&lt;span&gt;</code> tag is new to us. You can think of the <code>&lt;span&gt;</code> tag as the inline counterpart of the <code>&lt;div&gt;</code> tag. Its only purpose is to provide a hook to a part of inline content, so that we can for instance target it for styling purposes. The first <code>&lt;span&gt;</code> tag is used here as a hook for Font Awesome to insert a heart icon. The second is used to style (<code>position</code> and <code>font-size</code>) our footnote.
@@ -336,7 +331,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Add the following CSS to your "footer.css" file:
 	<!-- css: web developer in 3 days - v1 -->
-	<div id="46ffd238ba2e2cdac67c"><iframe width="100%" frameborder="0" id="gist-46ffd238ba2e2cdac67c" style="height: 617px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/46ffd238ba2e2cdac67c.js"></script>
 </p>
 <p class="ng-scope">
 	With that, all content has been added to our website. And it’s looking great too! But before we call it a day, let’s give our website an ultra professional boost with two little tweaks.
@@ -348,7 +343,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Update the header CSS rule in your "header.css" file like so:
 	<!-- css: web developer in 3 days - v2 -->
-	<div id="3491104b0e5d61fc6d9f"><iframe width="100%" frameborder="0" id="gist-3491104b0e5d61fc6d9f" style="height: 309px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/3491104b0e5d61fc6d9f.js"></script>
 	Note that we’ve also set a white background to the header, so that the underlying elements don’t show through.
 </p>
 <p class="ng-scope">
@@ -360,7 +355,7 @@
 <p class="blogpost__intructions blogpost__indented ng-scope">
 	Replace the content of your "grid.css" file with the following:
 	<!-- css: web developer in 3 days - v2 -->
-	<div id="6127ae3be88e1920eb2e"><iframe width="100%" frameborder="0" id="gist-6127ae3be88e1920eb2e" style="height: 353px;"></iframe></div>
+	<script src="https://gist.github.com/fredericJos/6127ae3be88e1920eb2e.js"></script>
 </p>
 <p class="ng-scope">
 	In this piece of code, everything that’s wrapped within the <code>@media (min-width: 750px) { }</code> curly braces will only be executed in screens that are at least 750px in width. Our first CSS rule thus has effect on smaller devices only, making our content wrapper stretch to full screen width on them. We’ve also applied a 15px left and right padding, so that its content doesn’t touch the borders of the screen. Viewed on a large enough screen, the width property of the content wrapper gets overwritten to 750px, and its left and right margins are set to auto so that it is centered. Note that the padding property does not get overwritten, and thus still stands on larger devices too, which is totally fine.
