@@ -13,6 +13,13 @@
         >
           <%= links[i].text %>
         </a>
+        <% if (links[i].labels.length) { %>
+          <div class="external-link-list__items__item__labels">
+            <% for (var j = 0; j < links[i].labels.length; j++) { %>
+              <span class="<%= links[i].labels[j] %>"></span>
+            <% } %>
+          </div>
+        <% } %>
       </li>
     <% } %>
   </ul>

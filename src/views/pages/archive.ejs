@@ -1,4 +1,6 @@
+<% var pageHeader = require('@components/page-header/page-header.ejs'); %>
 <% var externalLinkList = require('@components/external-link-list/external-link-list.ejs'); %>
+<% var pageFooter = require('@components/page-footer/page-footer.ejs'); %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,32 +20,15 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
   </head>
   <body>
+    <%= pageHeader({
+      link: {
+        text: 'Home',
+        link: '/'
+      }
+    }) %>
     <div class="archive-page">
       <div class="section">
         <h1>Archive</h1>
-      </div>
-      <div class="section">
-        <h2>Portfolio</h2>
-        <%= externalLinkList({
-          introText: 'Here are some projects I worked on as a freelance web developer.',
-          links: [
-            {
-              text: 'Frontend template for an enterprise grade open publishing and live broadcasting platform.',
-              link: '/external/projects/webinar/html/sign-in/',
-              newTab: false
-            },
-            {
-              text: 'Online home for an organisation that aims to provide a platform for a worldwide community of Mölkky players.',
-              link: 'https://www.molkky.world/',
-              newTab: true
-            },
-            {
-              text: 'Online home for Nazka Mapps',
-              link: 'https://www.nazka.be/en',
-              newTab: true
-            }
-          ]
-        }) %>
       </div>
       <div class="section">
         <h2>Writing</h2>
@@ -53,21 +38,102 @@
             {
               text: 'Day 1: What websites are made of',
               link: '/external/writing/developer-in-3-days/what-websites-are-made-of',
-              newTab: false
+              newTab: false,
+              labels: []
             },
             {
               text: 'Day 2: Structure and styling',
               link: '/external/writing/developer-in-3-days/structure-and-styling',
-              newTab: false
+              newTab: false,
+              labels: []
             },
             {
               text: 'Day 3: Behavior and going live',
               link: '/external/writing/developer-in-3-days/behavior-and-going-live',
-              newTab: false
+              newTab: false,
+              labels: []
             }
           ]
         }) %>
       </div>
+      <div class="section archive-page__portfolio">
+        <h2>Portfolio</h2>
+        <div class="archive-page__portfolio__legend">
+          <span class="green">Frontend</span>
+          <span class="pink">Design</span>
+          <span class="blue">Backend</span>
+        </div>
+        <%= externalLinkList({
+          introText: 'Here are some projects I worked on as a freelance web developer.',
+          links: [
+            {
+              text: 'Online home for Nazka Mapps.',
+              link: 'https://www.nazka.be/en',
+              newTab: true,
+              labels: ['green', 'pink', 'blue']
+            },
+            {
+              text: 'Frontend template for an enterprise grade open publishing and live broadcasting platform.',
+              link: '/external/projects/webinar/html/sign-in/',
+              newTab: true,
+              labels: ['green']
+            },
+            {
+              text: 'A place for creating, editing and presenting slide decks.',
+              link: '/external/projects/slideshow/hub/#/',
+              newTab: true,
+              labels: ['green']
+            },
+            {
+              text: 'The Global Wind Atlas: a web-based application to help policymakers and investors identify potential high-wind areas for wind power generation.',
+              link: 'https://globalwindatlas.info/',
+              newTab: true,
+              labels: ['green']
+            },
+            {
+              text: 'Online home for an organisation that aims to provide a platform for a worldwide community of Mölkky players.',
+              link: 'https://www.molkky.world/',
+              newTab: true,
+              labels: ['green', 'pink', 'blue']
+            },
+            {
+              text: 'One of many fully responsive frontend templates I\'ve built for Wavecast.',
+              link: '/external/projects/anz/',
+              newTab: true,
+              labels: ['green']
+            },
+            {
+              text: 'Online home for a company that is committed to give your scientific research the platform it deserves.',
+              link: '/external/projects/highlight-science-writing/',
+              newTab: true,
+              labels: ['green', 'pink', 'blue']
+            },
+            {
+              text: 'Pro bono project that delivered an online home for a platform aimed at streamlining transplant-related research at the University of Leuven.',
+              link: '/external/projects/transcent/',
+              newTab: true,
+              labels: ['green', 'pink', 'blue']
+            },
+            {
+              text: 'Small website for a small gym located in Kessel-Lo, Leuven.',
+              link: '/external/projects/energym/',
+              newTab: true,
+              labels: ['green', 'pink', 'blue']
+            },
+          ]
+        }) %>
+      </div>
     </div>
+    <%= pageFooter() %>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46279182-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-46279182-1');
+    </script>
   </body>
 </html>

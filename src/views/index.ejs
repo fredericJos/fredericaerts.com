@@ -20,10 +20,14 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
   </head>
   <body>
-    <%= pageHeader() %>
+    <%= pageHeader({
+      link: {
+        text: 'Archive',
+        link: '/archive'
+      }
+    }) %>
     <div class="home-page-body">
       <%= contactCard({
-        avatarSrc: '/img/avatar/frederic-aerts.jpg',
         contactName: 'Hi, I\'m Frederic',
         metaItems: [
           {
@@ -58,5 +62,15 @@
       }) %>
     </div>
     <%= pageFooter() %>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46279182-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-46279182-1');
+    </script>
   </body>
 </html>

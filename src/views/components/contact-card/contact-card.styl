@@ -5,13 +5,11 @@
   width: 160px
   height: 160px
   margin: ($gutter-width / 2) auto 0
-  border-radius: 50%
-  background-repeat: no-repeat
-  background-position: center center
-  background-size: cover
 
   > img 
-    width: 100%
+    width: 160px
+    height: 160px
+    border-radius: 50%
 
 .contact-card__contact-name
   margin-top: ($gutter-width / 2)
@@ -30,6 +28,9 @@
   height: 30px
   width: 30px
   border-radius: 50%
+
+  & + .contact-card__social__item
+    margin-left: ($horizontal-spacing / 2)
 
   > a
     justify-content: center

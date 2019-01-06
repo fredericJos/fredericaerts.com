@@ -42,10 +42,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/views/index.ejs',
+      minify: {
+        collapseWhitespace: true,
+      },
     }),
     new HtmlWebpackPlugin({
       filename: 'archive/index.html',
       template: 'src/views/pages/archive.ejs',
+      minify: {
+        collapseWhitespace: true,
+      },
     }),
     new CleanWebpackPlugin(['public']),
     new webpack.ProvidePlugin({

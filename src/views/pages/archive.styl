@@ -1,7 +1,7 @@
 .archive-page
   max-width: 830px
   margin: auto
-  padding: 0 ($gutter-width / 2)
+  padding: 0 0 $gutter-width
 
   h1
     font-size: $font-size-base * 2
@@ -10,3 +10,45 @@
   h2
     font-size: $font-size-base * 1.5
     font-weight: $font-weight-regular
+
+.archive-page__portfolio__legend
+  float: right
+
+  flex-direction: column
+
+  display: flex
+  margin-top: $vertical-spacing
+  margin-left: $horizontal-spacing
+  margin-bottom: ($horizontal-spacing / 2)
+  padding: $vertical-spacing $horizontal-spacing
+  padding-left: ($horizontal-spacing / 1.5)
+  border: 1px solid $grey-light
+
+  > span 
+    font-size: 12px
+
+    &:before
+      vertical-align: middle
+
+      display: inline-block
+      width: 10px
+      height: 4px
+      margin-right: ($horizontal-spacing / 2)
+      border-radius: 6px
+      
+      content: ""
+  
+    &.green
+
+      &:before 
+        background-color: #4CAF50
+    
+    &.blue
+      
+      &:before 
+        background-color: #1976D2
+    
+    &.pink
+
+      &:before 
+        background-color: #E91E63
