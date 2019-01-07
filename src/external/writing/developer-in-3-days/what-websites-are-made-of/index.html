@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 
 	<title>Developer in 3 days | What websites are made of</title>
-	<link rel="stylesheet" href="web/styles/external-style.css">
+	<link rel="stylesheet" href="https://www.fredericaerts.com/external/writing/developer-in-3-days/web/styles/external-style.css">
 </head>
 <body data-status="" ng-controller="mainCtrl as mainCtrl" class="ng-scope" cz-shortcut-listen="true">
 	<div class="page-wrapper bg-contrast">
@@ -19,7 +19,7 @@
 			<h1 class="ng-binding">Day 1: What websites are made of</h1>
 			<div class="blogpost__meta blogpost__meta--top">
 				<div class="blogpost__meta__item ng-binding">
-					posted on Aug 15, 2015 by <a href="http://twitter.com/fredericAerts" target="_blank">@fredericAerts</a>
+					posted on Aug 15, 2015 by <a href="https://twitter.com/fredericAerts" target="_blank">@fredericAerts</a>
 				</div>
 				<div class="blogpost__meta__item">
 					Part of series: <span class="blogpost__meta__seriesTitle ng-binding">How to become a web developer in 3 days</span> <span ng-show="currentSeries.inProgress" class="ng-hide">(to be continued)</span>
@@ -40,7 +40,7 @@
 	</footer>
 </blockquote>
 <p class="blogpost__intro ng-scope">
-	I don’t have to tell you that the ability to build websites is an incredibly empowering skill. The idea of building things — especially things of your own design — that could potentially reach millions of people is an exhilarating one. When you get started with building your first website, it’s easy to get overwhelmed by all the information out there. Before you get caught in tutorial paralysis, let us get one thing straight: you don’t have to be a genius to build websites! What you do need, is to be determined. In the end, it’s all just a matter of breaking down problems into smaller problems, and then solving them one by one. So for this series, the problem we’ll solve is: how can we, without any prior knowledge in web development, build <a href="/external/developer-in-3-days/" target="_blank">this website</a> in 3 days time. We'll break this problem down into: getting acquainted with the languages that make up any website (day 1), laying down the structure and style for our website (day 2), and finally, adding interaction behavior and publishing it for the world to admire (day 3). When you’ve finished this series, you’re going to look like you have magical powers compared to everyone else. So let’s get started…
+	I don’t have to tell you that the ability to build websites is an incredibly empowering skill. The idea of building things — especially things of your own design — that could potentially reach millions of people is an exhilarating one. When you get started with building your first website, it’s easy to get overwhelmed by all the information out there. Before you get caught in tutorial paralysis, let us get one thing straight: you don’t have to be a genius to build websites! What you do need, is to be determined. In the end, it’s all just a matter of breaking down problems into smaller problems, and then solving them one by one. So for this series, the problem we’ll solve is: how can we, without any prior knowledge in web development, build <a href="https://www.fredericaerts.com/external/developer-in-3-days/" target="_blank">this website</a> in 3 days time. We'll break this problem down into: getting acquainted with the languages that make up any website (day 1), laying down the structure and style for our website (day 2), and finally, adding interaction behavior and publishing it for the world to admire (day 3). When you’ve finished this series, you’re going to look like you have magical powers compared to everyone else. So let’s get started…
 </p>
 <h2 class="ng-scope">Browsers talk HTML</h2>
 <p class="ng-scope">
@@ -149,7 +149,7 @@
 	Note the dot before the class name in our new CSS rule? That’s special CSS syntax reserved for targeting elements (from now on we’ll refer to HTML tags with their content as "elements”) with the respective class attribute. In other words, our CSS selector is now targeting all elements with a class name "highlighted". If you’d add this class to our paragraph element, it would be red as well. Give it a try! Isn’t it wonderful… Note that although the choice of class name is entirely up to you, it’s highly recommended to keep them semantically correct.
 </p>
 <p class="ng-scope">
-	Now what if we added a second rule to our CSS file <code>h1{color:brown;}</code>? Will our header color brown or red? Indeed, we now have two categories of CSS selectors (type selector vs. class selector) in our CSS file, both targeting our h1 header. And by the way, are there any other categories of CSS selectors I should now of? Yes sir, there are! And you’d probably like to know that you can combine multiple CSS selectors too, like for instance <code>h1.highlighted{}</code> targeting only h1 headers with a class highlighted. And you should also know that… Hold it right there! This is neither the time nor place to learn about complex CSS selector patterns. Keeping our CSS code simple is not only convenient for us at this point, it’s also best practice. Let’s focus on what we need to build our website, and what we need is a notion of the concept CSS specificity. Here’s a definition:
+	Now what if we added a second rule to our CSS file <code>h1{color:brown;}</code>? Will our header color brown or red? Indeed, we now have two categories of CSS selectors (type selector vs. class selector) in our CSS file, both targeting our h1 header. And by the way, are there any other categories of CSS selectors I should know of? Yes sir, there are! And you’d probably like to know that you can combine multiple CSS selectors too, like for instance <code>h1.highlighted{}</code> targeting only h1 headers with a class highlighted. And you should also know that… Hold it right there! This is neither the time nor place to learn about complex CSS selector patterns. Keeping our CSS code simple is not only convenient for us at this point, it’s also best practice. Let’s focus on what we need to build our website, and what we need is a notion of the concept CSS specificity. Here’s a definition:
 </p>
 <p class="blogpost__indented ng-scope">
 	<strong>CSS specificity</strong> is the means by which a browser decides which CSS property values are the most relevant to an element and therefore will be applied. CSS specificity is based on the matching rules which are composed of CSS selectors of different sorts.
@@ -226,14 +226,8 @@
 <p class="ng-scope">
 	The most commonly used property of the window object is the document object, which serves as an entry point into the web page's content, namely the Document Object Model (DOM) tree. The DOM tree for your current website should look familiar:
 </p>
-<style class="ng-scope">
-	.blogpost__image--dom-tree img {
-		width: 600px;
-		height: 258px;
-	}
-</style>
 <div class="blogpost__image-wrapper blogpost__image--dom-tree ng-scope">
-	<img src="web/img/blog-posts/dev-in-3-days/dom-tree.jpg" alt="Document Object Model">
+	<img src="https://www.fredericaerts.com/external/writing/developer-in-3-days/web/img/blog-posts/dev-in-3-days/dom-tree.jpg" alt="Document Object Model">
 </div>
 <p class="ng-scope">
 	This DOM tree is created by the browser upon pageload, and is based on the HTML file we provided. Via the <code>window.document</code> object, we can now iterate over this DOM tree, access and manipulate our existing HTML elements, and even create or delete HTML elements on the fly. An important gotcha we have to take into account is that the browser is only able to construct the DOM after it has processed our HTML file in its entirety. Execution of our JavaScript file can thus start before DOM availability, resulting in errors when it’s trying to interact with our as of yet inexistent DOM. Luckily for us, the browser keeps us in the know on the myriad of events occurring, one of which is DOM content loading. DOM manipulating code should be wrapped in a function that’s executed only when this ‘DOMContentLoaded’ event is triggered. Let’s illustrate this:
@@ -250,7 +244,7 @@
 <h2 class="ng-scope">The right tools for the job</h2>
 
 <p class="ng-scope">
-	If you don’t use the right tools for the job, you're apt to find something you didn't expect and get discouraged. So far, we’ve been using our default text editor (notepad on Windows, textEdit on Mac) to code our websites. Text editors like these are great for building your very first "Hello world" website, as it drives home the point that virtually anyone is able to build websites. However, they are very basic in their functionality. If you’re writing a body of formatted text, you’re not likely to use this simple editor, but rather a specialized editor like Microsoft Word or Google Docs. Likewise, you should use a specialized editor for building websites. Examples of such editors are Coda, TextMate, Vim… I use <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>, which I hereby recommend. Get it now! The benefits will be self evident immediately.
+	If you don’t use the right tools for the job, you're apt to find something you didn't expect and get discouraged. So far, we’ve been using our default text editor (notepad on Windows, textEdit on Mac) to code our websites. Text editors like these are great for building your very first "Hello world" website, as it drives home the point that virtually anyone is able to build websites. However, they are very basic in their functionality. If you’re writing a body of formatted text, you’re not likely to use this simple editor, but rather a specialized editor like Microsoft Word or Google Docs. Likewise, you should use a specialized editor for building websites. Examples of such editors are Coda, TextMate, Vim… I use <a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a>, which I hereby recommend. Get it now! The benefits will be self evident immediately.
 </p>
 <p class="ng-scope">
 	Another indispensable set of tools for any web developer is most likely already built in in your browser, though some browsers require more action than others to open them. In most browsers, right clicking on a website and selecting "inspect element" will do. If this is not an option for you, I suggest googling for instructions on how to open these developer tools in your specific browser. Browser developer tools enable you to take a look at your code from a browser’s perspective, which evidently can be very helpful when testing and debugging your code. There’s an enormous amount of functionality in these tools, aimed specifically at facilitating the process of building websites. I’ll leave you to discover them for yourself.

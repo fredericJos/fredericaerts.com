@@ -19,6 +19,7 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, 'src/views/components'),
+      '@meta': path.resolve(__dirname, 'src/views/meta'),
     },
   },
   module: {

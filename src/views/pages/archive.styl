@@ -1,7 +1,8 @@
 .archive-page
   max-width: 830px
   margin: auto
-  padding: 0 0 $gutter-width
+  min-height: "calc(100vh - %s)" % ($page-header-height + $page-footer-height )
+  padding: ($gutter-width / 2) ($gutter-width / 2) $gutter-width
 
   h1
     font-size: $font-size-base * 2
