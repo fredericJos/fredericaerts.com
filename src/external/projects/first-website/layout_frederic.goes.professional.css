@@ -1,0 +1,127 @@
+head
+{
+color : rgb(0,0,0)
+}
+
+body
+{
+font-family:monospace;
+color:rgb(0,0,0);
+overflow:scroll;
+background-color:rgb(200,200,200);
+}
+
+div#wrapper
+{
+position:relative;
+height:700px;
+width:800px;
+margin:auto;
+background-color:#ffed75;
+border-width:1px 1px 1px 1px;
+border-color:black;
+border-style:solid;
+
+}
+
+h1
+{
+margin:0px;
+padding:20px 20px 20px 10px;
+font-size:75px;
+background-image:url('titelbalk.jpg');
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+
+img.foto 
+{
+float:left;
+height:104px;
+width: 104px;
+margin-right:20px;
+}
+
+div.tekst
+{
+width:530px;
+height:500px;
+margin:30px 0px 0px 45px;
+float:left;
+text-align:center;
+overflow:auto;
+background-image:url('achtergrond_tekst.gif');
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+
+div#logo
+{
+position:absolute;
+bottom:2px;
+right:2px;
+}
+
+img.logo
+{
+width:200px;
+height:140px;
+}
+
+img.voorpagina
+{
+margin-top:20px;
+width:520x;
+height:460px;
+}
+
+h2
+{
+margin:0px 0px 30px 20px;
+}
+
+div.cv
+{
+text-align:left;
+}
+
+p
+{
+text-decoration:underline;
+}
+
+div.menu
+{
+margin:0px 0px 0px 0px;
+padding:50px 30px 0px 0px;
+height:523px;
+width:150px;
+float:right;
+background-color:#ffff66;
+}
+
+ul
+{
+list-style-type:none;
+}
+
+a
+{
+color:rgb(0,0,0);
+text-decoration:none;
+}
+
+a:hover
+ { 
+background-color:orange;
+ }
+
+
+
+
+
+
+
+
+
+
