@@ -9,7 +9,7 @@
   <head>
     <%= head({
       title: 'Archive',
-      description: 'Feel free to browse some articles I\'ve written in the past, and some projects I\'ve worked on as a freelance web developer.',
+      description: 'Feel free to browse some articles I\'ve written in the past, and some projects I\'ve worked on as a web developer.',
       canonicalUrl: 'https://www.fredericaerts.com/archive',
     }) %>    
   </head>
@@ -58,8 +58,20 @@
           <span class="blue">Backend</span>
         </div>
         <%= externalLinkList({
-          introText: 'Here are some projects I worked on as a freelance web developer.',
+          introText: 'Here are some projects I worked on as a web developer.',
           links: [
+            {
+              text: 'An application that enables parents to create qualitative video playlists — suitable for kids aged one to six.',
+              link: 'https://tinytarantino.com/',
+              newTab: true,
+              labels: ['green', 'pink', 'blue']
+            },
+            {
+              text: 'An effort to obliterate common misconceptions about immigration in Belgium, made in the run-up to the Belgian elections of 2019.',
+              link: 'https://www.immigration-in-belgium.com/',
+              newTab: true,
+              labels: ['green', 'pink', 'blue']
+            },
             {
               text: 'Frontend template for an enterprise grade open publishing and live broadcasting platform.',
               link: '/external/projects/webinar/html/sign-in/',
