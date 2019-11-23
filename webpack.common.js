@@ -48,8 +48,8 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      filename: 'archive/index.html',
-      template: 'src/views/pages/archive.ejs',
+      filename: 'work/index.html',
+      template: 'src/views/pages/work.ejs',
       minify: {
         collapseWhitespace: true,
       },

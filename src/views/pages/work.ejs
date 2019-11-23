@@ -8,9 +8,9 @@
 <html lang="en">
   <head>
     <%= head({
-      title: 'Archive',
+      title: 'Work',
       description: 'Feel free to browse some articles I\'ve written in the past, and some projects I\'ve worked on as a web developer.',
-      canonicalUrl: 'https://www.fredericaerts.com/archive',
+      canonicalUrl: 'https://www.fredericaerts.com/work',
     }) %>    
   </head>
   <body>
@@ -20,9 +20,9 @@
         link: '/'
       }
     }) %>
-    <div class="archive-page">
+    <div class="work-page">
       <div class="section">
-        <h1>Archive</h1>
+        <h1>Work</h1>
       </div>
       <div class="section">
         <h2>Writing</h2>
@@ -31,6 +31,7 @@
           links: [
             {
               text: 'Day 1: What websites are made of',
+              mediumLink: 'https://medium.com/@frederic_aerts/day-1-what-websites-are-made-of-2f572662db71',
               link: '/external/writing/developer-in-3-days/what-websites-are-made-of',
               newTab: false,
               labels: []
@@ -38,21 +39,23 @@
             {
               text: 'Day 2: Structure and styling',
               link: '/external/writing/developer-in-3-days/structure-and-styling',
+              mediumLink: 'https://medium.com/@frederic_aerts/day-2-structure-and-styling-2576c63f0258',
               newTab: false,
               labels: []
             },
             {
               text: 'Day 3: Behavior and going live',
               link: '/external/writing/developer-in-3-days/behavior-and-going-live',
+              mediumLink: 'https://medium.com/@frederic_aerts/day-3-behavior-and-going-live-5d8d4a73afba',
               newTab: false,
               labels: []
             }
           ]
         }) %>
       </div>
-      <div class="section archive-page__portfolio">
+      <div class="section work-page__portfolio">
         <h2>Portfolio</h2>
-        <div class="archive-page__portfolio__legend">
+        <div class="work-page__portfolio__legend">
           <span class="green">Frontend</span>
           <span class="pink">Design</span>
           <span class="blue">Backend</span>
@@ -61,7 +64,7 @@
           introText: 'Here are some projects I worked on as a web developer.',
           links: [
             {
-              text: 'An application that enables parents to create qualitative video playlists — suitable for kids aged one to six.',
+              text: 'Web application that enables parents to create qualitative video playlists — suitable for kids aged one to six.',
               link: 'https://tinytarantino.com/',
               newTab: true,
               labels: ['green', 'pink', 'blue']

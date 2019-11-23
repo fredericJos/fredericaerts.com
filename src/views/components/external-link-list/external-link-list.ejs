@@ -13,6 +13,15 @@
         >
           <%= links[i].text %>
         </a>
+        <% if (links[i].mediumLink) { %>          
+          <a 
+            class="external-link-list__items__item__labels__extra-link"
+            href="<%= links[i].mediumLink %>"
+            target="_blank"
+          >
+            <span>&#8212;</span> read on medium
+          </a>
+        <% } %>
         <% if (links[i].labels.length) { %>
           <div class="external-link-list__items__item__labels">
             <% for (var j = 0; j < links[i].labels.length; j++) { %>
